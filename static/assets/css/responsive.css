@@ -1,0 +1,280 @@
+@media screen and (min-width: 1370px) {
+    .banner--2 .banner--2-row .banner--2--outer-col .banner--2--innercol {
+        padding: 160px 50px;
+    }
+
+    .banner--2 .banner--2-row .banner--2--outer-col .banner--2--innercol h1 {
+        max-width: 755px;
+        font-size: 90px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner {
+        max-width: 700px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner-row .col-black{
+        width: 800px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .banner {
+        height: auto;
+        min-height: 120vh;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .heading h1{
+        margin-bottom: 0;
+        font-size: 60px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner{
+        padding-right: 150px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner p{
+        margin-bottom: 0;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .heading h1 .blue {
+        font-size: 110px;
+    }
+	
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+    .card-image {
+        width: 200px;
+    }
+
+    .banner--2 .banner--2-row .banner--2--outer-col .banner--2--innercol h1 {
+        font-size: 50px;
+    }
+
+    .banner--2 .banner--2-row .banner--2--outer-col .banner--2--innercol {
+        min-height: 300px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner {
+        padding-right: 0;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .heading h1 {
+        position: static;
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .heading h1 .blue {
+        font-size: 70px;
+    }
+	
+}
+
+@media screen and (max-width: 991px) {
+
+    .container, .container-sm {
+        max-width: 95%;
+    }
+
+    .banner .banner-image {
+        width: 60%;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .banner .banner-content h1 {
+        text-align: center;
+    }
+
+    .call-to-action .call-to-action-row {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .call-to-action-col{
+        margin-bottom: 20px;
+    }
+
+    .about {
+        padding-top: 0;
+    }
+
+    .about p {
+        padding: 0 10px;
+    }
+
+    .service .service-row .service-col {
+        width: 49%;
+    }
+
+    .connect .connect-row .connect-col {
+        width: 49%;
+    }
+
+    .testimonial .slider-div-image .slider-image-overlay img {
+        width: 55%;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner-row {
+        display: none;
+    }
+    
+	
+}
+
+@media screen and (max-width: 768px) {
+    .container, .container-sm {
+        max-width: 95%;
+    }
+
+    .border-white-right {
+        border-right: none;
+    }
+
+    .testimonial .slider-div-image .slider-image-overlay img {
+        width: 35%;
+    }
+
+    .testimonial .slider-div-row .slider-div-quote {
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .testimonial .slider-div-quote .icon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    
+    .testimonial .slider-div-quote p {
+        padding-right: 0px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner {
+        padding-left: 0;
+    }
+
+    .banner--2 .banner--2-row .banner--2--outer-col .banner--2--innercol{
+        width: 100%;
+        display: grid;
+        place-items: center;
+        position: static;
+        top: 0;
+        transform: none;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .banner--2 .banner--2-row .banner--2-col img {
+        width: 100%;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 0;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner p {
+        margin-bottom: 50px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner {
+        text-align: center;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .heading h1 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -50px;
+    }
+
+    
+
+}
+
+@media screen and (max-width: 600px) {
+    .banner .banner-content h1 {
+        font-size: 25px;
+    }
+
+    .banner .banner-content h5 {
+        margin-bottom: 35px;
+        font-size: 17px;
+    }
+
+    .card-image {
+        display: none;
+    }
+
+    .banner .banner-content .banner-content-row {
+        justify-content: space-around;
+    }
+
+    .banner .banner-content .banner-content-row .banner-content-col {
+        width: 49%;
+    }
+
+    .about p {
+        text-align: justify;
+        line-height: 1.5;
+        padding: 0;
+        font-size: 17px;
+    }
+
+    .service p {
+        font-size: 17px;
+        text-align: justify;
+    }
+
+    .service .service-row .service-col {
+        width: 100%;
+    }
+
+    .connect p {
+        font-size: 17px;
+        text-align: justify;
+    }
+
+    .connect .connect-row .connect-col {
+        width: 100%;
+    }
+
+    .contact .contact-row .contact-col {
+        width: 90%;
+    }
+
+    .testimonial .slider-div-image .slider-image-overlay img {
+        width: 60%;
+        max-width: 45%;
+    }
+
+    .banner--2 .banner--2-row .banner--2--outer-col .banner--2--innercol h1 {
+        font-size: 30px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .banner--3-inner p {
+        font-size: 20px;
+        margin-bottom: 75px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .heading h1 .blue {
+        font-size: 50px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .heading h1 {
+        font-size: 30px;
+    }
+
+    .banner--3 .banner--3-row .banner--3-col .button-div a {
+        width: 100px;
+        height: 100px;
+    }
+    
+
+}
