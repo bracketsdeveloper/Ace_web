@@ -413,6 +413,10 @@ export default {
   box-shadow: 2px 2px 8px #000;
   padding: 0px 34px;
   background: #fff;
+  width: 90px;
+  height: 80px;
+  display: grid;
+  place-items: center;
 }
 
 .product-area .product-area-row .product-area-col img {
