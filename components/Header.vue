@@ -130,6 +130,7 @@ nav .nav-row {
 
 .logo {
   width: 60%;
+  margin-bottom: 0px;
 }
 
 nav .menu-wrapper {
