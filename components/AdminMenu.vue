@@ -1,16 +1,16 @@
 <template>
   <div class="nav--menu--container">
-    <NuxtLink to="/admin/dashboard" class="nav--menu nav--menu--active"
+    <NuxtLink to="/admin/dashboard" :class="path.includes('/admin/dashboard') ? 'nav--menu nav--menu--active':'nav--menu'"
       ><p>Dashboard</p></NuxtLink
     >
-    <NuxtLink to="/admin/enquriy" class="nav--menu"><p>Enquiry</p></NuxtLink>
+    <NuxtLink to="/admin/enquiry" :class="path.includes('/admin/enquiry') ? 'nav--menu nav--menu--active':'nav--menu'" ><p>Enquries</p></NuxtLink>
     <div>
-      <div class="nav--sub--menu" @click="subMenuHandler">
-        <p>Home Page</p>
+      <div class="nav--sub--menu" @click="subMenuHandler('/enquiry')">
+        <p>Enquries</p>
       </div>
-      <div :class="subMenu ? 'inner-sub-menu inner-sub-menu-active' : 'inner-sub-menu'">
-        <p>First Layout</p>
-        <p>Second Layout</p>
+      <div :class="subMenu=='/enquiry' || path.includes('/enquiry') ? 'inner-sub-menu inner-sub-menu-active' : 'inner-sub-menu'">
+        <NuxtLink class="inner-menu-link" to="/admin/enquriy">First Layout</NuxtLink>
+        <NuxtLink class="inner-menu-link" to="/admin/enquriy">Second Layout</NuxtLink>
       </div>
     </div>
   </div>
@@ -21,14 +21,20 @@ export default {
   name: 'AdminMenu',
   data() {
       return {
-          subMenu:false
+          subMenu:''
       }
   },
+  computed: {
+    path () {
+      return this.$route.path
+    }
+  },
   methods: {
-      subMenuHandler(){
-          this.subMenu = !this.subMenu;
+      subMenuHandler(val){
+          this.subMenu = val===this.subMenu ? '' : val;
       }
-  }
+  },
+  
 }
 </script>
 
@@ -123,17 +129,18 @@ export default {
     height: auto;
 }
 
-.inner-sub-menu  p {
+.inner-sub-menu  .inner-menu-link {
   margin: 0;
   padding: 0;
   line-height: 0;
   /* margin-left: 25px; */
+  display: block;
   color: #fff;
   padding: 25px 10px !important;
   transition: all 0.3s ease-in-out;
 }
 
-.inner-sub-menu  p:hover {
+.inner-sub-menu  .inner-menu-link:hover {
     background: #48adcf;
     cursor: pointer;
 }

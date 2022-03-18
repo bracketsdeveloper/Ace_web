@@ -1,7 +1,7 @@
 <template>
     <div>
         <DashboardHeader header-name="Dashboard" />
-        <button @click="refreshToken">logout</button>
+        <button @click="getUser">user</button>
     </div>
 </template>
 
@@ -10,8 +10,8 @@ export default {
     name: 'DashboardPage',
     layout:'AdminDashboardLayout',
     methods:{
-        async refreshToken(){
-            await this.$auth.logout('logout')
+        async getUser(){
+            await this.$api.get('/auth/view-profile')
         },
     }
 }

@@ -58,15 +58,16 @@
               </p>
             </div>
             <div class="wpo-contact-form-area">
-              <form class="form">
+              <p v-if="error" style="color:red;text-align:center">{{errorMessage}}</p>
+              <form class="form" @submit.prevent="formHandler">
                 <div class="row justify-content-center">
                   <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-field">
                       <input
+                      v-model="name"
                         type="text"
                         name="name"
                         placeholder="Name"
-                        value=""
                       />
                       <p></p>
                     </div>
@@ -74,9 +75,10 @@
                   <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-field">
                       <input
+                      v-model="phone"
                         type="text"
-                        name="lastname"
-                        placeholder="Lastname"
+                        name="phone"
+                        placeholder="Phone"
                         value=""
                       />
                       <p></p>
@@ -85,10 +87,10 @@
                   <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-field">
                       <input
+                      v-model="email"
                         type="email"
                         name="email"
                         placeholder="Email"
-                        value=""
                       />
                       <p></p>
                     </div>
@@ -96,17 +98,17 @@
                   <div class="col-lg-6 col-md-6 col-12">
                     <div class="form-field">
                       <input
+                      v-model="subject"
                         type="text"
                         name="subject"
                         placeholder="Subject"
-                        value=""
                       />
                       <p></p>
                     </div>
                   </div>
                   <div class="col-lg-12">
                     <div class="form-field">
-                      <textarea name="message" placeholder="Message"></textarea>
+                      <textarea v-model="message" name="message" placeholder="Message"></textarea>
                     </div>
                   </div>
                   <div class="col-lg-12">
@@ -139,8 +141,114 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 export default {
   name: 'ContactUsPage',
+  data() {
+    return {
+      name:'',
+      email:'',
+      phone:'',
+      subject:'',
+      message:'',
+      error: false,
+      errorMessage: '',
+    }
+  },
   mounted() {
     AOS.init()
   },
+  methods: {
+    async formHandler(){
+      this.error = false
+      this.errorMessage = ''
+
+      if (this.name === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your name'
+          return false;
+      } else if (!(/^[a-zA-Z\s]*$/.test(this.name))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid name'
+          return false;
+      }
+
+      if (this.phone === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your phone'
+          return false;
+      } else if (!(/^[0-9\s]*$/.test(this.phone))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid phone'
+          return false;
+      } else if (this.phone.length < 10 || this.phone.length > 10) { 
+          this.error = true
+          this.errorMessage = 'Please enter a valid phone'
+          return false;
+      }
+
+      if (this.email === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your email'
+          return false;
+      } else if (!(/^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/.test(this.email))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid email'
+          return false;
+      }
+
+      if (this.subject === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your subject'
+          return false;
+      } else if (!(/^[a-z 0-9~%.:_\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&+=,]+$/i.test(this.subject))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid subject'
+          return false;
+      }
+
+      if (this.message === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your message'
+          return false;
+      } else if (!(/^[a-z 0-9~%.:_\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&+=,]+$/i.test(this.message))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid message'
+          return false;
+      }
+
+      this.$store.commit('loaders/show')
+      try {
+          const response = await this.$publicApi.post('/enquiry/create', {email:this.email, name:this.name, phone:this.phone, subject:this.subject, message:this.message} ) // eslint-disable-line
+          this.error = false
+          this.errorMessage = ''
+          this.email = ''
+          this.phone = ''
+          this.name = ''
+          this.subject = ''
+          this.message = ''
+          this.$toast.success('Message Delivered Successfully')
+          this.$store.commit('loaders/hide')
+      } catch (err) {
+          console.log(err.response)// eslint-disable-line
+          if (err?.response?.data?.message) {
+              this.$toast.error(err?.response?.data?.message)
+          }
+          if (err?.response?.data?.errors?.name) {
+              this.$toast.error(err?.response?.data?.errors?.name?.msg)
+          }
+          if (err?.response?.data?.errors?.phone) {
+              this.$toast.error(err?.response?.data?.errors?.phone?.msg)
+          }
+          if (err?.response?.data?.errors?.email) {
+              this.$toast.error(err?.response?.data?.errors?.email?.msg)
+          }
+          if (err?.response?.data?.errors?.subject) {
+              this.$toast.error(err?.response?.data?.errors?.subject?.msg)
+          }
+          if (err?.response?.data?.errors?.message) {
+              this.$toast.error(err?.response?.data?.errors?.message?.msg)
+          }
+          this.$store.commit('loaders/hide')
+      }
+    }
+  }
 }
 </script>

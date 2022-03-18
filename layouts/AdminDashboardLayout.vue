@@ -55,6 +55,7 @@
         </div>
       </section>
     </div>
+    <Loader v-if="loader" />
   </div>
 </template>
 
@@ -62,6 +63,11 @@
 export default {
   name: 'AdminDashboardLayout',
   middleware: 'auth',
+  computed: {
+    loader () {
+      return this.$store.state.loaders.loader
+    }
+  },
 }
 </script>
 
