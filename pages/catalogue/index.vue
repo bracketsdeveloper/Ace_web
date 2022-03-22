@@ -1,414 +1,135 @@
 <template>
   <div class="App">
-    <BreadCrumb page-name="Product Catalogue" />
+    <BreadCrumb page-name="Catalogue" />
     <section id="wrapper">
       <div class="container">
+        <nav data-depth="1" class="breadcrumb hidden-sm-down">
+          <ol>
+            <li>
+              <span>Home</span>
+            </li>
+          </ol>
+        </nav>
+
         <div class="row">
           <div
-            id="left-column"
-            class="sidebar col-xs-12 col-sm-12 col-md-4 col-lg-3"
-          >
-            <div id="search_filters_wrapper" class="hidden-sm-down">
-              <div id="search_filter_controls" class="hidden-md-up">
-                <span id="_mobile_search_filters_clear_all"></span>
-                <button class="btn btn-secondary ok">
-                  <i class="material-icons rtl-no-flip"></i>
-                  OK
-                </button>
-              </div>
-              <div id="search_filters">
-                <p class="facet-top-title h6 hidden-sm-down">Filter By</p>
-
-                <section class="facet clearfix">
-                  <p class="h6 facet-title hidden-sm-down">Categories</p>
-
-                  <div
-                    class="title hidden-md-up"
-                    data-target="#facet_67733"
-                    data-toggle="collapse"
-                  >
-                    <p class="h6 facet-title">Categories</p>
-                    <span class="float-xs-right">
-                      <span class="navbar-toggler collapse-icons">
-                        <i class="material-icons add"></i>
-                        <i class="material-icons remove"></i>
-                      </span>
-                    </span>
-                  </div>
-
-                  <ul id="facet_67733" class="collapse">
-                    <li>
-                      <label class="facet-label" for="facet_input_67733_0">
-                        <span class="custom-checkbox">
-                          <input
-                            id="facet_input_67733_0"
-                            data-search-url="#"
-                            type="checkbox"
-                          />
-                          <span class="ps-shown-by-js"
-                            ><i
-                              class="
-                                material-icons
-                                rtl-no-flip
-                                checkbox-checked
-                              "
-                              ></i
-                            ></span
-                          >
-                        </span>
-
-                        <a
-                          href="#"
-                          class="_gray-darker search-link js-search-link"
-                          rel="nofollow"
-                        >
-                          Home Accessories
-                          <span class="magnitude">(18)</span>
-                        </a>
-                      </label>
-                    </li>
-
-                    <li>
-                      <label class="facet-label" for="facet_input_67733_1">
-                        <span class="custom-checkbox">
-                          <input
-                            id="facet_input_67733_1"
-                            data-search-url="#"
-                            type="checkbox"
-                          />
-                          <span class="ps-shown-by-js"
-                            ><i
-                              class="
-                                material-icons
-                                rtl-no-flip
-                                checkbox-checked
-                              "
-                              ></i
-                            ></span
-                          >
-                        </span>
-
-                        <a
-                          href="6-accessories2299.html?q=Categories-Stationery"
-                          class="_gray-darker search-link js-search-link"
-                          rel="nofollow"
-                        >
-                          Stationery
-                          <span class="magnitude">(16)</span>
-                        </a>
-                      </label>
-                    </li>
-                  </ul>
-                </section>
-
-                <section class="facet clearfix">
-                  <p class="h6 facet-title hidden-sm-down">Price</p>
-
-                  <div
-                    class="title hidden-md-up"
-                    data-target="#facet_67733"
-                    data-toggle="collapse"
-                  >
-                    <p class="h6 facet-title">Price</p>
-                    <span class="float-xs-right">
-                      <span class="navbar-toggler collapse-icons">
-                        <i class="material-icons add"></i>
-                        <i class="material-icons remove"></i>
-                      </span>
-                    </span>
-                  </div>
-
-                  <ul id="facet_67733" class="collapse">
-                    <li>
-                      <label class="facet-label" for="facet_input_67733_0">
-                        <span class="custom-checkbox">
-                          <input
-                            id="facet_input_67733_0"
-                            data-search-url="#"
-                            type="checkbox"
-                          />
-                          <span class="ps-shown-by-js"
-                            ><i
-                              class="
-                                material-icons
-                                rtl-no-flip
-                                checkbox-checked
-                              "
-                              ></i
-                            ></span
-                          >
-                        </span>
-
-                        <a
-                          href="#"
-                          class="_gray-darker search-link js-search-link"
-                          rel="nofollow"
-                        >
-                          INR 9.00 -INR 36.00
-                          <span class="magnitude">(18)</span>
-                        </a>
-                      </label>
-                    </li>
-
-                    <li>
-                      <label class="facet-label" for="facet_input_67733_1">
-                        <span class="custom-checkbox">
-                          <input
-                            id="facet_input_67733_1"
-                            data-search-url="#"
-                            type="checkbox"
-                          />
-                          <span class="ps-shown-by-js"
-                            ><i
-                              class="
-                                material-icons
-                                rtl-no-flip
-                                checkbox-checked
-                              "
-                              ></i
-                            ></span
-                          >
-                        </span>
-
-                        <a
-                          href="6-accessories2299.html?q=Categories-Stationery"
-                          class="_gray-darker search-link js-search-link"
-                          rel="nofollow"
-                        >
-                          INR 9.00 -INR 36.00
-                          <span class="magnitude">(16)</span>
-                        </a>
-                      </label>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-            </div>
-          </div>
-
-          <div
             id="content-wrapper"
-            class="left-column col-xs-12 col-sm-12 col-md-8 col-lg-9"
+            class="col-lg-12 col-xs-12 js-content-wrapper"
           >
             <section id="main">
-              <div id="js-product-list-header">
-                <div class="block-category card card-block">
-                  <h1 class="h1">Accessories</h1>
-                  <div class="block-category-inner">
-                    <div id="category-description" class="text-muted">
-                      <p>
-                        <span style="font-size: 10pt; font-style: normal"
-                          >Items and accessories for your desk, kitchen or
-                          living room. Make your house a home with our
-                          eye-catching designs.
-                        </span>
-                      </p>
+              <div class="cart-grid row">
+              
+                <div class="cart-grid-body col-xs-12 col-lg-12">
+                 
+                  <div class="card cart-container">
+                    <div class="card-block">
+                      <h1 class="h1">Catalogue</h1>
                     </div>
-                  </div>
-                </div>
-              </div>
+                    <hr class="separator" />
 
-              <section id="products">
-                <div>
-                  <div id="js-product-list">
-                    <div class="products">
-                      <div class="product_list grid product-list-default">
-                        <div class="row">
-                          <div
-                           v-for="(item, index) in products" :key="index"
-                            class="
-                              ajax_block_product
-                              col-sp-12
-                              col-xs-6
-                              col-sm-6
-                              col-md-6
-                              col-lg-6
-                              col-xl-4
-                              last-in-line
-                              last-line
-                              last-item-of-tablet-line
-                              last-item-of-mobile-line
-                              last-mobile-line
-                            "
-                          >
-                            <article
-                              class="product-miniature js-product-miniature"
-                              data-id-product="19"
-                              data-id-product-attribute="0"
-                              itemscope=""
-                              itemtype="http://schema.org/Product"
+                    <div
+                    v-for="(item, index) in carts" :key="index"
+                      class="cart-overview js-cart"
+                      data-refresh-url="//demo74.leotheme.com/prestashop/leo_stationero_demo/en/cart?ajax=1&amp;action=refresh"
+                    >
+                      <ul class="cart-items">
+                        <li class="cart-item">
+                          <div class="product-line-grid row">
+                            
+                            <div
+                              class="product-line-grid-left col-md-3 col-xs-4"
                             >
-                              <div class="thumbnail-container">
-                                <div class="product-image">
-                                  <nuxt-link
-                                    :to="'/product/'+item.id"
-                                    class="thumbnail product-thumbnail"
-                                  >
-                                    <img
-                                      class="img-fluid"
-                                      :src="'http://localhost:8080/products/'+item.image"
-                                      alt=""
-                                    />
-                                    <span
-                                      class="product-additional"
-                                      data-idproduct="19"
-                                    ></span>
-                                  </nuxt-link>
+                              <span class="product-image media-middle">
+                                <img
+                                  :src="'http://localhost:8080/products/'+item.image"
+                                  alt="Guildhall Pre-Printed HR File Yellow (Pack of 50)"
+                                  loading="lazy"
+                                />
+                              </span>
+                            </div>
 
-                                  <ul class="product-flags"></ul>
+                            <div
+                              class="product-line-grid-body col-md-8 col-xs-8"
+                            >
+                              <div class="product-line-info">
+                                <NuxtLink
+                                  class="label"
+                                  :to="'/product/'+item.id"
+                                  data-id_customization="0"
+                                  >{{item.name}}</NuxtLink
+                                >
+                              </div>
 
-                                  <div class="functional-buttons clearfix">
-                                    <div class="button-container cart">
-                                      <button
-                                        class="
-                                          btn btn-product
-                                          add-to-cart
-                                          leo-bt-cart leo-bt-cart_19
-                                        "
-                                        data-button-action="add-to-cart"
-                                        @click="addToCart(item)"
-                                      >
-                                        <span
-                                          class="
-                                            leo-loading
-                                            cssload-speeding-wheel
-                                          "
-                                        ></span>
-                                        <span class="leo-bt-cart-content">
-                                          <i
-                                            class="
-                                              icon-btn-product icon-cart
-                                              material-icons
-                                              shopping-cart
-                                            "
-                                            ></i
-                                          >
-                                          <span class="name-btn-product"
-                                            >Add to cart</span
-                                          >
-                                        </span>
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="product-meta">
-                                  <h3 class="h3 product-title" itemprop="name">
-                                    <nuxt-link :to="'/product/'+item.id"
-                                      >{{item.name}}</nuxt-link
+                              <div
+                                class="
+                                  product-line-info product-price
+                                  h5
+                                  has-discount
+                                "
+                              >
+                                <div class="current-price">
+                                  <span class="price">INR {{item.price}}</span>
+                                </div><br />
+                                <p style="color:black">{{item.description}}</p>
+                              </div>
+
+                              <br />
+                            </div>
+
+                            <div
+                              class="
+                                product-line-grid-right product-line-actions
+                                col-md-1 col-xs-12
+                              "
+                            >
+                              <div class="row">
+                                <div class="col-xs-4 hidden-md-up"></div>
+                                <div class="col-md-2 col-xs-2 text-xs-right">
+                                  <div class="cart-line-product-actions">
+                                    <a
+                                      class="remove-from-cart"
+                                      rel="nofollow"
+                                      href="javascript:void(0)"
+                                      data-link-action="delete-from-cart"
+                                      data-id-product="2"
+                                      data-id-product-attribute="9"
+                                      data-id-customization=""
+                                      @click="removeFromCart(index)"
                                     >
-                                  </h3>
-
-                                  <div class="product-price-and-shipping">
-                                    <span class="sr-only">Price</span>
-                                    <span
-                                      class="price"
-                                      itemprop="offers"
-                                      itemscope=""
-                                      itemtype="#"
-                                    >
-                                      <span
-                                        itemprop="priceCurrency"
-                                        content="USD"
-                                      ></span
-                                      ><span itemprop="price" content="13.9"
-                                        >INR {{item.price}}</span
+                                      <i class="material-icons float-xs-left"
+                                        >delete</i
                                       >
-                                    </span>
-                                  </div>
-
-                                  <div
-                                    class="product-description-short"
-                                    itemprop="description"
-                                  >
-                                    It has in-built batteries that can be
-                                    charged by using the included USB cable.
-                                    There is also a useful timer that will
-                                    automatically shut it off...
-                                  </div>
-
-                                  <div class="function-line">
-                                    <div class="button-container cart">
-                                      <button
-                                        class="
-                                          btn btn-product
-                                          add-to-cart
-                                          leo-bt-cart leo-bt-cart_19
-                                          disabled
-                                        "
-                                        data-button-action="add-to-cart"
-                                        type="submit"
-                                      >
-                                        <span
-                                          class="
-                                            leo-loading
-                                            cssload-speeding-wheel
-                                          "
-                                        ></span>
-                                        <span class="leo-bt-cart-content">
-                                          <i
-                                            class="
-                                              icon-btn-product icon-cart
-                                              material-icons
-                                              shopping-cart
-                                            "
-                                            ></i
-                                          >
-                                          <span class="name-btn-product"
-                                            >Add to cart</span
-                                          >
-                                        </span>
-                                      </button>
-                                    </div>
+                                    </a>
                                   </div>
                                 </div>
                               </div>
-                            </article>
+                              
+                            </div>
+
+                            <div class="clearfix"></div>
                           </div>
-                        </div>
-                      </div>
+                        </li>
+                      </ul>
                     </div>
-
-                    <nav class="pagination">
-                      <div
-                        class="
-                          col-xs-12 col-md-6 col-lg-4
-                          text-md-left text-xs-center
-                        "
+                    <div class="checkout text-sm-center card-block">
+                      <button
+                        type="button"
+                        class="btn btn-primary disabled"
+                        disabled=""
                       >
-                        Total {{totalItems}} item(s)
-                      </div>
-
-                      <div class="col-xs-12 col-md-6 col-lg-8">
-                        <ul
-                          class="
-                            page-list
-                            clearfix
-                            text-md-right text-xs-center
-                          "
-                        >
-                          <li>
-                            <a rel="next" href="javascript:void(0)" class="next js-search-link">
-                              <i class="fa fa-long-arrow-left"></i>
-                              <span>Previous</span
-                              >
-                            </a>
-                          </li>
-                          <li>
-                            <a rel="next" href="javascript:void(0)" class="next js-search-link">
-                              <span>Next</span
-                              ><i class="fa fa-long-arrow-right"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </nav>
+                        Checkout
+                      </button>
+                    </div>
                   </div>
+
+                  <NuxtLink class="label" to="/product-catalogue">
+                    <i class="material-icons">chevron_left</i>Continue browsing
+                  </NuxtLink>
+
                 </div>
 
-                <div>
-                  <div id="js-product-list-bottom"></div>
-                </div>
-              </section>
+                
+              </div>
             </section>
           </div>
         </div>
@@ -422,32 +143,37 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 export default {
-  name: 'ProductCataloguePage',
+  name: 'CataloguePage',
   data() {
     return {
-      products: [],
-      currentPage: 0,
-      totalItems: 0,
-      totalPages: 0,
+      text: `
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+          richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+          brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
+          tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
+          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+          vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
+          synth nesciunt you probably haven't heard of them accusamus labore VHS.
+        `,
     }
   },
-  async fetch() {
-    const response = await this.$axios.$get('/product/view?page=0')
-    this.products = response.data.products
-    this.currentPage = parseInt(response.data.currentPage)
-    this.totalItems = parseInt(response.data.totalItems)
-    this.totalPages = parseInt(response.data.totalPages)
-    console.log(response.data) // eslint-disable-line
+  computed: {
+    carts () {
+      return this.$store.state.carts.cart
+    }
   },
   mounted() {
     AOS.init()
   },
   methods: {
-    addToCart(item){
-        this.$store.commit('carts/addToCart',{item})
-        const aceCart = JSON.parse(localStorage.getItem('aceCart'))
-        aceCart.push(item)
-        localStorage.setItem('aceCart', JSON.stringify(aceCart))
+    removeFromCart(id){
+      this.$store.commit('carts/removeFromCart', {
+        id
+      })
+      const aceCart = JSON.parse(localStorage.getItem('aceCart'))
+      let newItems = aceCart.filter((item,index)=>index!=id) // eslint-disable-line
+      localStorage.setItem('aceCart', JSON.stringify(newItems))
     }
   },
 }

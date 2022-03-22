@@ -1,36 +1,34 @@
 <template>
   <div>
-    <DashboardHeader header-name="Enquiries" />
+    <DashboardHeader header-name="Testimonial" :link="true" route-link="/admin/testimonial/create" route-name="CREATE" />
     <div class="main-dashboard-table-data">
       <table class="table table-striped table-hover">
         <thead>
           <tr class="table-primary">
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Email</th>
-            <th scope="col">Subject</th>
+            <th scope="col">Designation</th>
             <th scope="col">Message</th>
+            <th scope="col">Image</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in enquiries" :key="index">
+          <tr v-for="(item, index) in testimonial" :key="index">
             <td scope="row">{{ index + 1 }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ item.phone }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.subject }}</td>
+            <td>{{ item.designation }}</td>
             <td>{{ item.message }}</td>
+            <td><img :src="'http://localhost:8080/uploads/'+item.image" style="max-width:100px" /></td>
             <td>
               <NuxtLink
-                :to="'/admin/enquiry/view/' + item.id"
+                :to="'/admin/testimonial/view/' + item.id"
                 class="viewBtn"
                 title="view"
                 ><font-awesome-icon :icon="['fa', 'eye']"
               /></NuxtLink>
               <NuxtLink
-                :to="'/admin/enquiry/edit/' + item.id"
+                :to="'/admin/testimonial/edit/' + item.id"
                 class="editBtn"
                 title="edit"
                 ><font-awesome-icon :icon="['fa', 'pen-to-square']"
@@ -98,11 +96,11 @@
 
 <script>
 export default {
-  name: 'EnquiryPage',
+  name: 'TestimonialPage',
   layout: 'AdminDashboardLayout',
   data() {
     return {
-      enquiries: [],
+      testimonial: [],
       currentPage: 0,
       totalItems: 0,
       totalPages: 0,
@@ -115,8 +113,8 @@ export default {
     async getEnquries(page = 0) {
       this.$store.commit('loaders/show')
       try {
-        const response = await this.$api.get(`/enquiry/view?page=${page}`)
-        this.enquiries = response.data.data.enquiry
+        const response = await this.$api.get(`/testimonial/view?page=${page}`)
+        this.testimonial = response.data.data.testimonial
         this.currentPage = parseInt(response.data.data.currentPage)
         this.totalItems = parseInt(response.data.data.totalItems)
         this.totalPages = parseInt(response.data.data.totalPages)
@@ -131,7 +129,7 @@ export default {
         if (confirm("Are you sure you want to delete this?") === true) {
             this.$store.commit('loaders/show')
             try {
-                await this.$api.delete(`/enquiry/delete/${id}`)
+                await this.$api.delete(`/testimonial/delete/${id}`)
                 this.$toast.success('Data deleted successfully')
                 this.getEnquries(this.currentPage)
             } catch (err) {
@@ -224,5 +222,9 @@ export default {
 
 .pagination--nav {
   display: inline-block;
+}
+
+.table th, .table td {
+    vertical-align: middle !important;
 }
 </style>

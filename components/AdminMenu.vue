@@ -3,14 +3,15 @@
     <NuxtLink to="/admin/dashboard" :class="path.includes('/admin/dashboard') ? 'nav--menu nav--menu--active':'nav--menu'"
       ><p>Dashboard</p></NuxtLink
     >
-    <NuxtLink to="/admin/enquiry" :class="path.includes('/admin/enquiry') ? 'nav--menu nav--menu--active':'nav--menu'" ><p>Enquries</p></NuxtLink>
+    <NuxtLink to="/admin/enquiry" :class="path.includes('/admin/enquiry') ? 'nav--menu nav--menu--active':'nav--menu'" ><p>Enquiry</p></NuxtLink>
+    <NuxtLink to="/admin/testimonial" :class="path.includes('/admin/testimonial') ? 'nav--menu nav--menu--active':'nav--menu'" ><p>Testimonial</p></NuxtLink>
     <div>
-      <div class="nav--sub--menu" @click="subMenuHandler('/enquiry')">
-        <p>Enquries</p>
+      <div class="nav--sub--menu" @click="subMenuHandler('/products')">
+        <p>Products</p>
       </div>
-      <div :class="subMenu=='/enquiry' || path.includes('/enquiry') ? 'inner-sub-menu inner-sub-menu-active' : 'inner-sub-menu'">
-        <NuxtLink class="inner-menu-link" to="/admin/enquriy">First Layout</NuxtLink>
-        <NuxtLink class="inner-menu-link" to="/admin/enquriy">Second Layout</NuxtLink>
+      <div :class="subMenu=='/products' || path.includes('/products') ? 'inner-sub-menu inner-sub-menu-active' : 'inner-sub-menu'">
+        <NuxtLink :class="path.includes('/products/category') ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/products/category">Category</NuxtLink>
+        <NuxtLink :class="path.includes('/products/items') ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/products/items">Product Items</NuxtLink>
       </div>
     </div>
   </div>
@@ -140,7 +141,7 @@ export default {
   transition: all 0.3s ease-in-out;
 }
 
-.inner-sub-menu  .inner-menu-link:hover {
+.inner-sub-menu  .inner-menu-link:hover, .inner-sub-menu  .inner-menu-link.active {
     background: #48adcf;
     cursor: pointer;
 }

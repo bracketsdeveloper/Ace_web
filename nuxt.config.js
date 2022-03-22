@@ -34,7 +34,7 @@ export default {
     // '@nuxtjs/stylelint-module',
     '@nuxtjs/fontawesome',
     '@nuxtjs/toast',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -138,6 +138,7 @@ export default {
 
   toast: {
     position: 'top-right',
-  }
+  },
 
 }
+

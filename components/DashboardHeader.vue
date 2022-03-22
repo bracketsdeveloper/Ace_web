@@ -1,6 +1,7 @@
 <template>
     <div class="main-dashboard-header">
             <p>{{headerName}}</p>
+            <NuxtLink v-if="link" class="header-link-btn" :to="routeLink">{{routeName}}</NuxtLink>
     </div>
 </template>
 
@@ -11,7 +12,19 @@ export default {
       headerName:{
           type: String,
           default: ''
-      }
+      },
+      link:{
+          type: Boolean,
+          default: false
+      },
+      routeName:{
+          type: String,
+          default: ''
+      },
+      routeLink:{
+          type: String,
+          default: ''
+      },
   }
 }
 </script>
@@ -41,7 +54,7 @@ export default {
     border-radius: 5px;
     text-align: center;
     display: inline-block;
-    background: rgb(104 84 142);
+    background: #42b8f4;
     transition: all 0.3s ease-in-out;
 }
 

@@ -1,36 +1,34 @@
 <template>
   <div>
-    <DashboardHeader header-name="Enquiries" />
+    <DashboardHeader header-name="Product Items" :link="true" route-link="/admin/products/items/create" route-name="CREATE" />
     <div class="main-dashboard-table-data">
       <table class="table table-striped table-hover">
         <thead>
           <tr class="table-primary">
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Email</th>
-            <th scope="col">Subject</th>
-            <th scope="col">Message</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+            <th scope="col">Image</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in enquiries" :key="index">
+          <tr v-for="(item, index) in products" :key="index">
             <td scope="row">{{ index + 1 }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ item.phone }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.subject }}</td>
-            <td>{{ item.message }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.productCategories.name }}</td>
+            <td><img :src="'http://localhost:8080/products/'+item.image" style="max-width:100px" /></td>
             <td>
               <NuxtLink
-                :to="'/admin/enquiry/view/' + item.id"
+                :to="'/admin/products/items/view/' + item.id"
                 class="viewBtn"
                 title="view"
                 ><font-awesome-icon :icon="['fa', 'eye']"
               /></NuxtLink>
               <NuxtLink
-                :to="'/admin/enquiry/edit/' + item.id"
+                :to="'/admin/products/items/edit/' + item.id"
                 class="editBtn"
                 title="edit"
                 ><font-awesome-icon :icon="['fa', 'pen-to-square']"
@@ -58,7 +56,7 @@
                 :aria-disabled="
                   totalPages === 0 || currentPage === 0 ? 'true' : 'false'
                 "
-                @click="getEnquries(currentPage - 1)"
+                @click="getProducts(currentPage - 1)"
               >
                 Previous
               </button>
@@ -83,7 +81,7 @@
                     ? 'true'
                     : 'false'
                 "
-                @click="getEnquries(currentPage + 1)"
+                @click="getProducts(currentPage + 1)"
               >
                 Next
               </button>
@@ -98,25 +96,25 @@
 
 <script>
 export default {
-  name: 'EnquiryPage',
+  name: 'ProductcPage',
   layout: 'AdminDashboardLayout',
   data() {
     return {
-      enquiries: [],
+      products: [],
       currentPage: 0,
       totalItems: 0,
       totalPages: 0,
     }
   },
   mounted() {
-    this.getEnquries()
+    this.getProducts()
   },
   methods: {
-    async getEnquries(page = 0) {
+    async getProducts(page = 0) {
       this.$store.commit('loaders/show')
       try {
-        const response = await this.$api.get(`/enquiry/view?page=${page}`)
-        this.enquiries = response.data.data.enquiry
+        const response = await this.$api.get(`/product/view?page=${page}`)
+        this.products = response.data.data.products
         this.currentPage = parseInt(response.data.data.currentPage)
         this.totalItems = parseInt(response.data.data.totalItems)
         this.totalPages = parseInt(response.data.data.totalPages)
@@ -131,9 +129,9 @@ export default {
         if (confirm("Are you sure you want to delete this?") === true) {
             this.$store.commit('loaders/show')
             try {
-                await this.$api.delete(`/enquiry/delete/${id}`)
+                await this.$api.delete(`/product/delete/${id}`)
                 this.$toast.success('Data deleted successfully')
-                this.getEnquries(this.currentPage)
+                this.getProducts(this.currentPage)
             } catch (err) {
                 console.log(err) // eslint-disable-line
                 this.$toast.error('Something went wrong! Please try again')
@@ -224,5 +222,9 @@ export default {
 
 .pagination--nav {
   display: inline-block;
+}
+
+.table th, .table td {
+    vertical-align: middle !important;
 }
 </style>

@@ -27,8 +27,11 @@
                 <NuxtLink to="/contact-us">Contact Us</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/" class="last">Start an Order</NuxtLink>
+                <NuxtLink to="/catalogue"><font-awesome-icon :icon="['fa', 'cart-shopping']"/> <span>{{cartCount}}</span></NuxtLink>
               </li>
+              <!-- <li>
+                <NuxtLink to="/" class="last"><font-awesome-icon :icon="['fa', 'cart-shopping']"/></NuxtLink>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -75,8 +78,11 @@
                 <NuxtLink to="/contact-us">Contact Us</NuxtLink>
               </li>
               <li>
-                <a href="" class="last">Start an Order</a>
+                <NuxtLink to="/catalogue"><font-awesome-icon :icon="['fa', 'cart-shopping']"/> <span>{{cartCount}}</span></NuxtLink>
               </li>
+              <!-- <li>
+                <a href="" class="last">Start an Order</a>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -92,6 +98,12 @@ export default {
     return {
       scrollPosition: null,
       displayMobileMenu:false
+    }
+  },
+
+  computed: {
+    cartCount () {
+      return this.$store.state.carts.cart.length
     }
   },
   
@@ -169,6 +181,21 @@ nav .menu-wrapper .nav-header-row li a {
   font-weight: 700;
   font-size: 18px;
   transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+nav .menu-wrapper .nav-menu-row li a span, nav .menu-wrapper .nav-header-row li a span {
+    background: #ff0000;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
 }
 
 nav .menu-wrapper .nav-header-row li button {

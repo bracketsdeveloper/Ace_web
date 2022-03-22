@@ -1,36 +1,22 @@
 <template>
   <div>
-    <DashboardHeader header-name="Enquiries" />
+    <DashboardHeader header-name="Category" :link="true" route-link="/admin/products/category/create" route-name="CREATE" />
     <div class="main-dashboard-table-data">
       <table class="table table-striped table-hover">
         <thead>
           <tr class="table-primary">
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Email</th>
-            <th scope="col">Subject</th>
-            <th scope="col">Message</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in enquiries" :key="index">
+          <tr v-for="(item, index) in category" :key="index">
             <td scope="row">{{ index + 1 }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ item.phone }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.subject }}</td>
-            <td>{{ item.message }}</td>
             <td>
               <NuxtLink
-                :to="'/admin/enquiry/view/' + item.id"
-                class="viewBtn"
-                title="view"
-                ><font-awesome-icon :icon="['fa', 'eye']"
-              /></NuxtLink>
-              <NuxtLink
-                :to="'/admin/enquiry/edit/' + item.id"
+                :to="'/admin/products/category/edit/' + item.id"
                 class="editBtn"
                 title="edit"
                 ><font-awesome-icon :icon="['fa', 'pen-to-square']"
@@ -58,7 +44,7 @@
                 :aria-disabled="
                   totalPages === 0 || currentPage === 0 ? 'true' : 'false'
                 "
-                @click="getEnquries(currentPage - 1)"
+                @click="getCategory(currentPage - 1)"
               >
                 Previous
               </button>
@@ -83,7 +69,7 @@
                     ? 'true'
                     : 'false'
                 "
-                @click="getEnquries(currentPage + 1)"
+                @click="getCategory(currentPage + 1)"
               >
                 Next
               </button>
@@ -98,25 +84,25 @@
 
 <script>
 export default {
-  name: 'EnquiryPage',
+  name: 'ProductCategoryPage',
   layout: 'AdminDashboardLayout',
   data() {
     return {
-      enquiries: [],
+      category: [],
       currentPage: 0,
       totalItems: 0,
       totalPages: 0,
     }
   },
   mounted() {
-    this.getEnquries()
+    this.getCategory()
   },
   methods: {
-    async getEnquries(page = 0) {
+    async getCategory(page = 0) {
       this.$store.commit('loaders/show')
       try {
-        const response = await this.$api.get(`/enquiry/view?page=${page}`)
-        this.enquiries = response.data.data.enquiry
+        const response = await this.$api.get(`/product-category/view?page=${page}`)
+        this.category = response.data.data.category
         this.currentPage = parseInt(response.data.data.currentPage)
         this.totalItems = parseInt(response.data.data.totalItems)
         this.totalPages = parseInt(response.data.data.totalPages)
@@ -131,9 +117,9 @@ export default {
         if (confirm("Are you sure you want to delete this?") === true) {
             this.$store.commit('loaders/show')
             try {
-                await this.$api.delete(`/enquiry/delete/${id}`)
+                await this.$api.delete(`/product-category/delete/${id}`)
                 this.$toast.success('Data deleted successfully')
-                this.getEnquries(this.currentPage)
+                this.getCategory(this.currentPage)
             } catch (err) {
                 console.log(err) // eslint-disable-line
                 this.$toast.error('Something went wrong! Please try again')

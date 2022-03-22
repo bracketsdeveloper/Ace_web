@@ -53,7 +53,7 @@
                           id="zoom_product"
                           data-type-zoom=""
                           class="js-qv-product-cover img-fluid"
-                          src="/assets/images/Product/product-img1.jpeg"
+                          :src="'http://localhost:8080/products/'+products.image"
                           alt=""
                           title=""
                           itemprop="image"
@@ -72,7 +72,7 @@
                   "
                 >
                   <h1 class="h1 product-detail-name" itemprop="name">
-                    Ace - Gifting Product
+                    {{products.name}}
                   </h1>
 
                   <div
@@ -116,7 +116,7 @@
                     <div class="product-price h5">
                       <div class="current-price">
                         <span class="current-price-value" content="11.9">
-                          INR 11.90
+                          INR {{products.price}}
                         </span>
                       </div>
                     </div>
@@ -130,9 +130,7 @@
                     itemprop="description"
                   >
                     <p>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout.
+                      {{products.description}}
                     </p>
                   </div>
 
@@ -152,10 +150,10 @@
                             <button
                               class="btn btn-primary add-to-cart"
                               data-button-action="add-to-cart"
-                              type="submit"
+                              @click="addToCart(products)"
                             >
                               <i class="fal fa-bag shopping-cart"></i>
-                              Add to cart
+                              Add to catalogue
                             </button>
                           </div>
                           
@@ -192,21 +190,28 @@ export default {
   name: 'ProductPage',
   data() {
     return {
-      text: `
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-          richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-          brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-          tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-          vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-          synth nesciunt you probably haven't heard of them accusamus labore VHS.
-        `,
+        products: {},
     }
+  },
+  async fetch() {
+      try {
+          const response = await this.$axios.$get(`/product/view/${this.$route.params.id}`)
+          this.products = response.data
+      } catch (error) {
+          console.log(error)  // eslint-disable-line
+      }
   },
   mounted() {
     AOS.init()
   },
+  methods:{
+      addToCart(item){
+          this.$store.commit('carts/addToCart',{item})
+          const aceCart = JSON.parse(localStorage.getItem('aceCart'))
+          aceCart.push(item)
+          localStorage.setItem('aceCart', JSON.stringify(aceCart))
+      }
+  }
 }
 </script>
 
