@@ -35,7 +35,7 @@
 
       <div v-if="extImage!==''" class="mb-3">
         <label class="form-label">Existing Image</label><br />
-        <img :src="'https://ace-nuxt-backend.herokuapp.com/uploads/'+extImage" style="max-width:100px" />
+        <img :src="apiLink+'uploads/'+extImage" style="max-width:100px" />
       </div>
 
       <div class="mb-3">
@@ -67,6 +67,11 @@ export default {
       image:null,
       error:'',
       errorMessage:''
+    }
+  },
+  computed:{
+    apiLink (){
+      return this.$store.state.apis.link
     }
   },
   mounted() {

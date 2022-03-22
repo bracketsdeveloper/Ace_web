@@ -34,7 +34,7 @@
                             >
                               <span class="product-image media-middle">
                                 <img
-                                  :src="'https://ace-nuxt-backend.herokuapp.com/products/'+item.image"
+                                  :src="apiLink+'products/'+item.image"
                                   alt="Guildhall Pre-Printed HR File Yellow (Pack of 50)"
                                   loading="lazy"
                                 />
@@ -203,6 +203,9 @@ export default {
   computed: {
     carts () {
       return this.$store.state.carts.cart
+    },
+    apiLink (){
+      return this.$store.state.apis.link
     }
   },
   mounted() {
@@ -216,7 +219,7 @@ export default {
       const aceCart = JSON.parse(localStorage.getItem('aceCart'))
       let newItems = aceCart.filter((item,index)=>index!=id) // eslint-disable-line
       localStorage.setItem('aceCart', JSON.stringify(newItems))
-      this.$toast.success('Item removed from cart')
+      this.$toast.success('Item removed from catalogue')
     },
     async formHandler(){
       this.error = false

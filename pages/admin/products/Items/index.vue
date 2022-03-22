@@ -19,7 +19,7 @@
             <td>{{ item.name }}</td>
             <td>{{ item.price }}</td>
             <td>{{ item.productCategories.name }}</td>
-            <td><img :src="'https://ace-nuxt-backend.herokuapp.com/products/'+item.image" style="max-width:100px" /></td>
+            <td><img :src="apiLink+'products/'+item.image" style="max-width:100px" /></td>
             <td>
               <NuxtLink
                 :to="'/admin/products/items/view/' + item.id"
@@ -104,6 +104,11 @@ export default {
       currentPage: 0,
       totalItems: 0,
       totalPages: 0,
+    }
+  },
+  computed:{
+    apiLink (){
+      return this.$store.state.apis.link
     }
   },
   mounted() {

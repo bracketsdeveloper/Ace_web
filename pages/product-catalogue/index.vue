@@ -246,7 +246,7 @@
                                   >
                                     <img
                                       class="img-fluid"
-                                      :src="'https://ace-nuxt-backend.herokuapp.com/products/'+item.image"
+                                      :src="apiLink+'products/'+item.image"
                                       alt=""
                                     />
                                     <span
@@ -446,6 +446,11 @@ export default {
   async fetch() {
     await this.getProducts()
   },
+  computed: {
+    apiLink (){
+      return this.$store.state.apis.link
+    }
+  },
   mounted() {
     AOS.init()
   },
@@ -455,7 +460,7 @@ export default {
         const aceCart = JSON.parse(localStorage.getItem('aceCart'))
         aceCart.push(item)
         localStorage.setItem('aceCart', JSON.stringify(aceCart))
-        this.$toast.success('Item added to cart')
+        this.$toast.success('Item added to catalogue')
     },
     async getProducts(page=0){
         const response = await this.$axios.$get(`/product/view-custom?page=${page}&size=9`)

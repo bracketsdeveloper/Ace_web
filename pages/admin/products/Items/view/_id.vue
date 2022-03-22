@@ -20,7 +20,7 @@
               <td>{{ name }}</td>
               <td>{{ price }}</td>
               <td>{{ category }}</td>
-              <td><img :src="'https://ace-nuxt-backend.herokuapp.com/products/'+image" style="max-width:100px" /></td>
+              <td><img :src="apiLink+'products/'+image" style="max-width:100px" /></td>
             </tr>
           </tbody>
         </table>
@@ -51,6 +51,9 @@ export default {
   computed:{
     id(){
         return this.$route.params.id;
+    },
+    apiLink (){
+      return this.$store.state.apis.link
     }
   },
   mounted() {

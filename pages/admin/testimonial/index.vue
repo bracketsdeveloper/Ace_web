@@ -19,7 +19,7 @@
             <td>{{ item.name }}</td>
             <td>{{ item.designation }}</td>
             <td>{{ new Date(item.created_at).getDate() }}-{{ new Date(item.created_at).getMonth()+1 }}-{{ new Date(item.created_at).getFullYear() }}</td>
-            <td><img :src="'https://ace-nuxt-backend.herokuapp.com/uploads/'+item.image" style="max-width:100px" /></td>
+            <td><img :src="apiLink+'uploads/'+item.image" style="max-width:100px" /></td>
             <td>
               <NuxtLink
                 :to="'/admin/testimonial/view/' + item.id"
@@ -104,6 +104,11 @@ export default {
       currentPage: 0,
       totalItems: 0,
       totalPages: 0,
+    }
+  },
+  computed:{
+    apiLink (){
+      return this.$store.state.apis.link
     }
   },
   mounted() {

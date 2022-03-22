@@ -53,7 +53,7 @@
                           id="zoom_product"
                           data-type-zoom=""
                           class="js-qv-product-cover img-fluid"
-                          :src="'https://ace-nuxt-backend.herokuapp.com/products/'+products.image"
+                          :src="apiLink+'products/'+products.image"
                           alt=""
                           title=""
                           itemprop="image"
@@ -207,6 +207,11 @@ export default {
             }
       }
   },
+  computed: {
+    apiLink (){
+      return this.$store.state.apis.link
+    }
+  },
   mounted() {
     AOS.init()
   },
@@ -216,7 +221,7 @@ export default {
           const aceCart = JSON.parse(localStorage.getItem('aceCart'))
           aceCart.push(item)
           localStorage.setItem('aceCart', JSON.stringify(aceCart))
-          this.$toast.success('Item added to cart')
+          this.$toast.success('Item added to catalogue')
       }
   }
 }

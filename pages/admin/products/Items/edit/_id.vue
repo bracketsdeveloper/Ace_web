@@ -42,7 +42,7 @@
 
       <div v-if="extImage!==''" class="mb-3">
         <label class="form-label">Existing Image</label><br />
-        <img :src="'https://ace-nuxt-backend.herokuapp.com/products/'+extImage" style="max-width:100px" />
+        <img :src="apiLink+'products/'+extImage" style="max-width:100px" />
       </div>
 
       <div class="mb-3">
@@ -76,6 +76,11 @@ export default {
       productCategoryId:'',
       error:'',
       errorMessage:''
+    }
+  },
+  computed:{
+    apiLink (){
+      return this.$store.state.apis.link
     }
   },
   mounted() {
