@@ -3,13 +3,6 @@
     <BreadCrumb page-name="Catalogue" />
     <section id="wrapper">
       <div class="container">
-        <nav data-depth="1" class="breadcrumb hidden-sm-down">
-          <ol>
-            <li>
-              <span>Home</span>
-            </li>
-          </ol>
-        </nav>
 
         <div class="row">
           <div
@@ -108,17 +101,20 @@
 
                             <div class="clearfix"></div>
                           </div>
+                          <hr/>
                         </li>
                       </ul>
                     </div>
                     <div class="checkout text-sm-center card-block">
-                      <button
+                      <p v-if="carts.length==0">There are no items in your catalogue. Kindly add one in order to request it.</p>
+                      <b-button  
+                        v-if="carts.length>0"
+                        v-b-modal.modal-center
                         type="button"
-                        class="btn btn-primary disabled"
-                        disabled=""
+                        class="btn btn-primary"
                       >
-                        Checkout
-                      </button>
+                        Request Catalogue
+                      </b-button >
                     </div>
                   </div>
 
@@ -135,6 +131,54 @@
         </div>
       </div>
     </section>
+    <b-modal id="modal-center" ref="catalogue-modal" centered title="Request Catalogue" hide-footer>
+     <b-form @submit.prevent="formHandler">
+       <p v-if="error" style="color:red;text-align:center">{{errorMessage}}</p>
+       <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="name"
+          placeholder="Enter name"
+          required
+        ></b-form-input>
+      </b-form-group>
+
+      <b-form-group
+        id="input-group-1"
+        label="Email address:"
+        label-for="input-1"
+        description="We'll never share your email with anyone else."
+      >
+        <b-form-input
+          id="input-1"
+          v-model="email"
+          type="email"
+          placeholder="Enter email"
+          required
+        ></b-form-input>
+      </b-form-group>
+
+      <b-form-group id="input-group-2" label="Your Phone:" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          v-model="phone"
+          placeholder="Enter phone"
+          required
+        ></b-form-input>
+      </b-form-group>
+
+      <b-form-group id="input-group-3" label="Your Message:" label-for="input-3">
+        <b-form-textarea
+          id="input-2"
+          v-model="message"
+          placeholder="Enter Message"
+          required
+        ></b-form-textarea>
+      </b-form-group>
+
+      <b-button type="submit" variant="primary">Submit</b-button>
+    </b-form>
+    </b-modal>
   </div>
 </template>
 
@@ -146,16 +190,14 @@ export default {
   name: 'CataloguePage',
   data() {
     return {
-      text: `
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-          richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-          brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-          tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-          vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-          synth nesciunt you probably haven't heard of them accusamus labore VHS.
-        `,
+      name:'',
+      email:'',
+      phone:'',
+      message:'',
+      checked:'',
+      foods:[],
+      error: false,
+      errorMessage: '',
     }
   },
   computed: {
@@ -174,6 +216,97 @@ export default {
       const aceCart = JSON.parse(localStorage.getItem('aceCart'))
       let newItems = aceCart.filter((item,index)=>index!=id) // eslint-disable-line
       localStorage.setItem('aceCart', JSON.stringify(newItems))
+      this.$toast.success('Item removed from cart')
+    },
+    async formHandler(){
+      this.error = false
+      this.errorMessage = ''
+
+      if (this.name === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your name'
+          return false;
+      } else if (!(/^[a-zA-Z\s]*$/.test(this.name))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid name'
+          return false;
+      }
+
+      if (this.phone === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your phone'
+          return false;
+      } else if (!(/^[0-9\s]*$/.test(this.phone))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid phone'
+          return false;
+      } else if (this.phone.length < 10 || this.phone.length > 10) { 
+          this.error = true
+          this.errorMessage = 'Please enter a valid phone'
+          return false;
+      }
+
+      if (this.email === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your email'
+          return false;
+      } else if (!(/^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/.test(this.email))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid email'
+          return false;
+      }
+
+      if (this.message === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your message'
+          return false;
+      } else if (!(/^[a-z 0-9~%.:_\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&+=,]+$/i.test(this.message))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid message'
+          return false;
+      }
+
+      this.$store.commit('loaders/show')
+      try {
+          const productList = []
+          this.$store.state.carts.cart.forEach((item)=>{
+            productList.push(item.id)
+          })
+          const response = await this.$publicApi.post('/order-request/create', {email:this.email, name:this.name, phone:this.phone, message:this.message, product:productList} ) // eslint-disable-line
+          this.error = false
+          this.errorMessage = ''
+          this.email = ''
+          this.phone = ''
+          this.name = ''
+          this.message = ''
+          this.$toast.success('Catalogue Requested Successfully')
+          this.$store.commit('loaders/hide')
+          this.$store.commit('carts/resetCart')
+          const newItems = [] // eslint-disable-line
+          localStorage.setItem('aceCart', JSON.stringify(newItems))
+          this.$refs['catalogue-modal'].hide()
+      } catch (err) {
+          console.log(err.response)// eslint-disable-line
+          if (err?.response?.data?.message) {
+              this.$toast.error(err?.response?.data?.message)
+          }
+          if (err?.response?.data?.errors?.name) {
+              this.$toast.error(err?.response?.data?.errors?.name?.msg)
+          }
+          if (err?.response?.data?.errors?.phone) {
+              this.$toast.error(err?.response?.data?.errors?.phone?.msg)
+          }
+          if (err?.response?.data?.errors?.email) {
+              this.$toast.error(err?.response?.data?.errors?.email?.msg)
+          }
+          if (err?.response?.data?.errors?.product) {
+              this.$toast.error(err?.response?.data?.errors?.product?.msg)
+          }
+          if (err?.response?.data?.errors?.message) {
+              this.$toast.error(err?.response?.data?.errors?.message?.msg)
+          }
+          this.$store.commit('loaders/hide')
+      }
     }
   },
 }
@@ -38534,7 +38667,9 @@ body#checkout #payment-confirmation .ps-shown-by-js .btn {
 }
 
 .product-line-grid-left img {
-  max-width: 100%;
+  /* max-width: 100%; */
+  height:150px;
+  object-fit:contain;
 }
 
 .product-line-grid-body > .product-line-info {

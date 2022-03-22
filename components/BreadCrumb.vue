@@ -6,7 +6,7 @@
           <div class="wpo-breadcumb-wrap">
             <h2>{{pageName}}</h2>
             <ul>
-              <li><a href="/home">Home</a></li>
+              <li><NuxtLink to="/">Home</NuxtLink></li>
               <li><span>{{pageName}}</span></li>
             </ul>
           </div>

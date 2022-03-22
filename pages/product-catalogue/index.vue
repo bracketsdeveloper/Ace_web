@@ -193,7 +193,7 @@
             <section id="main">
               <div id="js-product-list-header">
                 <div class="block-category card card-block">
-                  <h1 class="h1">Accessories</h1>
+                  <h1 class="h1">Product Catalogue</h1>
                   <div class="block-category-inner">
                     <div id="category-description" class="text-muted">
                       <p>
@@ -386,15 +386,27 @@
                             text-md-right text-xs-center
                           "
                         >
-                          <li>
-                            <a rel="next" href="javascript:void(0)" class="next js-search-link">
+                          <li class="disabled">
+                            <a 
+                            rel="next" 
+                            href="javascript:void(0)" 
+                            :class="totalPages === 0 || currentPage === 0 ? 'next js-search-link disabled' : 'next js-search-link'"
+                            :disabled="totalPages === 0 || currentPage === 0 ? 'true' : 'false'"
+                             @click="totalPages === 0 || currentPage === 0 ? null: getProducts(currentPage - 1)"
+                            >
                               <i class="fa fa-long-arrow-left"></i>
                               <span>Previous</span
                               >
                             </a>
                           </li>
                           <li>
-                            <a rel="next" href="javascript:void(0)" class="next js-search-link">
+                            <a 
+                            rel="next" 
+                            href="javascript:void(0)" 
+                            :class="totalPages === 0 || currentPage === totalPages - 1 ? 'previous js-search-link disabled' : 'previous js-search-link' " 
+                            :disabled="totalPages === 0 || currentPage === totalPages - 1 ? 'true' : 'false'"
+                            @click="totalPages === 0 || currentPage === totalPages - 1 ? null : getProducts(currentPage + 1)"
+                            >
                               <span>Next</span
                               ><i class="fa fa-long-arrow-right"></i>
                             </a>
@@ -432,12 +444,7 @@ export default {
     }
   },
   async fetch() {
-    const response = await this.$axios.$get('/product/view?page=0')
-    this.products = response.data.products
-    this.currentPage = parseInt(response.data.currentPage)
-    this.totalItems = parseInt(response.data.totalItems)
-    this.totalPages = parseInt(response.data.totalPages)
-    console.log(response.data) // eslint-disable-line
+    await this.getProducts()
   },
   mounted() {
     AOS.init()
@@ -448,6 +455,14 @@ export default {
         const aceCart = JSON.parse(localStorage.getItem('aceCart'))
         aceCart.push(item)
         localStorage.setItem('aceCart', JSON.stringify(aceCart))
+        this.$toast.success('Item added to cart')
+    },
+    async getProducts(page=0){
+        const response = await this.$axios.$get(`/product/view-custom?page=${page}&size=9`)
+        this.products = response.data.products
+        this.currentPage = parseInt(response.data.currentPage)
+        this.totalItems = parseInt(response.data.totalItems)
+        this.totalPages = parseInt(response.data.totalPages)
     }
   },
 }

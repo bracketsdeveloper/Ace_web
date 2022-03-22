@@ -198,7 +198,13 @@ export default {
           const response = await this.$axios.$get(`/product/view/${this.$route.params.id}`)
           this.products = response.data
       } catch (error) {
-          console.log(error)  // eslint-disable-line
+          console.log(error.response)  // eslint-disable-line
+          if (error?.response?.data?.errors?.id) {
+                this.$toast.error(error?.response?.data?.errors?.id?.msg)
+                this.$router.push({
+                path:'/product-catalogue'
+                })
+            }
       }
   },
   mounted() {
@@ -210,6 +216,7 @@ export default {
           const aceCart = JSON.parse(localStorage.getItem('aceCart'))
           aceCart.push(item)
           localStorage.setItem('aceCart', JSON.stringify(aceCart))
+          this.$toast.success('Item added to cart')
       }
   }
 }

@@ -13,4 +13,7 @@ export const mutations = {
         let newItems = state.cart.filter((item,index)=>index!=payload.id) // eslint-disable-line
         state.cart = newItems
     },
+    resetCart(state) {
+        state.cart = []
+    },
 }
