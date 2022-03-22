@@ -10,7 +10,7 @@
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
             <th scope="col">Subject</th>
-            <th scope="col">Message</th>
+            <th scope="col">Date</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -21,7 +21,7 @@
             <td>{{ item.phone }}</td>
             <td>{{ item.email }}</td>
             <td>{{ item.subject }}</td>
-            <td>{{ item.message }}</td>
+            <td>{{ new Date(item.created_at).getDate() }}-{{ new Date(item.created_at).getMonth()+1 }}-{{ new Date(item.created_at).getFullYear() }}</td>
             <td>
               <NuxtLink
                 :to="'/admin/enquiry/view/' + item.id"

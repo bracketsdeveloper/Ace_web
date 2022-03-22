@@ -1,37 +1,31 @@
 <template>
   <div>
-    <DashboardHeader header-name="Testimonial" :link="true" route-link="/admin/testimonial/create" route-name="CREATE" />
+    <DashboardHeader header-name="Order Request" />
     <div class="main-dashboard-table-data">
       <table class="table table-striped table-hover">
         <thead>
           <tr class="table-primary">
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Designation</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
             <th scope="col">Date</th>
-            <th scope="col">Image</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in testimonial" :key="index">
+          <tr v-for="(item, index) in orderRequest" :key="index">
             <td scope="row">{{ index + 1 }}</td>
             <td>{{ item.name }}</td>
-            <td>{{ item.designation }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.email }}</td>
             <td>{{ new Date(item.created_at).getDate() }}-{{ new Date(item.created_at).getMonth()+1 }}-{{ new Date(item.created_at).getFullYear() }}</td>
-            <td><img :src="'http://localhost:8080/uploads/'+item.image" style="max-width:100px" /></td>
             <td>
               <NuxtLink
-                :to="'/admin/testimonial/view/' + item.id"
+                :to="'/admin/order-request/view/' + item.id"
                 class="viewBtn"
                 title="view"
                 ><font-awesome-icon :icon="['fa', 'eye']"
-              /></NuxtLink>
-              <NuxtLink
-                :to="'/admin/testimonial/edit/' + item.id"
-                class="editBtn"
-                title="edit"
-                ><font-awesome-icon :icon="['fa', 'pen-to-square']"
               /></NuxtLink>
               <button class="deleteBtn" title="delete" @click="deleteEnquiry(item.id)">
                 <font-awesome-icon :icon="['fa', 'trash']" />
@@ -56,7 +50,7 @@
                 :aria-disabled="
                   totalPages === 0 || currentPage === 0 ? 'true' : 'false'
                 "
-                @click="getEnquries(currentPage - 1)"
+                @click="getOrderRequest(currentPage - 1)"
               >
                 Previous
               </button>
@@ -81,7 +75,7 @@
                     ? 'true'
                     : 'false'
                 "
-                @click="getEnquries(currentPage + 1)"
+                @click="getOrderRequest(currentPage + 1)"
               >
                 Next
               </button>
@@ -96,25 +90,25 @@
 
 <script>
 export default {
-  name: 'TestimonialPage',
+  name: 'OrderRequestPage',
   layout: 'AdminDashboardLayout',
   data() {
     return {
-      testimonial: [],
+      orderRequest: [],
       currentPage: 0,
       totalItems: 0,
       totalPages: 0,
     }
   },
   mounted() {
-    this.getEnquries()
+    this.getOrderRequest()
   },
   methods: {
-    async getEnquries(page = 0) {
+    async getOrderRequest(page = 0) {
       this.$store.commit('loaders/show')
       try {
-        const response = await this.$api.get(`/testimonial/view?page=${page}`)
-        this.testimonial = response.data.data.testimonial
+        const response = await this.$api.get(`/order-request/view?page=${page}`)
+        this.orderRequest = response.data.data.orderRequest
         this.currentPage = parseInt(response.data.data.currentPage)
         this.totalItems = parseInt(response.data.data.totalItems)
         this.totalPages = parseInt(response.data.data.totalPages)
@@ -129,9 +123,9 @@ export default {
         if (confirm("Are you sure you want to delete this?") === true) {
             this.$store.commit('loaders/show')
             try {
-                await this.$api.delete(`/testimonial/delete/${id}`)
+                await this.$api.delete(`/order-request/delete/${id}`)
                 this.$toast.success('Data deleted successfully')
-                this.getEnquries(this.currentPage)
+                this.getOrderRequest(this.currentPage)
             } catch (err) {
                 console.log(err) // eslint-disable-line
                 this.$toast.error('Something went wrong! Please try again')
@@ -222,9 +216,5 @@ export default {
 
 .pagination--nav {
   display: inline-block;
-}
-
-.table th, .table td {
-    vertical-align: middle !important;
 }
 </style>
