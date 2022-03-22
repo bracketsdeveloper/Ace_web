@@ -19,7 +19,7 @@
             <td>{{ item.name }}</td>
             <td>{{ item.price }}</td>
             <td>{{ item.productCategories.name }}</td>
-            <td><img :src="'http://localhost:8080/products/'+item.image" style="max-width:100px" /></td>
+            <td><img :src="'https://ace-nuxt-backend.herokuapp.com/products/'+item.image" style="max-width:100px" /></td>
             <td>
               <NuxtLink
                 :to="'/admin/products/items/view/' + item.id"

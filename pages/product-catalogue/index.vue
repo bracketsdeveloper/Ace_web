@@ -246,7 +246,7 @@
                                   >
                                     <img
                                       class="img-fluid"
-                                      :src="'http://localhost:8080/products/'+item.image"
+                                      :src="'https://ace-nuxt-backend.herokuapp.com/products/'+item.image"
                                       alt=""
                                     />
                                     <span

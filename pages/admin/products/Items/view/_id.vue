@@ -20,7 +20,7 @@
               <td>{{ name }}</td>
               <td>{{ price }}</td>
               <td>{{ category }}</td>
-              <td><img :src="'http://localhost:8080/products/'+image" style="max-width:100px" /></td>
+              <td><img :src="'https://ace-nuxt-backend.herokuapp.com/products/'+image" style="max-width:100px" /></td>
             </tr>
           </tbody>
         </table>

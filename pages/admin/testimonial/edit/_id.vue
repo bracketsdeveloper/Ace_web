@@ -35,7 +35,7 @@
 
       <div v-if="extImage!==''" class="mb-3">
         <label class="form-label">Existing Image</label><br />
-        <img :src="'http://localhost:8080/uploads/'+extImage" style="max-width:100px" />
+        <img :src="'https://ace-nuxt-backend.herokuapp.com/uploads/'+extImage" style="max-width:100px" />
       </div>
 
       <div class="mb-3">

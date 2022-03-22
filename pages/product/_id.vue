@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-    <BreadCrumb page-name="Design & Planning" />
+    <BreadCrumb :page-name="products.name" />
     <section id="wrapper">
       <div class="container">
 
@@ -53,7 +53,7 @@
                           id="zoom_product"
                           data-type-zoom=""
                           class="js-qv-product-cover img-fluid"
-                          :src="'http://localhost:8080/products/'+products.image"
+                          :src="'https://ace-nuxt-backend.herokuapp.com/products/'+products.image"
                           alt=""
                           title=""
                           itemprop="image"
@@ -455,8 +455,11 @@ dl.row>dd+dt {
 .img-fluid,
 .carousel-inner>.carousel-item>img,
 .carousel-inner>.carousel-item>a>img {
-    max-width: 100%;
-    height: auto
+    max-width: 70%;
+    object-fit: cover;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .img-thumbnail {

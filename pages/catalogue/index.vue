@@ -34,7 +34,7 @@
                             >
                               <span class="product-image media-middle">
                                 <img
-                                  :src="'http://localhost:8080/products/'+item.image"
+                                  :src="'https://ace-nuxt-backend.herokuapp.com/products/'+item.image"
                                   alt="Guildhall Pre-Printed HR File Yellow (Pack of 50)"
                                   loading="lazy"
                                 />

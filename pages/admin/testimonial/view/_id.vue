@@ -18,7 +18,7 @@
               <td>{{ id }}</td>
               <td>{{ name }}</td>
               <td>{{ designation }}</td>
-              <td><img :src="'http://localhost:8080/uploads/'+image" style="max-width:100px" /></td>
+              <td><img :src="'https://ace-nuxt-backend.herokuapp.com/uploads/'+image" style="max-width:100px" /></td>
             </tr>
           </tbody>
         </table>
