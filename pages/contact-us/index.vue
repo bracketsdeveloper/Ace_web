@@ -208,7 +208,7 @@ export default {
           this.error = true
           this.errorMessage = 'Please enter your message'
           return false;
-      } else if (!(/^[a-z 0-9~%.:_\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&+=,]+$/i.test(this.message))) { // eslint-disable-line
+      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&+=,]+$/i.test(this.message))) { // eslint-disable-line
           this.error = true
           this.errorMessage = 'Please enter a valid message'
           return false;

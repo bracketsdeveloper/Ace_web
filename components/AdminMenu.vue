@@ -15,6 +15,19 @@
         <NuxtLink :class="path.includes('/products/items') ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/products/items">Product Items</NuxtLink>
       </div>
     </div>
+    <div>
+      <div class="nav--sub--menu" @click="subMenuHandler('/home-page')">
+        <p>Home Page</p>
+      </div>
+      <div :class="subMenu=='/home-page' || path.includes('/home-page') ? 'inner-sub-menu inner-sub-menu-active' : 'inner-sub-menu'">
+        <NuxtLink :class="path=='/admin/home-page/second-section' ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/home-page/second-section">Second Section</NuxtLink>
+        <NuxtLink :class="path=='/admin/home-page/second-section-banner' ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/home-page/second-section-banner">Second Section Banner</NuxtLink>
+        <NuxtLink :class="path=='/admin/home-page/third-section' ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/home-page/third-section">Third Section</NuxtLink>
+        <NuxtLink :class="path.includes('/home-page/third-section-content') ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/home-page/third-section-content">Third Section Content</NuxtLink>
+        <NuxtLink :class="path=='/admin/home-page/fifth-section' ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/home-page/fifth-section">Fifth Section</NuxtLink>
+        <NuxtLink :class="path.includes('/home-page/fifth-section-content') ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/home-page/fifth-section-content">Fifth Section Content</NuxtLink>
+      </div>
+    </div>
   </div>
 </template>
 

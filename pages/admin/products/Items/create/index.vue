@@ -100,7 +100,7 @@ export default {
           this.error = true
           this.errorMessage = 'Please enter the name'
           return false;
-      } else if (!(/^[a-z 0-9~%.:_\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&+=,]+$/i.test(this.name))) { // eslint-disable-line
+      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\<\>\'+=,]+$/i.test(this.name))) { // eslint-disable-line
           this.error = true
           this.errorMessage = 'Please enter a valid name'
           return false;
@@ -110,7 +110,7 @@ export default {
           this.error = true
           this.errorMessage = 'Please enter the price'
           return false;
-      } else if (!(/^[a-z 0-9~%.:_\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&+=,]+$/i.test(this.price))) { // eslint-disable-line
+      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\<\>\'+=,]+$/i.test(this.price))) { // eslint-disable-line
           this.error = true
           this.errorMessage = 'Please enter a valid price'
           return false;
@@ -120,7 +120,7 @@ export default {
           this.error = true
           this.errorMessage = 'Please enter the description'
           return false;
-      } else if (!(/^[a-z 0-9~%.:_\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&+=,]+$/i.test(this.description))) { // eslint-disable-line
+      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\<\>\'+=,]+$/i.test(this.description))) { // eslint-disable-line
           this.error = true
           this.errorMessage = 'Please enter a valid description'
           return false;

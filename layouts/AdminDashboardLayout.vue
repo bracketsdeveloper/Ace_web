@@ -17,11 +17,8 @@
                   <font-awesome-icon class="avatar-dropdown" :icon="['fa', 'user']"/>
                     </div>
                 </template>
-                <b-dropdown-item href="#">Action</b-dropdown-item>
-                <b-dropdown-item href="#">Another action</b-dropdown-item>
-                <b-dropdown-item href="#"
-                  >Something else here...</b-dropdown-item
-                >
+                <li><NuxtLink to="/admin/change-password" class="dropdown-item">Change Password</NuxtLink></li>
+                <b-dropdown-item href="javascript:void(0)" @click="logoutHandler">Logout</b-dropdown-item>
               </b-dropdown>
             </div>
           </div>
@@ -35,7 +32,6 @@
                 <div class="section-logo-img-container">
                   <img src="/assets/images/logo.png" alt="logo" />
                 </div>
-                <!-- {menus.map((item, index) => <NavLink key={index} to={item.link} class={({ isActive }) => { return isActive ? "nav--menu nav--menu--active" : "nav--menu" }}>{item.icon} <p>{item.name}</p></NavLink>)} -->
                 <AdminMenu />
               </div>
             </div>
@@ -68,6 +64,11 @@ export default {
       return this.$store.state.loaders.loader
     }
   },
+  methods:{
+    async logoutHandler(){
+      await this.$auth.logout('/auth/logout')
+    }
+  }
 }
 </script>
 
@@ -132,8 +133,8 @@ header {
 }
 
 .dropdown--custom--main .dropdown--custom {
-  border-color: #69558f;
-  color: #69558f;
+  border-color: #02b8f4;
+  color: #02b8f4;
   background-color: #fff;
   border-style: dashed;
   border-radius: 50%;
@@ -152,31 +153,31 @@ header {
 }
 
 .dropdown--custom--main .dropdown--custom:hover {
-  background-color: #69558f;
-  border-color: #69558f;
+  background-color: #02b8f4;
+  border-color: #02b8f4;
 }
 
 .dropdown--custom--main .dropdown--custom--notification:hover {
-  color: #69558f;
+  color: #02b8f4;
   border: 1px solid transparent !important;
   background-color: #fff !important;
 }
 
 .dropdown--custom--main .dropdown--custom:active {
-  background-color: #69558f;
-  border-color: #69558f;
+  background-color: #02b8f4;
+  border-color: #02b8f4;
 }
 
 .dropdown--custom--main .dropdown--custom--notification:active {
-  color: #69558f;
+  color: #02b8f4;
   border: 1px solid transparent !important;
   background-color: #fff !important;
 }
 
 .btn-primary:active,
 .show > .btn-primary.dropdown-toggle {
-  background-color: #69558f !important;
-  border-color: #69558f !important;
+  background-color: #02b8f4 !important;
+  border-color: #02b8f4 !important;
 }
 
 .dropdown-toggle::after {
@@ -240,7 +241,7 @@ header {
   .section-logo-img-container {
   width: 100%;
   position: relative;
-  /* border-bottom: 1px dashed #69558f; */
+  /* border-bottom: 1px dashed #02b8f4; */
   padding-bottom: 0px;
   margin-bottom: 0px;
   padding-top: 20px;
@@ -273,7 +274,7 @@ header {
 }
 
 .notification:hover {
-  color: #69558f;
+  color: #02b8f4;
 }
 
 .main-dashboard-content {

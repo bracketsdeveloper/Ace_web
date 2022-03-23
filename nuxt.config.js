@@ -91,8 +91,8 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    // baseURL: 'http://localhost:8080/',
-    baseURL: 'https://ace-nuxt-backend.herokuapp.com/',
+    baseURL: 'http://localhost:8080/',
+    // baseURL: 'https://ace-nuxt-backend.herokuapp.com/',
     credentials: true
   },
 
@@ -139,6 +139,8 @@ export default {
 
   toast: {
     position: 'top-right',
+    timeout: 3000,
+    closeOnClick: true,
   },
 
 }

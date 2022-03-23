@@ -6,9 +6,7 @@
         <div class="col-lg-4 col-md-6 col-sm-12 footer-main">
           <img src="/assets/images/logo.png" class="logo" alt="" />
           <p>
-            Perfectly packaged, lovingly sourced, and curated with care,
-            TreatBox is the letterbox friendly service that delivers unique and
-            thoughtful gifts from the heart.
+            Ace allows you to benchmark your business against industry peers through thoughtful gifting solutions!!
           </p>
           <div class="social">
             <a href=""><font-awesome-icon :icon="['fab', 'facebook-f']"/></a>

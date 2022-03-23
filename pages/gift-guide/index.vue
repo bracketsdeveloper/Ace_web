@@ -5,9 +5,8 @@
     <section class="product-area">
       <div class="container">
         <h1>
-          Custom Gifts We've <br />
-          <span class="underline">Do</span>ne For Our
-          <span class="blue">Clients</span>
+          GET INSPIRED WITH <br />
+          <span class="underline">OUR GUIDE</span>
         </h1>
         <div class="row product-area-row product-slider">
           <button
@@ -21,46 +20,26 @@
           <VueSlickCarousel v-bind="slickOptions" ref="slick">
             <div class="product-area-col" data-aos="fade-left">
               <div>
-                <h4>Joining Kit - Basic</h4>
+                <h4>Business Gifts</h4>
                 <span>1</span>
                 <img src="/assets/images/Product/1.jpg" alt="" />
               </div>
             </div>
             <div class="product-area-col" data-aos="fade-up">
               <div>
-                <h4>Welcome Orientation Gift</h4>
+                <h4>Employee Gifts</h4>
                 <span>2</span>
                 <img src="/assets/images/Product/2.jpg" alt="" />
               </div>
             </div>
             <div class="product-area-col" data-aos="fade-right">
               <div>
-                <h4>Personalised diary with Pen</h4>
+                <h4>Customised Gifts</h4>
                 <span>3</span>
                 <img src="/assets/images/Product/3.jpg" alt="" />
               </div>
             </div>
-            <div class="product-area-col" data-aos="fade-left">
-              <div>
-                <h4>Joining Kit - Basic</h4>
-                <span>1</span>
-                <img src="/assets/images/Product/1.jpg" alt="" />
-              </div>
-            </div>
-            <div class="product-area-col" data-aos="fade-up">
-              <div>
-                <h4>Welcome Orientation Gift</h4>
-                <span>2</span>
-                <img src="/assets/images/Product/2.jpg" alt="" />
-              </div>
-            </div>
-            <div class="product-area-col" data-aos="fade-right">
-              <div>
-                <h4>Personalised diary with Pen</h4>
-                <span>3</span>
-                <img src="/assets/images/Product/3.jpg" alt="" />
-              </div>
-            </div>
+            
           </VueSlickCarousel>
           <button
             type="button"
@@ -99,7 +78,7 @@
                 <p id="number2" class="number">1000</p>
                 <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
               </div>
-              <p>Corporate clients</p>
+              <p>Delightful Gifting</p>
             </div>
             <div
               class="item wow fadeInUpBig animated animated"
@@ -110,7 +89,7 @@
                 <p id="number3" class="number">4000</p>
                 <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
               </div>
-              <p>Unique Products</p>
+              <p>Custom Designs</p>
             </div>
           </div>
         </div>
@@ -121,8 +100,8 @@
         <div class="row">
           <div class="col col-xs-12">
             <h1>
-              <span class="underline">Wh</span>at Can We
-              <span class="blue">Offer</span>
+              <span class="underline">Gifts</span> 
+              <span class="blue">Galore</span>
             </h1>
           </div>
         </div>
@@ -133,10 +112,9 @@
                 <img src="/assets/images/icons/1.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/1">Apparel</a></h2>
+                <h2><a href="/service-single/1">Eco-Friendly Products</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Ace has a wide range of eco-friendly products to impact thoughtful gifting and the environment.
                 </p>
               </div>
               <div class="visible-icon">
@@ -150,10 +128,9 @@
                 <img src="/assets/images/icons/2.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/2">Accessories</a></h2>
+                <h2><a href="/service-single/2">Sustainable Products</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Ace has taken initiatives to promote sustainable products for impressive gifting.
                 </p>
               </div>
               <div class="visible-icon">
@@ -167,10 +144,9 @@
                 <img src="/assets/images/icons/3.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/3">Home & Living</a></h2>
+                <h2><a href="/service-single/3">Fitness Products</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Ace has ideal gifting solutions for the health-conscious and those who wish to balance health and work.
                 </p>
               </div>
               <div class="visible-icon">
@@ -184,10 +160,9 @@
                 <img src="/assets/images/icons/1.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/1">Apparel</a></h2>
+                <h2><a href="/service-single/1">Healthy Products</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Prioritising health and well-being, we have a vast range of versatile and impressive health products.
                 </p>
               </div>
               <div class="visible-icon">
@@ -201,10 +176,9 @@
                 <img src="/assets/images/icons/2.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/2">Accessories</a></h2>
+                <h2><a href="/service-single/2">Luxury Products</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Ace delivers luxury products to make every occasion memorable with our gifting solutions.
                 </p>
               </div>
               <div class="visible-icon">
@@ -218,10 +192,9 @@
                 <img src="/assets/images/icons/3.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/3">Home & Living</a></h2>
+                <h2><a href="/service-single/3">Cultural Products</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Ace has unique gifting solutions to appreciate culture and ethnicity. With Ace, relive the culture through Gifts.. Celebrate the culture through Gifts..
                 </p>
               </div>
               <div class="visible-icon">
@@ -237,18 +210,18 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-6 ticket-content">
-            <h1>Have a different question?</h1>
+            <h1>Talk to Us</h1>
             <p>
-              There are many variations of passages of Lorem ipsum dolor sit,
+              Share your corporate gift ideas with us,
               <br />
-              amet consectetur adipisicing elit. Quia unde cupiditate voluptates
+              and we will customize thoughtful gifting solutions.
             </p>
           </div>
           <div
             class="col-lg-4 col-md-4 col-sm-12 col-xs-6"
             style="text-align: center"
           >
-            <button class="btn btn-ticket">Submit a Ticket</button>
+            <NuxtLink to="/contact-us" class="btn btn-ticket">Submit</NuxtLink>
           </div>
         </div>
       </div>
@@ -259,17 +232,16 @@
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <h1>
-              Why Trust Ace for Buying <br />
-              <span class="underline blue">Co</span
-              ><span class="blue">rporate Gift</span> Items
+              We deliver gifts that <br />
+              <span class="underline blue">matter</span
+              > !!
             </h1>
             <p>
-              There are many Variations of passages of Lorem Ipsum available,<br />
-              but the majority have suffered alteration
+              The gifting process at Ace provides impactful solutions delivering consistent quality gifting worldwide. 
             </p>
             <div class="btn-area">
-              <button class="btn about-btn">About</button>
-              <button class="btn contact-btn">Contact</button>
+              <NuxtLink to="/product-catalogue" class="btn about-btn">Business Gifts</NuxtLink>
+              <NuxtLink to="/product-catalogue" class="btn contact-btn">Employee Gifts</NuxtLink>
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -566,7 +538,7 @@ export default {
   border-radius: 50px;
   padding: 10px;
   margin: 10px 0;
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -588,7 +560,7 @@ export default {
   border-radius: 20px;
   margin: 5px;
   font-size: 22px;
-  width: 120px;
+  width: 180px;
 }
 .wpo-service-section,
 .wpo-service-section-s2 {
@@ -672,5 +644,9 @@ export default {
   right: 0;
   background: #fff;
   color: #f25d79;
+}
+
+.wpo-service-section-s2 .wpo-service-item, .wpo-service-section .wpo-service-item {
+    min-height: 385px;
 }
 </style>

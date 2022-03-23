@@ -6,8 +6,8 @@
         <div class="row">
           <div class="col col-xs-12">
             <div class="section-title-s4">
-              <span>Why Us</span>
-              <h2>Why Choose Us</h2>
+              <span>JUST COUNT ON US</span>
+              <h2>Want to make an impact through gifting? We make it easy.</h2>
               <div class="transparent-text">ACE</div>
             </div>
           </div>
@@ -22,10 +22,9 @@
                 />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/1">Design &amp; Planning</a></h2>
+                <h2><a href="javascript:void(0)">Client Service</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  We are a service-oriented organization that provides reliable and professional service. Our priority is your complete satisfaction.
                 </p>
               </div>
               <div class="visible-icon">
@@ -45,10 +44,9 @@
                 />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/2">Graphic Design</a></h2>
+                <h2><a href="javascript:void(0)">Professional Experience</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  At Ace, your every order will be carried out maintaining professional standards from start to finish. 
                 </p>
               </div>
               <div class="visible-icon">
@@ -68,10 +66,9 @@
                 />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/3">Web Design</a></h2>
+                <h2><a href="javascript:void(0)">Personalised Attention</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Ace will fulfil your requirements by giving careful attention to quality and service every time you order. 
                 </p>
               </div>
               <div class="visible-icon">
@@ -91,10 +88,9 @@
                 />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/4">Digital Marketing</a></h2>
+                <h2><a href="javascript:void(0)">Promote Brands</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Through gifting solutions, Ace is ready to collaborate with you to promote your business brand. 
                 </p>
               </div>
               <div class="visible-icon">
@@ -115,11 +111,10 @@
               </div>
               <div class="wpo-service-text">
                 <h2>
-                  <a href="/service-single/5">Social Media Marketing</a>
+                  <a href="javascript:void(0)">Quality Products</a>
                 </h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  Our personally sourced range of merchandise undergoes strict quality checks from time to time.
                 </p>
               </div>
               <div class="visible-icon">
@@ -139,10 +134,9 @@
                 />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/6">Content Writing</a></h2>
+                <h2><a href="javascript:void(0)">Sustainable</a></h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor ultrices gravida.
+                  We work hard to meet all your gifting needs for all seasons to make it thoughtful and sustainable.
                 </p>
               </div>
               <div class="visible-icon">
@@ -170,3 +164,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.section-title-s4 h2, .section-title h2{
+  font-size: 2.2rem;
+}
+</style>

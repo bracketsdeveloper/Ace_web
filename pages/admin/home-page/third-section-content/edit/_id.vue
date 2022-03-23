@@ -1,34 +1,24 @@
 <template>
   <div>
-    <DashboardHeader header-name="Testimonial Edit" />
+    <DashboardHeader header-name="Third Section Content Edit" />
     <div class="main-dashboard-content-form-data">
         <p v-if="error" style="color:red;text-align:center">{{errorMessage}}</p>
       <div class="mb-3">
-        <label class="form-label">Name</label>
+        <label class="form-label">Heading</label>
         <input
-            v-model="name"
+            v-model="heading"
           type="text"
-          placeholder="Enter your name"
+          placeholder="Enter your heading"
           class="form-control"
         />
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Designation</label>
-        <input
-        v-model="designation"
-          type="text"
-          placeholder="Enter your designation"
-          class="form-control"
-        />
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Message</label>
+        <label class="form-label">Paragraph</label>
         <textarea
-        v-model="message"
+        v-model="paragraph"
           type="text"
-          placeholder="Enter your message"
+          placeholder="Enter your paragraph"
           class="form-control"
         />
       </div>
@@ -48,7 +38,7 @@
       </div>
 
       <div class="mt-5 mb-3">
-        <button class="btn btn-primary custom-btn" @click="updateTestimonial">Submit</button>
+        <button class="btn btn-primary custom-btn" @click="updateThirdSectionContent">Submit</button>
       </div>
     </div>
   </div>
@@ -56,13 +46,12 @@
 
 <script>
 export default {
-  name: 'TestimonialEditPage',
+  name: 'ThirdSectionContentEditPage',
   layout: 'AdminDashboardLayout',
   data() {
     return {
-      name: '',
-      designation: '',
-      message: '',
+      heading:'',
+      paragraph:'',
       extImage: '',
       image:null,
       error:'',
@@ -75,25 +64,24 @@ export default {
     }
   },
   mounted() {
-    this.getTestimonial()
+    this.getThirdSectionContent()
   },
   methods: {
-    async getTestimonial() {
+    async getThirdSectionContent() {
       this.$store.commit('loaders/show')
       try {
         const response = await this.$api.get(
-          `/testimonial/view/${this.$route.params.id}`
+          `/home-page-third-section-content/view/${this.$route.params.id}`
         )
-        this.name = response.data.data.name
-        this.designation = response.data.data.designation
-        this.message = response.data.data.message
+        this.heading = response.data.data.heading
+        this.paragraph = response.data.data.paragraph
         this.extImage = response.data.data.image
       } catch (err) {
         console.log(err) // eslint-disable-line
         if (err?.response?.data?.errors?.id) {
             this.$toast.error(err?.response?.data?.errors?.id?.msg)
             this.$router.push({
-              path:'/admin/testimonial'
+              path:'/admin/home-page/third-section-content'
             })
         }
       } finally{
@@ -101,37 +89,27 @@ export default {
       }
     },
 
-    async updateTestimonial() {
+    async updateThirdSectionContent() {
       this.error = false
       this.errorMessage = ''
 
-      if (this.name === '') {
+      if (this.heading === '') {
           this.error = true
-          this.errorMessage = 'Please enter your name'
+          this.errorMessage = 'Please enter the heading'
           return false;
-      } else if (!(/^[a-zA-Z\s]*$/.test(this.name))) { // eslint-disable-line
+      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\<\>\'+=,]+$/i.test(this.heading))) { // eslint-disable-line
           this.error = true
-          this.errorMessage = 'Please enter a valid name'
-          return false;
-      }
-
-      if (this.designation === '') {
-          this.error = true
-          this.errorMessage = 'Please enter your designation'
-          return false;
-      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\<\>\'+=,]+$/i.test(this.designation))) { // eslint-disable-line
-          this.error = true
-          this.errorMessage = 'Please enter a valid designation'
+          this.errorMessage = 'Please enter a valid heading'
           return false;
       }
 
-      if (this.message === '') {
+      if (this.paragraph === '') {
           this.error = true
-          this.errorMessage = 'Please enter your message'
+          this.errorMessage = 'Please enter the paragraph'
           return false;
-      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\<\>\'+=,]+$/i.test(this.message))) { // eslint-disable-line
+      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\<\>\'+=,]+$/i.test(this.paragraph))) { // eslint-disable-line
           this.error = true
-          this.errorMessage = 'Please enter a valid message'
+          this.errorMessage = 'Please enter a valid paragraph'
           return false;
       }
 
@@ -146,30 +124,26 @@ export default {
       this.$store.commit('loaders/show')
       try {
           const formData = new FormData()
-          formData.append('name',this.name)
-          formData.append('designation',this.designation)
-          formData.append('message',this.message)
+          formData.append('heading',this.heading)
+          formData.append('paragraph',this.paragraph)
           if (this.image !== null) {
             formData.append('image',this.image)
           }
-          const response = await this.$api.post(`/testimonial/edit/${this.$route.params.id}`, formData ) // eslint-disable-line
+          const response = await this.$api.post(`/home-page-third-section-content/edit/${this.$route.params.id}`, formData ) // eslint-disable-line
           this.error = false
           this.errorMessage = ''
-          this.$toast.success('Date Updated Successfully')
-          this.getTestimonial()
+          this.$toast.success('Data Updated Successfully')
+          this.getThirdSectionContent()
       } catch (err) {
           console.log(err.response)// eslint-disable-line
           if (err?.response?.data?.message) {
               this.$toast.error(err?.response?.data?.message)
           }
-          if (err?.response?.data?.errors?.name) {
-              this.$toast.error(err?.response?.data?.errors?.name?.msg)
+          if (err?.response?.data?.errors?.heading) {
+              this.$toast.error(err?.response?.data?.errors?.heading?.msg)
           }
-          if (err?.response?.data?.errors?.designation) {
-              this.$toast.error(err?.response?.data?.errors?.designation?.msg)
-          }
-          if (err?.response?.data?.errors?.message) {
-              this.$toast.error(err?.response?.data?.errors?.message?.msg)
+          if (err?.response?.data?.errors?.paragraph) {
+              this.$toast.error(err?.response?.data?.errors?.paragraph?.msg)
           }
           if (err?.response?.data?.errors?.image) {
               this.$toast.error(err?.response?.data?.errors?.image?.msg)

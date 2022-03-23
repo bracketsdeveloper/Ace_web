@@ -4685,7 +4685,7 @@ a:hover {
 
 .wpo-about-section-s2 .about-content ul,
 .wpo-about-section .about-content ul {
-    list-style: none;
+    list-style: auto;
     margin-top: 30px;
     margin-bottom: 30px
 }
@@ -4925,7 +4925,7 @@ a:hover {
 .wpo-fun-fact-section-s3 .grid h3,
 .wpo-fun-fact-section .grid h3 {
     font-size: 100px;
-    font-size: 5.55556rem;
+    font-size: 3.55556rem;
     font-weight: 900;
     color: #ffb100;
     font-family: 'Quattrocento Sans', sans-serif;

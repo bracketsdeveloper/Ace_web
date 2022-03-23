@@ -8,21 +8,20 @@
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <div class="banner-content">
-              <h1><span>Promote</span> Company Culture</h1>
+              <h1><span>Celebrate</span> Thoughtful Gifting!!</h1>
               <h5>
-                A healthy organisational culture begins with showing the
-                recognition the employee deserve.
+                Gifting that articulates joy every time.
               </h5>
               <div class="row banner-content-row">
                 <div class="banner-content-col">
-                  <h4>What?</h4>
-                  <p>Ace work for you?</p>
-                  <div><font-awesome-icon :icon="['fa', 'arrow-down']"/></div>
+                  <h4>For all seasons</h4>
+                  <!-- <p>Ace work for you?</p> -->
+                  <div><font-awesome-icon class="circle-first" :icon="['fa', 'circle-dot']"/></div>
                 </div>
                 <div class="banner-content-col">
-                  <h4>Find out</h4>
-                  <p>Take the survey</p>
-                  <div><font-awesome-icon :icon="['fa', 'arrow-right']"/></div>
+                  <h4>For all reasons</h4>
+                  <!-- <p>Take the survey</p> -->
+                  <div><font-awesome-icon class="circle-second" :icon="['fa', 'circle-dot']"/></div>
                 </div>
               </div>
             </div>
@@ -45,14 +44,14 @@
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
-              <h4>25600</h4>
-              <p>HAPPY CLIENTS<br />IN 25 YEARS</p>
+              <!-- <h4>25600</h4> -->
+              <p style="font-size:18px">Clients And<br />Employees Delighted</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
-              <h4>76500</h4>
-              <p>PROJETCS COMPLETED<br />ON THE WORLDWIDE</p>
+              <!-- <h4>76500</h4> -->
+              <p style="font-size:18px">Gifts Curated</p>
             </div>
           </div>
         </div>
@@ -69,15 +68,13 @@
           >
         </h1>
         <p>
-          We specialize in customised corporate gift boxes full of luxury
-          products, from Moleskine notebook to KOko Black chocolate and other
-          goodies that make the right impression.
+          {{secondSection.paragraph}}
         </p>
       </div>
     </section>
 
     <section class="bg-holder">
-      <img src="/assets/images/bg3.png" data-aos="fade-up" alt="" />
+      <img :src="apiLink+'uploads/'+secondSectionBanner.image" data-aos="fade-up" alt="" />
     </section>
 
     <section class="service">
@@ -87,60 +84,15 @@
           <span class="blue">Here's Why!!</span>
         </h1>
         <p>
-          There are many variations of passages of Lorem ipsum available, but
-          the majority have suffered alterations.
+          {{thirdSection.paragraph}}
         </p>
         <div class="row service-row">
-          <div class="service-col" data-aos="fade-left">
+          <div v-for="(item, index) in thirdSectionContent" :key="index" class="service-col" data-aos="fade-left">
             <div>
-              <img src="/assets/images/service-icon/giftbox.png" alt="" />
-              <h4>Value-added Gifting</h4>
+              <img :src="apiLink+'uploads/'+item.image" alt="" />
+              <h4>{{item.heading}}</h4>
               <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-            </div>
-          </div>
-          <div class="service-col" data-aos="fade-up">
-            <div>
-              <img
-                src="/assets/images/service-icon/delivery-truck.png"
-                alt=""
-              />
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-            </div>
-          </div>
-          <div class="service-col" data-aos="fade-right">
-            <div>
-              <img src="/assets/images/service-icon/insurance.png" alt="" />
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-            </div>
-          </div>
-          <div class="service-col" data-aos="fade-left">
-            <div>
-              <img src="/assets/images/service-icon/programmer.png" alt="" />
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-            </div>
-          </div>
-          <div class="service-col" data-aos="fade-right">
-            <div>
-              <img src="/assets/images/service-icon/rating.png" alt="" />
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
+                {{item.paragraph}}
               </p>
             </div>
           </div>
@@ -180,78 +132,14 @@
           <span class="blue"><span class="underline">co</span>nnect!!</span>
         </h1>
         <p>
-          There are many variations of passages of Lorem ipsum available, but
-          the majority have suffered alterations.
+          {{fifthSection.paragraph}}
         </p>
         <div class="row connect-row">
-          <div class="connect-col" data-aos="fade-right">
+          <div v-for="(item, index) in fifthSectionContent" :key="index" class="connect-col" data-aos="fade-right">
             <div>
-              <h4>Value-added Gifting</h4>
+              <h4>{{item.heading}}</h4>
               <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions. We have
-                curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-              <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a>
-            </div>
-          </div>
-          <div class="connect-col" data-aos="fade-left">
-            <div>
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions. We have
-                curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-              <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a>
-            </div>
-          </div>
-          <div class="connect-col" data-aos="fade-right">
-            <div>
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions. We have
-                curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-              <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a>
-            </div>
-          </div>
-          <div class="connect-col" data-aos="fade-left">
-            <div>
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions. We have
-                curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-              <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a>
-            </div>
-          </div>
-          <div class="connect-col" data-aos="fade-right">
-            <div>
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions. We have
-                curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
-              </p>
-              <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a>
-            </div>
-          </div>
-          <div class="connect-col" data-aos="fade-left">
-            <div>
-              <h4>Value-added Gifting</h4>
-              <p>
-                We have curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions. We have
-                curated thoughtful gifts that resonate with the value of
-                association. Gifting if for everyone and all occasions.
+                {{item.paragraph}}
               </p>
               <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a>
             </div>
@@ -267,8 +155,7 @@
             <div class="container" style="height: 100%">
               <div class="banner--3-inner">
                 <p>
-                  We recognise celebrate and build your brand through gifting
-                  the right product
+                  We recognise celebrate and build your business through creative corporate gifting solutions
                 </p>
               </div>
               <div class="heading">
@@ -299,7 +186,7 @@
       </div>
     </section>
 
-    <section class="testimonial" data-aos="fade-up">
+    <!-- <section class="testimonial" data-aos="fade-up">
       <div class="container">
         <h1>
           <span class="underline">Tru</span>sted By
@@ -372,7 +259,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+    
 
     <section class="contact">
       <div class="container">
@@ -382,23 +271,28 @@
         </h1>
         <div class="row contact-row">
           <div class="contact-col">
-            <form action="">
+            <p v-if="error" style="color:red;text-align:center">{{errorMessage}}</p>
+            <form  @submit.prevent="formHandler">
               <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <label for="">Your Name <span class="red">*</span></label>
-                  <input type="text" name="" />
+                  <input v-model="name" type="text" name="" />
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <label for="">Your Phone <span class="red">*</span></label>
+                  <input v-model="phone" type="text" name="" />
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                   <label for="">Your Email <span class="red">*</span></label>
-                  <input type="text" name="" />
+                  <input v-model="email" type="text" name="" />
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                  <label for="">Your Phone <span class="red">*</span></label>
-                  <input type="text" name="" />
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <label for="">Your Subject <span class="red">*</span></label>
+                  <input v-model="subject" type="text" name="" />
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <label for="">Your Message <span class="red">*</span></label>
-                  <textarea name="" cols="10" rows="5"></textarea>
+                  <textarea  v-model="message" name="" cols="10" rows="5"></textarea>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <button data-aos="flip-down">
@@ -420,9 +314,11 @@
             ><span class="underline">Send</span> just an email</span
           >
         </h1>
-        <a href="" data-aos="flip-down">CONTACT US</a>
+        <NuxtLink to="/contact-us" data-aos="flip-down">CONTACT US</NuxtLink>
       </div>
     </section>
+
+    
   </div>
 </template>
 
@@ -465,6 +361,32 @@ export default {
           },
         ],
       },
+      name:'',
+      email:'',
+      phone:'',
+      subject:'',
+      message:'',
+      error: false,
+      errorMessage: '',
+      fifthSectionContent:[],
+      fifthSection:{},
+      thirdSectionContent:[],
+      thirdSection:{},
+      secondSection:{},
+      secondSectionBanner:{},
+    }
+  },
+  async fetch() {
+    await this.getHomePageSecondSection()
+    await this.getHomePageSecondSectionBanner()
+    await this.getHomePageThirdSection()
+    await this.getHomePageThirdSectionContent()
+    await this.getHomePageFifthSection()
+    await this.getHomePageFifthSectionContent()
+  },
+  computed:{
+    apiLink (){
+      return this.$store.state.apis.link
     }
   },
   mounted() {
@@ -481,6 +403,123 @@ export default {
       // Helpful if you have to deal with v-for to update dynamic lists
       this.$refs.slick.reSlick()
     },
+    async formHandler(){
+      this.error = false
+      this.errorMessage = ''
+
+      if (this.name === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your name'
+          return false;
+      } else if (!(/^[a-zA-Z\s]*$/.test(this.name))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid name'
+          return false;
+      }
+
+      if (this.phone === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your phone'
+          return false;
+      } else if (!(/^[0-9\s]*$/.test(this.phone))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid phone'
+          return false;
+      } else if (this.phone.length < 10 || this.phone.length > 10) { 
+          this.error = true
+          this.errorMessage = 'Please enter a valid phone'
+          return false;
+      }
+
+      if (this.email === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your email'
+          return false;
+      } else if (!(/^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/.test(this.email))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid email'
+          return false;
+      }
+
+      if (this.subject === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your subject'
+          return false;
+      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\'+=,]+$/i.test(this.subject))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid subject'
+          return false;
+      }
+
+      if (this.message === '') {
+          this.error = true
+          this.errorMessage = 'Please enter your message'
+          return false;
+      } else if (!(/^[a-z 0-9~%.:_'\@\-\/\(\)\\\#\;\[\]\{\}\$\!\&\'+=,]+$/i.test(this.message))) { // eslint-disable-line
+          this.error = true
+          this.errorMessage = 'Please enter a valid message'
+          return false;
+      }
+
+      this.$store.commit('loaders/show')
+      try {
+          const response = await this.$publicApi.post('/enquiry/create', {email:this.email, name:this.name, phone:this.phone, subject:this.subject, message:this.message} ) // eslint-disable-line
+          this.error = false
+          this.errorMessage = ''
+          this.email = ''
+          this.phone = ''
+          this.name = ''
+          this.subject = ''
+          this.message = ''
+          this.$toast.success('Message Delivered Successfully')
+          this.$store.commit('loaders/hide')
+      } catch (err) {
+          console.log(err.response)// eslint-disable-line
+          if (err?.response?.data?.message) {
+              this.$toast.error(err?.response?.data?.message)
+          }
+          if (err?.response?.data?.errors?.name) {
+              this.$toast.error(err?.response?.data?.errors?.name?.msg)
+          }
+          if (err?.response?.data?.errors?.phone) {
+              this.$toast.error(err?.response?.data?.errors?.phone?.msg)
+          }
+          if (err?.response?.data?.errors?.email) {
+              this.$toast.error(err?.response?.data?.errors?.email?.msg)
+          }
+          if (err?.response?.data?.errors?.subject) {
+              this.$toast.error(err?.response?.data?.errors?.subject?.msg)
+          }
+          if (err?.response?.data?.errors?.message) {
+              this.$toast.error(err?.response?.data?.errors?.message?.msg)
+          }
+          this.$store.commit('loaders/hide')
+      }
+    },
+    async getHomePageSecondSection(){
+        const response = await this.$axios.$get(`/home-page-second-section`)
+        this.secondSection = response.data
+    },
+    async getHomePageSecondSectionBanner(){
+        const response = await this.$axios.$get(`/home-page-second-section-banner`)
+        this.secondSectionBanner = response.data
+    },
+    async getHomePageThirdSectionContent(){
+        const response = await this.$axios.$get(`/home-page-third-section-content/view`)
+        this.thirdSectionContent = response.data
+    },
+    async getHomePageThirdSection(){
+        const response = await this.$axios.$get(`/home-page-third-section`)
+        this.thirdSection = response.data
+    },
+    async getHomePageFifthSectionContent(){
+        const response = await this.$axios.$get(`/home-page-fifth-section-content/view`)
+        this.fifthSectionContent = response.data
+    },
+    async getHomePageFifthSection(){
+        const response = await this.$axios.$get(`/home-page-fifth-section`)
+        this.fifthSection = response.data
+    },
   },
 }
 </script>
@@ -489,5 +528,14 @@ export default {
 h1, h2, h3, h4, h5, h6 {
     color: #222 !important;
     font-family: 'Quattrocento Sans', sans-serif;
+}
+.banner .banner-content .banner-content-row .banner-content-col div .circle-first {
+    color: #ff0000;
+}
+.banner .banner-content .banner-content-row .banner-content-col div .circle-second {
+    color: #02b8f4;
+}
+.service .service-row .service-col div {
+    min-height: 385px;
 }
 </style>
