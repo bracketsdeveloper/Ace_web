@@ -20,6 +20,44 @@
                 <p class="facet-top-title h6 hidden-sm-down">Filter By</p>
 
                 <section class="facet clearfix">
+                  <p class="h6 facet-title hidden-sm-down">Search</p>
+
+                  <!-- <div
+                    class="title hidden-md-up"
+                    data-target="#facet_67733"
+                    data-toggle="collapse"
+                  >
+                    <p class="h6 facet-title">Categories</p>
+                    <span class="float-xs-right">
+                      <span class="navbar-toggler collapse-icons">
+                        <i class="material-icons add"></i>
+                        <i class="material-icons remove"></i>
+                      </span>
+                    </span>
+                  </div> -->
+
+                  <ul id="facet_67733" class="collapse">
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0">
+                        <form style="width:100%" @submit.prevent="getProducts(0)">
+                          <input
+                            id="facet_input_67733_0"
+                            v-model="searchText"
+                            data-search-url="#"
+                            type="text"
+                            class="search__text"
+                            placeholder="Type Here..."
+                            @change="getProducts(0)"
+                          />
+                        </form>
+
+                      </label>
+                    </li>
+
+                  </ul>
+                </section>
+
+                <section class="facet clearfix">
                   <p class="h6 facet-title hidden-sm-down">Categories</p>
 
                   <div
@@ -37,13 +75,16 @@
                   </div>
 
                   <ul id="facet_67733" class="collapse">
-                    <li>
-                      <label class="facet-label" for="facet_input_67733_0">
+                    <li v-for="(item, index) in category" :key="index">
+                      <label class="facet-label" :for="'facet_input_67733_0'+item.id">
                         <span class="custom-checkbox">
                           <input
-                            id="facet_input_67733_0"
+                            :id="'facet_input_67733_0'+item.id"
+                            v-model="categoryChecks"
                             data-search-url="#"
                             type="checkbox"
+                            :value="item.id"
+                            @change="categoryCheckHandler"
                           />
                           <span class="ps-shown-by-js"
                             ><i
@@ -58,46 +99,16 @@
                         </span>
 
                         <a
-                          href="#"
+                          href="javascript:void(0)"
                           class="_gray-darker search-link js-search-link"
                           rel="nofollow"
                         >
-                          Home Accessories
-                          <span class="magnitude">(18)</span>
+                          {{item.name}}
+                          <span class="magnitude">({{item.productCounts}})</span>
                         </a>
                       </label>
                     </li>
 
-                    <li>
-                      <label class="facet-label" for="facet_input_67733_1">
-                        <span class="custom-checkbox">
-                          <input
-                            id="facet_input_67733_1"
-                            data-search-url="#"
-                            type="checkbox"
-                          />
-                          <span class="ps-shown-by-js"
-                            ><i
-                              class="
-                                material-icons
-                                rtl-no-flip
-                                checkbox-checked
-                              "
-                              ></i
-                            ></span
-                          >
-                        </span>
-
-                        <a
-                          href="6-accessories2299.html?q=Categories-Stationery"
-                          class="_gray-darker search-link js-search-link"
-                          rel="nofollow"
-                        >
-                          Stationery
-                          <span class="magnitude">(16)</span>
-                        </a>
-                      </label>
-                    </li>
                   </ul>
                 </section>
 
@@ -197,13 +208,19 @@
                   <div class="block-category-inner">
                     <div id="category-description" class="text-muted">
                       <p>
-                        <span style="font-size: 12pt; font-style: normal"
-                          >Items and accessories for your desk, kitchen or
-                          living room. Make your house a home with our
-                          eye-catching designs.
+                        <span style="font-size: 14pt; font-style: normal"
+                          >There is a uniqueness in the way our products are presented.
                         </span>
                       </p>
                     </div>
+                  </div>
+                  <div class="sort__filter">
+                    <label>Sort By:</label>
+                    <select v-model="sortSelect" @change="sortSelectHandler">
+                      <option value="1">Newest First</option>
+                      <option value="2">Price -- Low to High</option>
+                      <option value="3">Price -- High to Low</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -438,13 +455,21 @@ export default {
   data() {
     return {
       products: [],
+      category: [],
       currentPage: 0,
       totalItems: 0,
       totalPages: 0,
+      searchText:'',
+      categoryChecks:[],
+      categoryChecksText:'',
+      sortSelect:'1',
+      sort:'id',
+      sortType:'DESC'
     }
   },
   async fetch() {
     await this.getProducts()
+    await this.getCategoryAndCount()
   },
   computed: {
     apiLink (){
@@ -463,13 +488,77 @@ export default {
         this.$toast.success('Item added to catalogue')
     },
     async getProducts(page=0){
-        const response = await this.$axios.$get(`/product/view-custom?page=${page}&size=9`)
+      this.$store.commit('loaders/show')
+      try {
+        const response = await this.$axios.$get(`/product/view-custom?page=${page}&size=9&sort=${this.sort}&sortType=${this.sortType}&search=${this.searchText}&category=${this.categoryChecksText}`)
         this.products = response.data.products
         this.currentPage = parseInt(response.data.currentPage)
         this.totalItems = parseInt(response.data.totalItems)
         this.totalPages = parseInt(response.data.totalPages)
+        
+        if (process.client) {
+          window.scrollTo(0,0);
+        }
+      } catch (error) {
+        console.log(error);// eslint-disable-line
+      }finally{this.$store.commit('loaders/hide')}
+        
+    },
+    async getCategoryAndCount(){
+      this.$store.commit('loaders/show')
+      try {
+        const response = await this.$axios.$get(`product-category/view-inner-count`)
+        this.category = response.data
+      } catch (error) {
+        console.log(error);// eslint-disable-line
+      }finally{this.$store.commit('loaders/hide')}
+        
+    },
+    categoryCheckHandler(){
+      this.categoryChecksText=''
+      if(this.categoryChecks.length===0){
+        this.getProducts(0);
+        return false
+      }
+      if(this.categoryChecks.length===1){
+        this.categoryChecks.forEach((item)=>{
+          this.categoryChecksText+=(item)
+        })
+        this.getProducts(0);
+        return false
+      }
+      this.categoryChecks.forEach((item)=>{
+        this.categoryChecksText+=(item+';')
+      })
+      this.getProducts(0);
+      return false;
+    },
+    sortSelectHandler(){
+    switch(this.sortSelect){
+      case '1':
+        this.sort='id'
+        this.sortType='DESC'
+        this.getProducts(0);
+        break;
+      case '2':
+        this.sort='price'
+        this.sortType='ASC'
+        this.getProducts(0);
+        break;
+      case '3':
+        this.sort='price'
+        this.sortType='DESC'
+        this.getProducts(0);
+        break;
+      default:
+        this.sort='id'
+        this.sortType='DESC'
+        this.getProducts(0);
+        break;
     }
+  }
   },
+  
 }
 </script>
 
@@ -60643,5 +60732,28 @@ article:hover{
   color:#fff;
 }
 
+.search__text{
+  width:100%;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  outline:none;
+  border-bottom: 1px dashed;
+  padding:5px 10px;
+}
+
+.sort__filter{
+  margin-bottom:30px;
+}
+
+.sort__filter select{
+  margin-left: 20px;
+  width: 300px;
+  height: 40px;
+  padding: 0 5px;
+  font-size: 16px;
+  outline: none;
+  border: 1px dashed;
+}
 
 </style>
