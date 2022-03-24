@@ -37,9 +37,9 @@
         <div class="row call-to-action-row">
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
-              <div class="icon"><font-awesome-icon :icon="['fa', 'phone']"/></div>
-              <p>CALL US<br />DIRECTLY</p>
-              <h4>(+37) 96354868</h4>
+              <div class="icon"><font-awesome-icon icon="fa-brands fa-whatsapp" @click="whatsappBtnHandler" /></div>
+              <!-- <p>CALL US<br />DIRECTLY</p>
+              <h4>(+37) 96354868</h4> -->
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
@@ -61,10 +61,9 @@
     <section class="about">
       <div class="container text-center">
         <h1>
-          Ace elevates the idea of<br />
-          thoughtful
+          {{secondSectionHeadingExceptLast2word()}}<br />{{secondSectionHeadingThirdLastword()}}
           <span class="blue"
-            ><span class="underline">corporate</span> gifting</span
+            ><span class="underline">{{secondSectionHeadingSecondLastword()}}</span> {{secondSectionHeadingLastword()}}</span
           >
         </h1>
         <p>
@@ -80,8 +79,8 @@
     <section class="service">
       <div class="container">
         <h1>
-          <span class="underline">We</span> are the best!!
-          <span class="blue">Here's Why!!</span>
+          {{thirdSectionHeadingExceptLast2word()}}
+          <span class="blue">{{thirdSectionHeadingSecondLastword()}} {{thirdSectionHeadingLastword()}}</span>
         </h1>
         <p>
           {{thirdSection.paragraph}}
@@ -128,8 +127,8 @@
     <section class="connect">
       <div class="container">
         <h1>
-          We aspire <span class="underline">to </span>
-          <span class="blue"><span class="underline">co</span>nnect!!</span>
+          {{fifthSectionHeadingExceptLast2word()}} <span class="underline">{{fifthSectionHeadingSecondLastword()}}</span>
+          <span class="blue"> {{fifthSectionHeadingLastword()}}</span>
         </h1>
         <p>
           {{fifthSection.paragraph}}
@@ -141,7 +140,7 @@
               <p>
                 {{item.paragraph}}
               </p>
-              <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a>
+              <!-- <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a> -->
             </div>
           </div>
         </div>
@@ -387,7 +386,8 @@ export default {
   computed:{
     apiLink (){
       return this.$store.state.apis.link
-    }
+    },
+
   },
   mounted() {
     AOS.init()
@@ -402,6 +402,135 @@ export default {
     reInit() {
       // Helpful if you have to deal with v-for to update dynamic lists
       this.$refs.slick.reSlick()
+    },
+    secondSectionHeadingLastword (){
+      const n = this.secondSection.heading ? this.secondSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        if(newN[parseInt(newN.length)-1]===""){
+          return newN[parseInt(newN.length)-2];
+        }else{
+          return newN[parseInt(newN.length)-1];
+        }
+      }
+      return "";
+    },
+    secondSectionHeadingSecondLastword (){
+      const n = this.secondSection.heading ? this.secondSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        if(newN[parseInt(newN.length)-1]===""){
+          return newN[parseInt(newN.length)-3];
+        }else{
+          return newN[parseInt(newN.length)-2];
+        }
+      }
+      return "";
+    },
+    secondSectionHeadingThirdLastword (){
+      const n = this.secondSection.heading ? this.secondSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        if(newN[parseInt(newN.length)-1]===""){
+          return newN[parseInt(newN.length)-4];
+        }else{
+          return newN[parseInt(newN.length)-3];
+        }
+      }
+      return "";
+    },
+    secondSectionHeadingExceptLast2word (){
+      const n = this.secondSection.heading ? this.secondSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        let secndLastWord =  ""
+        if(newN[parseInt(newN.length)-1]===""){
+          secndLastWord =  newN[parseInt(newN.length)-4];
+        }else{
+          secndLastWord =   newN[parseInt(newN.length)-3];
+        }
+        const lastIndex = n.lastIndexOf(secndLastWord)
+        return n.substring(0, lastIndex)
+      }
+      return "";
+    },
+    fifthSectionHeadingLastword (){
+      const n = this.fifthSection.heading ? this.fifthSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        if(newN[parseInt(newN.length)-1]===""){
+          return newN[parseInt(newN.length)-2];
+        }else{
+          return newN[parseInt(newN.length)-1];
+        }
+      }
+      return "";
+    },
+    fifthSectionHeadingSecondLastword (){
+      const n = this.fifthSection.heading ? this.fifthSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        if(newN[parseInt(newN.length)-1]===""){
+          return newN[parseInt(newN.length)-3];
+        }else{
+          return newN[parseInt(newN.length)-2];
+        }
+      }
+      return "";
+    },
+    fifthSectionHeadingExceptLast2word (){
+      const n = this.fifthSection.heading ? this.fifthSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        let secndLastWord =  ""
+        if(newN[parseInt(newN.length)-1]===""){
+          secndLastWord =  newN[parseInt(newN.length)-3];
+        }else{
+          secndLastWord =   newN[parseInt(newN.length)-2];
+        }
+        const lastIndex = n.lastIndexOf(secndLastWord)
+        return n.substring(0, lastIndex)
+      }
+      return "";
+    },
+    thirdSectionHeadingLastword (){
+      const n = this.thirdSection.heading ? this.thirdSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        if(newN[parseInt(newN.length)-1]===""){
+          return newN[parseInt(newN.length)-2];
+        }else{
+          return newN[parseInt(newN.length)-1];
+        }
+      }
+      return "";
+    },
+    thirdSectionHeadingSecondLastword (){
+      const n = this.thirdSection.heading ? this.thirdSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        if(newN[parseInt(newN.length)-1]===""){
+          return newN[parseInt(newN.length)-3];
+        }else{
+          return newN[parseInt(newN.length)-2];
+        }
+      }
+      return "";
+    },
+    thirdSectionHeadingExceptLast2word (){
+      const n = this.thirdSection.heading ? this.thirdSection.heading : " ";
+      if(n){
+        const newN = n.split(" ")
+        let secndLastWord =  ""
+        if(newN[parseInt(newN.length)-1]===""){
+          secndLastWord =  newN[parseInt(newN.length)-3];
+        }else{
+          secndLastWord =   newN[parseInt(newN.length)-2];
+        }
+        const lastIndex = n.lastIndexOf(secndLastWord)
+        return n.substring(0, lastIndex)
+      }
+      return "";
     },
     async formHandler(){
       this.error = false
@@ -520,6 +649,9 @@ export default {
         const response = await this.$axios.$get(`/home-page-fifth-section`)
         this.fifthSection = response.data
     },
+    whatsappBtnHandler(){
+      window.open('https://wa.me/7892156160/?text=Hi Ace', '_blank');
+    }
   },
 }
 </script>

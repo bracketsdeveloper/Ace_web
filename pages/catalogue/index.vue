@@ -211,6 +211,9 @@ export default {
   mounted() {
     AOS.init()
   },
+  updated(){
+    AOS.init()
+  },
   methods: {
     removeFromCart(id){
       this.$store.commit('carts/removeFromCart', {

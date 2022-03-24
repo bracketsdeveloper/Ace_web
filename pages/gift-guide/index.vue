@@ -63,21 +63,21 @@
               style="visibility: visible"
             >
               <div class="d-align">
-                <p id="number1" class="number">16</p>
-                <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
+                <!-- <p id="number1" class="number">16</p> -->
+                <font-awesome-icon class="i-icon" icon="fa-brands fa-whatsapp" @click="whatsappBtnHandler" />
               </div>
 
-              <p>Successful Projects</p>
+              <!-- <p>Successful Projects</p> -->
             </div>
             <div
               class="item wow fadeInUpBig animated animated"
               data-number="55"
               style="visibility: visible"
             >
-              <div class="d-align">
+              <!-- <div class="d-align">
                 <p id="number2" class="number">1000</p>
                 <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
-              </div>
+              </div> -->
               <p>Delightful Gifting</p>
             </div>
             <div
@@ -85,10 +85,10 @@
               data-number="359"
               style="visibility: visible"
             >
-              <div class="d-align">
+              <!-- <div class="d-align">
                 <p id="number3" class="number">4000</p>
                 <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
-              </div>
+              </div> -->
               <p>Custom Designs</p>
             </div>
           </div>
@@ -112,7 +112,7 @@
                 <img src="/assets/images/icons/1.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/1">Eco-Friendly Products</a></h2>
+                <h2><a href="javascript:void(0)">Eco-Friendly Products</a></h2>
                 <p>
                   Ace has a wide range of eco-friendly products to impact thoughtful gifting and the environment.
                 </p>
@@ -128,7 +128,7 @@
                 <img src="/assets/images/icons/2.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/2">Sustainable Products</a></h2>
+                <h2><a href="javascript:void(0)">Sustainable Products</a></h2>
                 <p>
                   Ace has taken initiatives to promote sustainable products for impressive gifting.
                 </p>
@@ -144,7 +144,7 @@
                 <img src="/assets/images/icons/3.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/3">Fitness Products</a></h2>
+                <h2><a href="javascript:void(0)">Fitness Products</a></h2>
                 <p>
                   Ace has ideal gifting solutions for the health-conscious and those who wish to balance health and work.
                 </p>
@@ -157,48 +157,48 @@
           <div class="col-lg-4 col-md-6 col-12">
             <div class="wpo-service-item">
               <div class="wpo-service-icon">
-                <img src="/assets/images/icons/1.png" alt="" />
+                <img src="/assets/images/icons/4.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/1">Healthy Products</a></h2>
+                <h2><a href="javascript:void(0)">Healthy Products</a></h2>
                 <p>
                   Prioritising health and well-being, we have a vast range of versatile and impressive health products.
                 </p>
               </div>
               <div class="visible-icon">
-                <img src="/assets/images/icons/1.png" alt="" />
+                <img src="/assets/images/icons/4.png" alt="" />
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-12">
             <div class="wpo-service-item">
               <div class="wpo-service-icon">
-                <img src="/assets/images/icons/2.png" alt="" />
+                <img src="/assets/images/icons/5.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/2">Luxury Products</a></h2>
+                <h2><a href="javascript:void(0)">Luxury Products</a></h2>
                 <p>
                   Ace delivers luxury products to make every occasion memorable with our gifting solutions.
                 </p>
               </div>
               <div class="visible-icon">
-                <img src="/assets/images/icons/2.png" alt="" />
+                <img src="/assets/images/icons/5.png" alt="" />
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-12">
             <div class="wpo-service-item">
               <div class="wpo-service-icon">
-                <img src="/assets/images/icons/3.png" alt="" />
+                <img src="/assets/images/icons/6.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="/service-single/3">Cultural Products</a></h2>
+                <h2><a href="javascript:void(0)">Cultural Products</a></h2>
                 <p>
                   Ace has unique gifting solutions to appreciate culture and ethnicity. With Ace, relive the culture through Gifts.. Celebrate the culture through Gifts..
                 </p>
               </div>
               <div class="visible-icon">
-                <img src="/assets/images/icons/3.png" alt="" />
+                <img src="/assets/images/icons/6.png" alt="" />
               </div>
             </div>
           </div>
@@ -311,6 +311,9 @@ export default {
       // Helpful if you have to deal with v-for to update dynamic lists
       this.$refs.slick.reSlick()
     },
+    whatsappBtnHandler(){
+      window.open('https://wa.me/7892156160/?text=Hi Ace', '_blank');
+    }
   },
 }
 </script>
@@ -437,6 +440,8 @@ export default {
   margin-top: 30px;
   flex-direction: row;
   flex-wrap: wrap;
+  background: #02b8f4;
+  align-items: center;
 }
 
 #projectFacts .fullWidth {
@@ -477,6 +482,7 @@ export default {
   font-weight: bold;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff;
+    cursor: pointer;
 }
 .projectFactsWrap .item p {
   color: #fff;

@@ -197,7 +197,7 @@
                   <div class="block-category-inner">
                     <div id="category-description" class="text-muted">
                       <p>
-                        <span style="font-size: 10pt; font-style: normal"
+                        <span style="font-size: 12pt; font-style: normal"
                           >Items and accessories for your desk, kitchen or
                           living room. Make your house a home with our
                           eye-catching designs.
@@ -563,7 +563,7 @@ h6,
 .h5,
 .h6 {
   margin-bottom: 0.5rem;
-  font-family: 'Moderat';
+  font-family: 'Quattrocento Sans', sans-serif !important;
   font-weight: 700;
   line-height: 1.1;
   color: #222;
@@ -18102,7 +18102,8 @@ p {
 .h2,
 .h3 {
   text-transform: uppercase;
-  color: #000;
+  color: #36bfed;
+  font-style:italic;
 }
 
 .h4 {
@@ -27771,7 +27772,7 @@ div.active-hover ul > li:hover > .dropdown-menu {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   color: #01213a;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -35759,7 +35760,7 @@ body#checkout #payment-confirmation .ps-shown-by-js .btn {
 #search_filters .facet .facet-title,
 #search_filters_brands .facet .facet-title,
 #search_filters_suppliers .facet .facet-title {
-  color: #01213a;
+  color: #36bfed;
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 20px;
@@ -60613,4 +60614,34 @@ svg {
   max-height: unset !important;
   min-height: unset !important;
 }
+
+.thumbnail-container{
+  border:3px solid #44bfed;
+}
+
+.thumbnail-container .product-image img{
+    border-bottom: 2px solid #ff0000;
+}
+
+.thumbnail-container .product-image .product-thumbnail{
+    padding: 0 20px;
+}
+
+article{
+  transition: 0.3s all ease-in-out;
+}
+
+article:hover{
+  box-shadow:5px 6px 12px -1px #818181;
+}
+
+.product-list-default .functional-buttons .btn-product {
+  background: #44bfed;
+}
+
+.btn-product .icon-btn-product, .btn-product i{
+  color:#fff;
+}
+
+
 </style>
