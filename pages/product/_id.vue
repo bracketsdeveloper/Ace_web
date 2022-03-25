@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-    <BreadCrumb :page-name="products.name" />
+    <BreadCrumb :page-name="products.name" bg-image="bread4.png" />
     <section id="wrapper">
       <div class="container">
 
@@ -194,18 +194,7 @@ export default {
     }
   },
   async fetch() {
-      try {
-          const response = await this.$axios.$get(`/product/view/${this.$route.params.id}`)
-          this.products = response.data
-      } catch (error) {
-          console.log(error.response)  // eslint-disable-line
-          if (error?.response?.data?.errors?.id) {
-                this.$toast.error(error?.response?.data?.errors?.id?.msg)
-                this.$router.push({
-                path:'/product-catalogue'
-                })
-            }
-      }
+      await this.getProduct()
   },
   computed: {
     apiLink (){
@@ -215,6 +204,9 @@ export default {
   mounted() {
     AOS.init()
   },
+  updated() {
+    AOS.init()
+  },
   methods:{
       addToCart(item){
           this.$store.commit('carts/addToCart',{item})
@@ -222,6 +214,21 @@ export default {
           aceCart.push(item)
           localStorage.setItem('aceCart', JSON.stringify(aceCart))
           this.$toast.success('Item added to catalogue')
+      },
+      async getProduct(){
+          this.$store.commit('loaders/show')
+          try {
+                const response = await this.$axios.$get(`/product/view/${this.$route.params.id}`)
+                this.products = response.data
+            } catch (error) {
+                console.log(error.response)  // eslint-disable-line
+                if (error?.response?.data?.errors?.id) {
+                    this.$toast.error(error?.response?.data?.errors?.id?.msg)
+                    this.$router.push({
+                    path:'/product-catalogue'
+                    })
+                }
+            }finally{this.$store.commit('loaders/hide')}
       }
   }
 }

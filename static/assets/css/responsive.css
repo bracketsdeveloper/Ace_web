@@ -221,13 +221,22 @@
     }
 
     .about p {
-        text-align: justify;
+        text-align: center;
         line-height: 1.5;
         padding: 0;
         font-size: 17px;
     }
 
+    .service h1 {
+        text-align: center;
+    }
+
     .service p {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .service .service-row p {
         font-size: 17px;
         text-align: justify;
     }
@@ -238,6 +247,11 @@
 
     .connect p {
         font-size: 17px;
+        text-align: center;
+    }
+
+    .connect .connect-row p {
+        font-size: 17px;
         text-align: justify;
     }
 
@@ -246,7 +260,8 @@
     }
 
     .contact .contact-row .contact-col {
-        width: 90%;
+        width: 100%;
+        padding: 40px 25px;
     }
 
     .testimonial .slider-div-image .slider-image-overlay img {
@@ -276,5 +291,9 @@
         height: 100px;
     }
     
+    .banner {
+        height: auto;
+        min-height: 80vh;
+    }
 
 }

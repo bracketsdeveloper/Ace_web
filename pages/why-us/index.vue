@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-    <BreadCrumb page-name="Why Us" />
+    <BreadCrumb page-name="Why Us" bg-image="bread3.png" />
     <section class="wpo-service-section">
       <div class="container">
         <div class="row">

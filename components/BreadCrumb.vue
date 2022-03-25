@@ -1,5 +1,5 @@
 <template>
-  <div class="wpo-breadcumb-area">
+  <div class="wpo-breadcumb-area" :style="'background-image:linear-gradient(139deg, rgb(49 141 189 / 61%) 100%, rgb(199 241 255 / 48%) 30%), url(/assets/images/bread-banner/'+bgImage+') !important;'">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -23,7 +23,11 @@ export default {
       pageName:{
           type: String,
           default: ''
-      }
+      },
+      bgImage:{
+          type: String,
+          default: ''
+      },
   }
 }
 </script>

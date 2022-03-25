@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-      <BreadCrumb page-name="About Ace" />
+      <BreadCrumb page-name="About Ace" bg-image="bread5.png" />
     <section class="wpo-about-section pt-120">
       <div class="container">
         <div class="row align-items-center">
@@ -337,5 +337,20 @@ nav {
 
 .wpo-testimonials-section .testimonials-wrapper .testimonials-item .testimonials-item-top {
     min-height: 241px;
+}
+
+@media (max-width:767px) {
+
+    .wpo-fun-fact-section-s2 .wpo-fun-fact-grids .grid,
+    .wpo-fun-fact-section-s3 .wpo-fun-fact-grids .grid,
+    .wpo-fun-fact-section .wpo-fun-fact-grids .grid {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .info {
+        width: 100%;
+        padding: 25px 0;
+    }
 }
 </style>

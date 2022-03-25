@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-    <BreadCrumb page-name="Product Catalogue" />
+    <BreadCrumb page-name="Product Catalogue" bg-image="bread2.png" />
     <section id="wrapper">
       <div class="container">
         <div class="row">
@@ -585,6 +585,9 @@ export default {
     }
   },
   mounted() {
+    AOS.init()
+  },
+  updated() {
     AOS.init()
   },
   methods: {
@@ -60874,6 +60877,21 @@ article:hover{
   font-size: 16px;
   outline: none;
   border: 1px dashed;
+}
+
+@media (max-width:600px) {
+  .sort__filter select{
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .h1{
+    text-align:center;
+  }
+
+  .block-category #category-description p{
+    text-align:center;
+  }
 }
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-    <BreadCrumb page-name="Contact Us" />
+    <BreadCrumb page-name="Contact Us" bg-image="bread1.png" />
     <section class="wpo-contact-pg-section section-padding">
       <div class="container">
         <div class="row">
@@ -153,6 +153,9 @@ export default {
     }
   },
   mounted() {
+    AOS.init()
+  },
+  updated() {
     AOS.init()
   },
   methods: {

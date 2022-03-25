@@ -655,4 +655,50 @@ export default {
 .wpo-service-section-s2 .wpo-service-item, .wpo-service-section .wpo-service-item {
     min-height: 385px;
 }
+
+@media (max-width:600px) {
+  .about-banner[data-v-22322b4a] {
+    background-size: cover;
+    height: auto;
+    min-height: 335px;
+  }
+
+  .p-prev, .p-next {
+    top: -65px;
+  }
+
+  .projectFactsWrap .item{
+    flex: 0 0 100%;
+    padding: 25px 0px;
+  }
+
+  .ticket-content h1 {
+    text-align: center;
+  }
+
+  .ticket-area {
+    padding: 50px 10px;
+  }
+
+  .ticket-content p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .btn-area {
+    width: 100%;
+  }
+
+  .about-btn {
+    font-size: 18px;
+  }
+
+  .contact-btn {
+    font-size: 18px;
+  }
+
+  .product-area p{
+    text-align: justify;
+  }
+}
 </style>

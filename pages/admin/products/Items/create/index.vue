@@ -130,7 +130,7 @@ export default {
           this.error = true
           this.errorMessage = 'Please enter the image'
           return false;
-      } else if (this.image.type != 'image/png' && this.image.type != 'image/jpg' && this.image.type != 'image/jpeg') { // eslint-disable-line
+      } else if (this.image.type != 'image/png' && this.image.type != 'image/jpg' && this.image.type != 'image/jpeg' && this.image.type != 'image/webp') { // eslint-disable-line
           this.error = true
           this.errorMessage = 'Please enter a valid image'
           return false;

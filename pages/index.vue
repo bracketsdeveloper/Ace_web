@@ -392,6 +392,9 @@ export default {
   mounted() {
     AOS.init()
   },
+  updated() {
+    AOS.init()
+  },
   methods: {
     next() {
       this.$refs.slick.next()
@@ -626,28 +629,58 @@ export default {
       }
     },
     async getHomePageSecondSection(){
+      this.$store.commit('loaders/show')
+      try { 
         const response = await this.$axios.$get(`/home-page-second-section`)
         this.secondSection = response.data
+      } catch (error) {
+        console.log(error);// eslint-disable-line
+      }finally{this.$store.commit('loaders/hide')}
     },
     async getHomePageSecondSectionBanner(){
+      this.$store.commit('loaders/show')
+      try {
         const response = await this.$axios.$get(`/home-page-second-section-banner`)
         this.secondSectionBanner = response.data
+      } catch (error) {
+         console.log(error);// eslint-disable-line
+      }finally{this.$store.commit('loaders/hide')}
     },
     async getHomePageThirdSectionContent(){
+      this.$store.commit('loaders/show')
+      try { 
         const response = await this.$axios.$get(`/home-page-third-section-content/view`)
         this.thirdSectionContent = response.data
+      } catch (error) {
+         console.log(error);// eslint-disable-line
+      }finally{this.$store.commit('loaders/hide')}
     },
     async getHomePageThirdSection(){
+      this.$store.commit('loaders/show')
+      try { 
         const response = await this.$axios.$get(`/home-page-third-section`)
         this.thirdSection = response.data
+      } catch (error) {
+         console.log(error);// eslint-disable-line
+      }finally{this.$store.commit('loaders/hide')}
     },
     async getHomePageFifthSectionContent(){
+      this.$store.commit('loaders/show')
+      try {
         const response = await this.$axios.$get(`/home-page-fifth-section-content/view`)
         this.fifthSectionContent = response.data
+      } catch (error) {
+         console.log(error);// eslint-disable-line
+      }finally{this.$store.commit('loaders/hide')}
     },
     async getHomePageFifthSection(){
+      this.$store.commit('loaders/show')
+      try {
         const response = await this.$axios.$get(`/home-page-fifth-section`)
         this.fifthSection = response.data
+      } catch (error) {
+         console.log(error);// eslint-disable-line
+      }finally{this.$store.commit('loaders/hide')}
     },
     whatsappBtnHandler(){
       window.open('https://wa.me/7892156160/?text=Hi Ace', '_blank');
@@ -669,5 +702,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .service .service-row .service-col div {
     min-height: 385px;
+}
+
+@media screen and (max-width: 600px) {
+  .service .service-row .service-col div {
+    min-height: 30px;
+  }
 }
 </style>

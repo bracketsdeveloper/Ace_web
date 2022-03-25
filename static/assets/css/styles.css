@@ -4908,8 +4908,13 @@ a:hover {
     .wpo-fun-fact-section-s2 .wpo-fun-fact-grids .grid,
     .wpo-fun-fact-section-s3 .wpo-fun-fact-grids .grid,
     .wpo-fun-fact-section .wpo-fun-fact-grids .grid {
-        width: 50%;
-        margin-bottom: 50px
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .info {
+        width: 100%;
+        padding: 25px 0;
     }
 }
 
@@ -5634,7 +5639,7 @@ a:hover {
 
     .wpo-fun-fact-section-s2 .wpo-fun-fact-grids,
     .wpo-fun-fact-section-s3 .wpo-fun-fact-grids {
-        padding: 40px 15px 0
+        padding: 15px 15px 0
     }
 }
 

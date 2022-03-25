@@ -1,6 +1,6 @@
 <template>
   <div class="App">
-    <BreadCrumb page-name="Catalogue" />
+    <BreadCrumb page-name="Catalogue" bg-image="bread6.png" />
     <section id="wrapper">
       <div class="container">
 
@@ -60459,5 +60459,32 @@ svg {
   width: 100%;
   max-height: unset !important;
   min-height: unset !important;
+}
+
+@media (max-width:600px) {
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #content-wrapper{
+    padding:0;
+  }
+
+  .text-xs-right{
+    text-align: center !important;
+    padding-left: 0;
+  }
+
+  .text-sm-center{
+    text-align: center !important;
+  }
 }
 </style>
