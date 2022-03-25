@@ -20,11 +20,10 @@
             <div class="col-lg-4 footer-menu-div border-white-right">
               <h4>COMPANY</h4>
               <ul>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Products</a></li>
-                <li><a href="">Corporate Gifting</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">Partner With Us</a></li>
+                <li><NuxtLink to="/about-ace">About Ace</NuxtLink></li>
+                <li><NuxtLink to="/gift-guide">Gift Guide</NuxtLink></li>
+                <li><NuxtLink to="/product-catalogue">Product Catalogue</NuxtLink></li>
+                <li><NuxtLink to="/why-us">Why Us</NuxtLink></li>
               </ul>
             </div>
             <div
@@ -33,8 +32,7 @@
             >
               <h4>INFORMATION</h4>
               <ul>
-                <li><a href="">FAQS</a></li>
-                <li><a href="">Corporate Gifting FAQS</a></li>
+                <li><NuxtLink to="/contact-us">Contact Us</NuxtLink></li>
                 <li><a href="">Delivery & Returns</a></li>
                 <li><a href="">Privacy Policy</a></li>
                 <li><a href="">Terms & Conditions</a></li>

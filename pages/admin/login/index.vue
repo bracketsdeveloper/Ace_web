@@ -94,6 +94,15 @@ export default {
         } catch (err) {
             console.log(err)// eslint-disable-line
             this.$store.commit('loaders/hide')
+            if (err?.response?.data?.message) {
+                this.$toast.error(err?.response?.data?.message)
+            }
+            if (err?.response?.data?.errors?.password) {
+                this.$toast.error(err?.response?.data?.errors?.password?.msg)
+            }
+            if (err?.response?.data?.errors?.email) {
+                this.$toast.error(err?.response?.data?.errors?.email?.msg)
+            }
         }
     }
   },

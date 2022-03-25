@@ -4,7 +4,7 @@
       <div class="container position-center">
         <div class="row banner-row">
           <div class="col-lg-5 col-md-12 col-sm-12">
-            <img src="/assets/images/diary.png" class="banner-image" alt="" />
+            <img src="/assets/images/diary2.png" class="banner-image" alt="" />
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12">
             <div class="banner-content">

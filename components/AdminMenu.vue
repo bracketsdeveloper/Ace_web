@@ -1,8 +1,8 @@
 <template>
   <div class="nav--menu--container">
-    <NuxtLink to="/admin/dashboard" :class="path.includes('/admin/dashboard') ? 'nav--menu nav--menu--active':'nav--menu'"
+    <!-- <NuxtLink to="/admin/dashboard" :class="path.includes('/admin/dashboard') ? 'nav--menu nav--menu--active':'nav--menu'"
       ><p>Dashboard</p></NuxtLink
-    >
+    > -->
     <NuxtLink to="/admin/enquiry" :class="path.includes('/admin/enquiry') ? 'nav--menu nav--menu--active':'nav--menu'" ><p>Enquiry</p></NuxtLink>
     <NuxtLink to="/admin/order-request" :class="path.includes('/admin/order-request') ? 'nav--menu nav--menu--active':'nav--menu'" ><p>Order Request</p></NuxtLink>
     <NuxtLink to="/admin/testimonial" :class="path.includes('/admin/testimonial') ? 'nav--menu nav--menu--active':'nav--menu'" ><p>Testimonial</p></NuxtLink>

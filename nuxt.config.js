@@ -53,7 +53,8 @@ export default {
       login: '/admin/login',
       logout: '/admin/login',
       callback: '/admin/login',
-      home: '/admin/dashboard'
+      // home: '/admin/dashboard'
+      home: '/admin/enquiry'
     },
     localStorage: false, // REALLY not secure, so nah
     resetOnError: true, // kick the user if any error happens w/ the auth

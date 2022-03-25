@@ -130,13 +130,17 @@
                   </div>
 
                   <ul id="facet_67733" class="collapse">
+
                     <li>
-                      <label class="facet-label" for="facet_input_67733_0">
+                      <label class="facet-label" for="facet_input_67733_0a12">
                         <span class="custom-checkbox">
                           <input
-                            id="facet_input_67733_0"
+                            id="facet_input_67733_0a12"
+                            v-model="priceChecks"
                             data-search-url="#"
                             type="checkbox"
+                            value="20000;15000;"
+                            @change="priceCheckHandler"
                           />
                           <span class="ps-shown-by-js"
                             ><i
@@ -151,23 +155,25 @@
                         </span>
 
                         <a
-                          href="#"
+                          href="javascript:void(0)"
                           class="_gray-darker search-link js-search-link"
                           rel="nofollow"
                         >
-                          INR 9.00 -INR 36.00
-                          <span class="magnitude">(18)</span>
+                          INR 20,000.00 - INR 15,000.00
                         </a>
                       </label>
                     </li>
 
                     <li>
-                      <label class="facet-label" for="facet_input_67733_1">
+                      <label class="facet-label" for="facet_input_67733_0a13">
                         <span class="custom-checkbox">
                           <input
-                            id="facet_input_67733_1"
+                            id="facet_input_67733_0a13"
+                            v-model="priceChecks"
                             data-search-url="#"
                             type="checkbox"
+                            value="15000;10000;"
+                            @change="priceCheckHandler"
                           />
                           <span class="ps-shown-by-js"
                             ><i
@@ -182,15 +188,115 @@
                         </span>
 
                         <a
-                          href="6-accessories2299.html?q=Categories-Stationery"
+                          href="javascript:void(0)"
                           class="_gray-darker search-link js-search-link"
                           rel="nofollow"
                         >
-                          INR 9.00 -INR 36.00
-                          <span class="magnitude">(16)</span>
+                          INR 15,000.00 - INR 10,000.00
                         </a>
                       </label>
                     </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a14">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a14"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="10000;5000;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          INR 10,000.00 - INR 5,000.00
+                        </a>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a15">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a15"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="5000;2000;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          INR 5,000.00 - INR 2,000.00
+                        </a>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a16">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a16"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="2000;0;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          Below INR 2,000.00
+                        </a>
+                      </label>
+                    </li>
+
+                    
                   </ul>
                 </section>
               </div>
@@ -462,6 +568,8 @@ export default {
       searchText:'',
       categoryChecks:[],
       categoryChecksText:'',
+      priceChecks:[],
+      priceChecksText:'',
       sortSelect:'1',
       sort:'id',
       sortType:'DESC'
@@ -490,7 +598,7 @@ export default {
     async getProducts(page=0){
       this.$store.commit('loaders/show')
       try {
-        const response = await this.$axios.$get(`/product/view-custom?page=${page}&size=9&sort=${this.sort}&sortType=${this.sortType}&search=${this.searchText}&category=${this.categoryChecksText}`)
+        const response = await this.$axios.$get(`/product/view-custom?page=${page}&size=9&sort=${this.sort}&sortType=${this.sortType}&search=${this.searchText}&category=${this.categoryChecksText}&price=${this.priceChecksText}`)
         this.products = response.data.products
         this.currentPage = parseInt(response.data.currentPage)
         this.totalItems = parseInt(response.data.totalItems)
@@ -529,6 +637,18 @@ export default {
       }
       this.categoryChecks.forEach((item)=>{
         this.categoryChecksText+=(item+';')
+      })
+      this.getProducts(0);
+      return false;
+    },
+    priceCheckHandler(){
+      this.priceChecksText=''
+      if(this.priceChecks.length===0){
+        this.getProducts(0);
+        return false
+      }
+      this.priceChecks.forEach((item)=>{
+        this.priceChecksText+=(item)
       })
       this.getProducts(0);
       return false;
