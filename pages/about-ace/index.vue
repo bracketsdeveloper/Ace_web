@@ -16,7 +16,7 @@
             <div class="about-content">
               <div class="section-title">
                 <span>Our Core Values</span>
-                <h2>We believe in being client-centric and providing gifts that reflect <span>emotions..</span> just as you want!!</h2>
+                <h2>We believe in being <br />client-centric and providing<br /> gifts that reflect <span>emotions..</span><br /> just as you want!!</h2>
                 <div class="transparent-text">Values</div>
               </div>
               <p>
@@ -244,33 +244,97 @@ This further boosts our business relationships.
       <div class="container">
         <div class="row">
           <div class="col col-xs-12">
-            <div class="wpo-fun-fact-grids clearfix">
-              <div class="grid">
-                <div class="info">
-                  <h3>82</h3>
-                  <p>Categories</p>
-                </div>
-              </div>
-              <div class="grid">
-                <div class="info">
-                  <h3>45</h3>
-                  <p>Clients</p>
-                </div>
-              </div>
-              <div class="grid">
-                <div class="info">
-                  <h3>15</h3>
-                  <p>Countries</p>
-                </div>
-              </div>
-              <div class="grid">
-                <div class="info">
-                  <h3>100%</h3>
-                  <p>Convenient</p>
-                </div>
-              </div>
+            <div class="section-title-s4">
+              <span>Clients</span>
+              <h2>Our Clients</h2>
+              <div class="transparent-text">Clients</div>
             </div>
           </div>
+        </div>
+        <div class="row brand-row">
+          <!-- <div class="col col-xs-12">
+            <div class="wpo-fun-fact-grids clearfix"> -->
+              <VueSlickCarousel v-bind="slickOptionsBrand" ref="slick" >
+              <div class="grid">
+                <div class="info">
+                  <!-- <h3>82</h3>
+                  <p>Categories</p> -->
+                  <img src="/assets/images/client/1.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/2.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/3.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/4.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/5.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/6.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/7.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/8.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/9.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/10.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/11.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/12.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/13.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/14.jpg" />
+                </div>
+              </div>
+              <div class="grid">
+                <div class="info">
+                  <img src="/assets/images/client/15.jpg" />
+                </div>
+              </div>
+              </VueSlickCarousel>
+            <!-- </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -316,6 +380,37 @@ export default {
           },
         ],
       },
+      slickOptionsBrand: {
+        arrows: false,
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        draggable: true,
+        pauseOnHover: true,
+        swipe: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: false,
+            },
+          },
+        ],
+      },
     }
   },
   mounted() {
@@ -337,6 +432,24 @@ nav {
 
 .wpo-testimonials-section .testimonials-wrapper .testimonials-item .testimonials-item-top {
     min-height: 241px;
+}
+
+.wpo-fun-fact-section-s3 .grid .info, .wpo-fun-fact-section .grid .info img{
+  width: 100%;
+  object-fit: contain;
+}
+
+.brand-row{
+  border: 3px solid #44bfed;
+  border-radius: 10px;
+}
+
+.wpo-fun-fact-section-s3 .section-title-s4 h2 {
+    font-size: 48px;
+    font-size: 3.2rem;
+    font-weight: 600;
+    position: relative;
+    margin: 0.31em 0 0;
 }
 
 @media (max-width:767px) {

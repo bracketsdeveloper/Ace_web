@@ -26,7 +26,7 @@ html,body{
     display: grid;
     place-items: center;
     background-color: #e6e6e6;
-    z-index: 999;
+    z-index: 99999999999999;
     position: fixed;
     top: 0;
     left: 0;

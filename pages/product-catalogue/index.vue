@@ -74,7 +74,7 @@
                     </span>
                   </div>
 
-                  <ul id="facet_67733" class="collapse">
+                  <ul id="facet_67733" class="collapse category--section">
                     <li v-for="(item, index) in category" :key="index">
                       <label class="facet-label" :for="'facet_input_67733_0'+item.id">
                         <span class="custom-checkbox">
@@ -814,6 +814,12 @@ h6,
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
+}
+
+.category--section{
+  height: 300px;
+  overflow:hidden;
+  overflow-y:auto;
 }
 
 .display-1 {

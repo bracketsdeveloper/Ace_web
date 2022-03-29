@@ -93,7 +93,7 @@
 
 <script>
 export default {
-  name: 'MainHeader',
+  name: 'HeaderGuide',
   data() {
     return {
       scrollPosition: null,
@@ -130,7 +130,8 @@ nav {
   position: fixed;
   top: 0px;
   left: 0px;
-  background: transparent;
+  /* background: transparent; */
+  background: white;
   z-index: 999;
   transition: all 0.3s ease-in-out;
 }

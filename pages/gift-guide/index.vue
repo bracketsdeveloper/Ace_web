@@ -22,21 +22,21 @@
               <div>
                 <h4>Business Gifts</h4>
                 <span>1</span>
-                <img src="/assets/images/Product/1.jpg" alt="" />
+                <img src="/assets/images/Product/4.png" alt="" />
               </div>
             </div>
             <div class="product-area-col" data-aos="fade-up">
               <div>
                 <h4>Employee Gifts</h4>
                 <span>2</span>
-                <img src="/assets/images/Product/2.jpg" alt="" />
+                <img src="/assets/images/Product/5.jpeg" alt="" />
               </div>
             </div>
             <div class="product-area-col" data-aos="fade-right">
               <div>
                 <h4>Customised Gifts</h4>
                 <span>3</span>
-                <img src="/assets/images/Product/3.jpg" alt="" />
+                <img src="/assets/images/Product/6.jpeg" alt="" />
               </div>
             </div>
             
@@ -57,39 +57,50 @@
       <div id="projectFacts" class="sectionClass">
         <div class="fullWidth eight columns">
           <div class="projectFactsWrap">
-            <div
-              class="item wow fadeInUpBig animated animated"
-              data-number="12"
-              style="visibility: visible"
-            >
-              <div class="d-align">
-                <!-- <p id="number1" class="number">16</p> -->
-                <font-awesome-icon class="i-icon" icon="fa-brands fa-whatsapp" @click="whatsappBtnHandler" />
-              </div>
-
-              <!-- <p>Successful Projects</p> -->
-            </div>
+            
             <div
               class="item wow fadeInUpBig animated animated"
               data-number="55"
               style="visibility: visible"
             >
-              <!-- <div class="d-align">
+              <div class="d-align">
                 <p id="number2" class="number">1000</p>
                 <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
-              </div> -->
-              <p>Delightful Gifting</p>
+              </div>
+              <p>Gifting Categories</p>
             </div>
             <div
               class="item wow fadeInUpBig animated animated"
               data-number="359"
               style="visibility: visible"
             >
-              <!-- <div class="d-align">
-                <p id="number3" class="number">4000</p>
+              <div class="d-align">
+                <p id="number3" class="number">500</p>
                 <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
-              </div> -->
-              <p>Custom Designs</p>
+              </div>
+              <p>Happy Client <br />& Counting</p>
+            </div>
+            <div
+              class="item wow fadeInUpBig animated animated"
+              data-number="359"
+              style="visibility: visible"
+            >
+              <div class="d-align">
+                <p id="number3" class="number">20</p>
+                <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
+              </div>
+              <p>Countries <br />Gifts Delivered</p>
+            </div>
+            <div
+              class="item wow fadeInUpBig animated animated"
+              data-number="359"
+              style="visibility: visible"
+            >
+              <div class="d-align">
+                <p id="number3" class="number">100</p>
+                <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
+              </div>
+              <p>Convenience Ensured</p>
             </div>
           </div>
         </div>
@@ -112,7 +123,7 @@
                 <img src="/assets/images/icons/1.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="javascript:void(0)">Eco-Friendly Products</a></h2>
+                <h2><NuxtLink to="/product-catalogue">Eco-Friendly Products</NuxtLink></h2>
                 <p>
                   Ace has a wide range of eco-friendly products to impact thoughtful gifting and the environment.
                 </p>
@@ -128,7 +139,7 @@
                 <img src="/assets/images/icons/2.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="javascript:void(0)">Sustainable Products</a></h2>
+                <h2><NuxtLink to="/product-catalogue">Sustainable Products</NuxtLink></h2>
                 <p>
                   Ace has taken initiatives to promote sustainable products for impressive gifting.
                 </p>
@@ -144,7 +155,7 @@
                 <img src="/assets/images/icons/3.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="javascript:void(0)">Fitness Products</a></h2>
+                <h2><NuxtLink to="/product-catalogue">Fitness Products</NuxtLink></h2>
                 <p>
                   Ace has ideal gifting solutions for the health-conscious and those who wish to balance health and work.
                 </p>
@@ -160,7 +171,7 @@
                 <img src="/assets/images/icons/4.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="javascript:void(0)">Healthy Products</a></h2>
+                <h2><NuxtLink to="/product-catalogue">Healthy Products</NuxtLink></h2>
                 <p>
                   Prioritising health and well-being, we have a vast range of versatile and impressive health products.
                 </p>
@@ -176,7 +187,7 @@
                 <img src="/assets/images/icons/5.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="javascript:void(0)">Luxury Products</a></h2>
+                <h2><NuxtLink to="/product-catalogue">Luxury Products</NuxtLink></h2>
                 <p>
                   Ace delivers luxury products to make every occasion memorable with our gifting solutions.
                 </p>
@@ -192,7 +203,7 @@
                 <img src="/assets/images/icons/6.png" alt="" />
               </div>
               <div class="wpo-service-text">
-                <h2><a href="javascript:void(0)">Cultural Products</a></h2>
+                <h2><NuxtLink to="/product-catalogue">Cultural Products</NuxtLink></h2>
                 <p>
                   Ace has unique gifting solutions to appreciate culture and ethnicity. With Ace, relive the culture through Gifts.. Celebrate the culture through Gifts..
                 </p>
@@ -245,10 +256,63 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <img
-              src="/assets/images/Product/ace4.png"
-              class="img-responsive w-100"
-            />
+            <VueSlickCarousel v-bind="slickOptionsBrand" ref="slick" >
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/1.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/2.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/3.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/4.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/5.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/6.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/7.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/8.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/9.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/10.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/11.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/12.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/13.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/14.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/client/15.jpg" />
+                </div>
+              </div>
+           </VueSlickCarousel>
           </div>
         </div>
       </div>
@@ -262,6 +326,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 export default {
   name: 'GiftGuidePage',
+  layout: 'GuideLayout',
   data() {
     return {
       slickOptions: {
@@ -295,6 +360,37 @@ export default {
           },
         ],
       },
+      slickOptionsBrand: {
+        arrows: false,
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        draggable: true,
+        pauseOnHover: true,
+        swipe: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              dots: false,
+            },
+          },
+        ],
+      },
     }
   },
    mounted() {
@@ -319,6 +415,17 @@ export default {
 </script>
 
 <style scoped>
+
+.img-content-container .img-wwrapper{
+  width: 140px;
+  margin: 0 auto;
+}
+
+.img-content-container .img-wwrapper img{
+  width: 100%;
+  object-fit: contain;
+}
+
 .about-banner {
   background-image: url(/assets/images/Banner/about-us.jpg);
   padding-top: 135px;
@@ -449,10 +556,13 @@ export default {
 }
 
 .projectFactsWrap .item {
-  width: 33%;
+  width: 25%;
   height: 100%;
   padding: 50px 0px;
   text-align: center;
+  display: grid;
+  place-content: center;
+  place-items: center;
 }
 
 .projectFactsWrap .item:nth-child(1) {
@@ -468,15 +578,15 @@ export default {
 }
 
 .projectFactsWrap .item p.number {
-  font-size: 80px;
-  color: #02b8f4;
+  font-size: 55px;
+  color: #fff;
   padding: 0;
   font-weight: bold;
-  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+  /* text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff; */
 }
 .projectFactsWrap .item .i-icon {
-  font-size: 62px;
+  font-size: 40px;
   color: #fff;
   padding: 0;
   font-weight: bold;
@@ -657,10 +767,11 @@ export default {
 }
 
 @media (max-width:600px) {
-  .about-banner[data-v-22322b4a] {
+  .about-banner {
     background-size: cover;
     height: auto;
     min-height: 335px;
+    margin-top: 95px;
   }
 
   .p-prev, .p-next {
@@ -701,4 +812,5 @@ export default {
     text-align: justify;
   }
 }
+
 </style>

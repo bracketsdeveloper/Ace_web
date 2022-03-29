@@ -244,7 +244,7 @@ header {
   /* border-bottom: 1px dashed #02b8f4; */
   padding-bottom: 0px;
   margin-bottom: 0px;
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 .dashboard-wrapper
@@ -257,6 +257,7 @@ header {
   width: 100%;
   height: 66px;
   object-fit: contain;
+  margin-bottom: 15px;
 }
 
 

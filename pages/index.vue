@@ -14,12 +14,12 @@
               </h5>
               <div class="row banner-content-row">
                 <div class="banner-content-col">
-                  <h4>For all seasons</h4>
+                  <h4 class="red-circle">For all<br /> seasons</h4>
                   <!-- <p>Ace work for you?</p> -->
                   <div><font-awesome-icon class="circle-first" :icon="['fa', 'circle-dot']"/></div>
                 </div>
                 <div class="banner-content-col">
-                  <h4>For all reasons</h4>
+                  <h4 class="blue-circle">For all<br /> reasons</h4>
                   <!-- <p>Take the survey</p> -->
                   <div><font-awesome-icon class="circle-second" :icon="['fa', 'circle-dot']"/></div>
                 </div>
@@ -44,13 +44,13 @@
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
-              <!-- <h4>25600</h4> -->
+              <h4>4900594</h4>
               <p style="font-size:18px">Clients And<br />Employees Delighted</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
-              <!-- <h4>76500</h4> -->
+              <h4>9297</h4>
               <p style="font-size:18px">Gifts Curated</p>
             </div>
           </div>
@@ -154,7 +154,7 @@
             <div class="container" style="height: 100%">
               <div class="banner--3-inner">
                 <p>
-                  We recognise celebrate and build your business through creative corporate gifting solutions
+                  We recognise, celebrate and build your business through creative corporate gifting solutions.
                 </p>
               </div>
               <div class="heading">
@@ -690,6 +690,11 @@ export default {
 </script>
 
 <style scoped>
+
+#navbar {
+  background: transparent !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: #222 !important;
     font-family: 'Quattrocento Sans', sans-serif;
@@ -702,6 +707,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 .service .service-row .service-col div {
     min-height: 385px;
+}
+
+.red-circle{
+  border: 4px solid #ff0000;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blue-circle{
+  border: 4px solid #44bfed;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 600px) {
