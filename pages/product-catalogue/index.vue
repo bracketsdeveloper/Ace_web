@@ -36197,8 +36197,8 @@ body#checkout #payment-confirmation .ps-shown-by-js .btn {
 .pagination a:hover,
 .pagination a:focus {
   text-decoration: none;
-  background: #ff0000;
-  color: #fff;
+  /* background: #ff0000;
+  color: #fff; */
 }
 
 .pagination .next,
@@ -60898,6 +60898,10 @@ article:hover{
   .block-category #category-description p{
     text-align:center;
   }
+
 }
+  .thumbnail-container .product-image img{
+    object-fit: scale-down;
+  }
 
 </style>

@@ -14,14 +14,14 @@
               </h5>
               <div class="row banner-content-row">
                 <div class="banner-content-col">
-                  <h4 class="red-circle">For all<br /> seasons</h4>
+                  <h4 class="red-circle"><span>For All<br /> <b><i>SEASONS</i></b></span></h4>
                   <!-- <p>Ace work for you?</p> -->
-                  <div><font-awesome-icon class="circle-first" :icon="['fa', 'circle-dot']"/></div>
+                  <!-- <div><font-awesome-icon class="circle-first" :icon="['fa', 'circle-dot']"/></div> -->
                 </div>
                 <div class="banner-content-col">
-                  <h4 class="blue-circle">For all<br /> reasons</h4>
+                  <h4 class="blue-circle"><span>For All<br /> <b><i>REASONS</i></b></span></h4>
                   <!-- <p>Take the survey</p> -->
-                  <div><font-awesome-icon class="circle-second" :icon="['fa', 'circle-dot']"/></div>
+                  <!-- <div><font-awesome-icon class="circle-second" :icon="['fa', 'circle-dot']"/></div> -->
                 </div>
               </div>
             </div>
@@ -45,13 +45,13 @@
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
               <h4>4900594</h4>
-              <p style="font-size:18px">Clients And<br />Employees Delighted</p>
+              <p style="font-size:20px;font-style:italic;font-weight:bold">Clients And<br />Employees Delighted</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
               <h4>9297</h4>
-              <p style="font-size:18px">Gifts Curated</p>
+              <p style="font-size:20px;font-style:italic;font-weight:bold">Gifts <br />Curated</p>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@
           {{thirdSection.paragraph}}
         </p>
         <div class="row service-row">
-          <div v-for="(item, index) in thirdSectionContent" :key="index" class="service-col" data-aos="fade-left">
+          <div v-for="(item, index) in thirdSectionContent" :key="index" class="service-col" data-aos="fade-up">
             <div>
               <img :src="apiLink+'uploads/'+item.image" alt="" />
               <h4>{{item.heading}}</h4>
@@ -103,7 +103,7 @@
       <div class="wrapper">
         <div class="row banner--2-row">
           <div class="col-lg-6 col-md-6 col-sm-12 banner--2-col">
-            <img src="/assets/images/book.png" alt="" data-aos="fade-right" />
+            <img src="/assets/images/book.png" alt="" data-aos="fade-up" />
           </div>
           <div
             class="
@@ -111,7 +111,7 @@
               banner--2-col banner--2--outer-col
             "
           >
-            <div class="banner--2--innercol" data-aos="fade-left">
+            <div class="banner--2--innercol" data-aos="fade-up">
               <h1>
                 Ace Corporate gifts are wrapped with
                 <span class="blue"
@@ -134,7 +134,7 @@
           {{fifthSection.paragraph}}
         </p>
         <div class="row connect-row">
-          <div v-for="(item, index) in fifthSectionContent" :key="index" class="connect-col" data-aos="fade-right">
+          <div v-for="(item, index) in fifthSectionContent" :key="index" class="connect-col" data-aos="fade-up">
             <div>
               <h4>{{item.heading}}</h4>
               <p>
@@ -711,6 +711,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .red-circle{
   border: 4px solid #ff0000;
+  background: #ff0000;
+  color: #fff !important;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -718,10 +720,20 @@ h1, h2, h3, h4, h5, h6 {
   place-items: center;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 2px 2px 6px 2px #818181;
 }
+
+.red-circle b{
+  color: #ff0000 !important;
+  animation: blinker 1.5s linear infinite;
+text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
 
 .blue-circle{
   border: 4px solid #44bfed;
+  background: #44bfed;
+  color: #fff !important;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -729,11 +741,45 @@ h1, h2, h3, h4, h5, h6 {
   place-items: center;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 2px 2px 6px 2px #818181;
+}
+
+.blue-circle b{
+  color: #44bfed !important;
+  animation: blinker 1.5s linear infinite;
+text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.i-icon{
+  color: #02b8f4 !important;
+    text-shadow: 2px 0 0 #02b8f4, -2px 0 0 #02b8f4, 0 2px 0 #02b8f4, 0 -2px 0 #02b8f4, 1px 1px #02b8f4, -1px -1px 0 #02b8f4, 1px -1px 0 #02b8f4, -1px 1px 0 #02b8f4;
+    letter-spacing: 3px;
+    font-size: 36px;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .service .service-row .service-col div {
     min-height: 30px;
+  }
+  /* .row>* {
+    padding: 0;
+  } */
+
+  .call-to-action .call-to-action-row .call-to-action-col .row h4 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .call-to-action-col {
+    margin-bottom: 35px;
   }
 }
 </style>

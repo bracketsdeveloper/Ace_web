@@ -29,14 +29,14 @@
               <div>
                 <h4>Employee Gifts</h4>
                 <span>2</span>
-                <img src="/assets/images/Product/5.jpeg" alt="" />
+                <img src="/assets/images/Product/6.jpeg" alt="" />
               </div>
             </div>
             <div class="product-area-col" data-aos="fade-right">
               <div>
                 <h4>Customised Gifts</h4>
                 <span>3</span>
-                <img src="/assets/images/Product/6.jpeg" alt="" />
+                <img src="/assets/images/Product/7.jpeg" alt="" />
               </div>
             </div>
             
@@ -67,7 +67,7 @@
                 <p id="number2" class="number">1000</p>
                 <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
               </div>
-              <p>Gifting Categories</p>
+              <p>Gifting <br />Categories</p>
             </div>
             <div
               class="item wow fadeInUpBig animated animated"
@@ -98,9 +98,9 @@
             >
               <div class="d-align">
                 <p id="number3" class="number">100</p>
-                <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
+                <font-awesome-icon class="i-icon" :icon="['fa', 'percent']" />
               </div>
-              <p>Convenience Ensured</p>
+              <p>Convenience <br />Ensured</p>
             </div>
           </div>
         </div>
@@ -256,7 +256,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <VueSlickCarousel v-bind="slickOptionsBrand" ref="slick" >
+            <VueSlickCarousel v-bind="slickOptionsBrand" >
               <div class="img-content-container">
                 <div class="img-wwrapper">
                   <img src="/assets/images/client/1.jpg" />
@@ -366,8 +366,8 @@ export default {
         infinite: true,
         autoplay: true,
         autoplaySpeed: 2000,
-        draggable: true,
-        pauseOnHover: true,
+        draggable: false,
+        pauseOnHover: false,
         swipe: true,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -595,10 +595,11 @@ export default {
     cursor: pointer;
 }
 .projectFactsWrap .item p {
-  color: #fff;
-  font-size: 22px;
-  margin: 0;
-  padding: 10px;
+    color: #fff;
+    font-size: 25px;
+    margin: 0;
+    padding: 10px;
+    font-weight: 700;
 }
 
 @media (max-width: 786px) {
@@ -810,6 +811,17 @@ export default {
 
   .product-area p{
     text-align: justify;
+  }
+}
+
+@media (max-width:450px) {
+  .about-btn {
+    font-size: 14px;
+  }
+
+  .contact-btn{
+    font-size: 14px;
+    width: 138px;
   }
 }
 

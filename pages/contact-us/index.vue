@@ -53,7 +53,7 @@
             <div class="wpo-contact-title">
               <h2>Have Any Question?</h2>
               <p>
-                If you have any queries about our product range or shipping, get in touch and we will assist you gladly.
+                Need some help? That's what we are here for!
               </p>
             </div>
             <div class="wpo-contact-form-area">

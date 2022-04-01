@@ -274,4 +274,10 @@ nav .menu-wrapper .nav-menu-row li a.last:hover {
     display: none;
   }
 }
+
+@media screen and (max-width: 450px) {
+  nav .menu-wrapper .nav-header-row li.first{
+    max-width: 200px;
+  }
+}
 </style>
