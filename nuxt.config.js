@@ -8,7 +8,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/assets/images/logo.png' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -33,7 +33,7 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     // '@nuxtjs/stylelint-module',
     '@nuxtjs/fontawesome',
-    '@nuxtjs/toast',
+    // '@nuxtjs/toast',
     '@nuxtjs/google-fonts',
   ],
 
@@ -45,7 +45,10 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    ["vue-toastification/nuxt", {
+      timeout: 3000,
+    }]
   ],
 
   auth: {
@@ -138,11 +141,11 @@ export default {
     }
   },
 
-  toast: {
-    position: 'top-right',
-    timeout: 3000,
-    closeOnClick: true,
-  },
+  // toast: {
+  //   position: 'top-right',
+  //   timeout: 3000,
+  //   closeOnClick: true,
+  // },
 
 }
 

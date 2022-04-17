@@ -36034,6 +36034,7 @@ body#checkout #payment-confirmation .ps-shown-by-js .btn {
   display: inline-block;
   font-size: 14px;
   text-align: left;
+  text-transform: capitalize;
 }
 
 .rtl #search_filters .facet .facet-label a,

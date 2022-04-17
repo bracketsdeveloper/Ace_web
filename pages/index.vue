@@ -32,26 +32,26 @@
         <img src="/assets/images/card.png" class="card-image" alt="" />
       </div>
     </section>
-    <section class="call-to-action">
+    <section class="call-to-action" style="border-bottom:1px dashed #02b8f4;">
       <div class="container-fluid">
         <div class="row call-to-action-row">
-          <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
+          <div class="col-lg-2 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
               <div class="icon"><font-awesome-icon icon="fa-brands fa-whatsapp" @click="whatsappBtnHandler" /></div>
               <!-- <p>CALL US<br />DIRECTLY</p>
               <h4>(+37) 96354868</h4> -->
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
+          <div class="col-lg-6 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
               <h4>4900594</h4>
-              <p style="font-size:20px;font-style:italic;font-weight:bold">Clients And<br />Employees Delighted</p>
+              <p style="font-size:23px;font-style:normal;font-weight:bold;font-family:'Font Awesome 5 Pro'">Clients And<br />Employees Delighted</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
             <div class="row">
               <h4>9297</h4>
-              <p style="font-size:20px;font-style:italic;font-weight:bold">Gifts <br />Curated</p>
+              <p style="font-size:23px;font-style:normal;font-weight:bold;font-family:'Font Awesome 5 Pro'">Gifts <br />Curated</p>
             </div>
           </div>
         </div>
@@ -683,7 +683,7 @@ export default {
       }finally{this.$store.commit('loaders/hide')}
     },
     whatsappBtnHandler(){
-      window.open('https://wa.me/7892156160/?text=Hi Ace', '_blank');
+      window.open('https://wa.me/7483862055/?text=Hi Ace', '_blank');
     }
   },
 }

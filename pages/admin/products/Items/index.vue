@@ -2,6 +2,13 @@
   <div>
     <DashboardHeader header-name="Product Items" :link="true" route-link="/admin/products/items/create" route-name="CREATE" />
     <div class="main-dashboard-table-data">
+      <div>
+        <form style="width:300px;margin-left:auto;margin-bottom:20px;" @submit.prevent="handleSearch">
+          <b-input-group prepend="Search">
+            <b-form-input  v-model="searchText" @input="handleSearch"></b-form-input>
+          </b-input-group>
+        </form>
+      </div>
       <table class="table table-striped table-hover">
         <thead>
           <tr class="table-primary">
@@ -21,18 +28,20 @@
             <td>{{ item.productCategories.name }}</td>
             <td><img :src="apiLink+'products/'+item.image" style="max-width:100px" /></td>
             <td>
-              <NuxtLink
-                :to="'/admin/products/items/view/' + item.id"
+              <button
                 class="viewBtn"
                 title="view"
+                style="outline:none;border:none;"
+                @click="navigate('/admin/products/items/view/',item.id)"
                 ><font-awesome-icon :icon="['fa', 'eye']"
-              /></NuxtLink>
-              <NuxtLink
-                :to="'/admin/products/items/edit/' + item.id"
+              /></button>
+              <button
                 class="editBtn"
                 title="edit"
+                style="outline:none;border:none;"
+                @click="navigate('/admin/products/items/edit/',item.id)"
                 ><font-awesome-icon :icon="['fa', 'pen-to-square']"
-              /></NuxtLink>
+              /></button>
               <button class="deleteBtn" title="delete" @click="deleteEnquiry(item.id)">
                 <font-awesome-icon :icon="['fa', 'trash']" />
               </button>
@@ -104,25 +113,30 @@ export default {
       currentPage: 0,
       totalItems: 0,
       totalPages: 0,
+      searchText:''
     }
   },
   computed:{
     apiLink (){
       return this.$store.state.apis.link
-    }
+    },
+    pageNum (){
+      return this.$store.state.pages.page
+    },
   },
   mounted() {
-    this.getProducts()
+    this.getProducts(this.$store.state.pages.page)
   },
   methods: {
     async getProducts(page = 0) {
       this.$store.commit('loaders/show')
       try {
-        const response = await this.$api.get(`/product/view?page=${page}`)
+        const response = await this.$api.get(`/product/view-custom?page=${page}&size=10&sort=id&sortType=DESC&search=${this.searchText}`)
         this.products = response.data.data.products
         this.currentPage = parseInt(response.data.data.currentPage)
         this.totalItems = parseInt(response.data.data.totalItems)
         this.totalPages = parseInt(response.data.data.totalPages)
+        this.$store.commit('pages/set',{page:0})
       } catch (err) {
         console.log(err) // eslint-disable-line
       } finally{
@@ -145,6 +159,16 @@ export default {
             }
         }
     },
+
+    navigate(link,id){
+      this.$store.commit('pages/set',{page:this.currentPage})
+      this.$router.push({
+          path: link+id
+      })
+    },
+    handleSearch(){
+      this.getProducts()
+    }
   },
 }
 </script>

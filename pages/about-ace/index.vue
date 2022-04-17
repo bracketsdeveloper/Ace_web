@@ -6,7 +6,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="about-img">
-              <img src="/assets/images/about.5dcaca85.jpg" alt="" />
+              <img src="/assets/images/about_ace.jpg" alt="" />
               <div class="shape-1"></div>
               <div class="shape-2"></div>
               <!-- <span class="ab-btn">ACE</span> -->
@@ -200,6 +200,24 @@
             </div>
           </div>
         </div>
+        <div class="row product-area-row product-slider brand-slider">
+              <button
+                type="button"
+                data-role="none"
+                class="slick-prev slick-arrow p-prev p2-prev"
+                @click="prevBrand"
+              >
+                <font-awesome-icon :icon="['fa', 'angle-left']" />
+              </button>
+              <button
+                type="button"
+                data-role="none"
+                class="slick-next slick-arrow p-next p2-next"
+                @click="nextBrand"
+              >
+                <font-awesome-icon :icon="['fa', 'angle-right']" />
+              </button>
+            </div>
         <div class="row brand-row">
           <!-- <div class="col col-xs-12">
             <div class="wpo-fun-fact-grids clearfix"> -->
@@ -376,6 +394,12 @@ export default {
     AOS.init()
   },
   methods:{
+    nextBrand() {
+      this.$refs.slickBrand.next()
+    },
+    prevBrand() {
+      this.$refs.slickBrand.prev()
+    },
     async getTestimonial(){
       this.$store.commit('loaders/show')
       try { 
@@ -422,6 +446,43 @@ nav {
     margin: 0.31em 0 0;
 }
 
+.product-slider {
+  position: relative;
+  margin-bottom: 30px;
+}
+.p-prev {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #c8c8c8;
+  width: 75px;
+  font-size: 22px;
+  position: absolute;
+  top: -120px;
+  right: 100px;
+  background: #fff;
+  color: #f25d79;
+}
+.p2-prev {
+  top: -75px;
+}
+
+.p-next {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #c8c8c8;
+  width: 75px;
+  font-size: 22px;
+  position: absolute;
+  top: -120px;
+  right: 0;
+  background: #fff;
+  color: #f25d79;
+}
+
+.p2-next {
+  top: -75px;
+}
+
 @media (max-width:767px) {
 
     .wpo-fun-fact-section-s2 .wpo-fun-fact-grids .grid,
@@ -434,6 +495,12 @@ nav {
     .info {
         width: 100%;
         padding: 25px 0;
+    }
+
+    .product-slider {
+      position: relative;
+      margin-top: 50px;
+      margin-bottom: 30px;
     }
 }
 </style>

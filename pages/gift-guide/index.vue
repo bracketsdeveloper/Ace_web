@@ -64,7 +64,7 @@
               style="visibility: visible"
             >
               <div class="d-align">
-                <p id="number2" class="number">1000</p>
+                <p id="number2" class="number">90</p>
                 <font-awesome-icon class="i-icon" :icon="['fa', 'plus']" />
               </div>
               <p>Gifting <br />Categories</p>
@@ -256,60 +256,265 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <VueSlickCarousel v-bind="slickOptionsBrand" >
+            <div class="row product-area-row product-slider brand-slider">
+              <button
+                type="button"
+                data-role="none"
+                class="slick-prev slick-arrow p-prev p2-prev"
+                @click="prevBrand"
+              >
+                <font-awesome-icon :icon="['fa', 'angle-left']" />
+              </button>
+              <button
+                type="button"
+                data-role="none"
+                class="slick-next slick-arrow p-next p2-next"
+                @click="nextBrand"
+              >
+                <font-awesome-icon :icon="['fa', 'angle-right']" />
+              </button>
+            </div>
+            <VueSlickCarousel v-bind="slickOptionsBrand" ref="slickBrand" >
               <div class="img-content-container">
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/1.jpg" />
+                  <img src="/assets/images/brand/1.jpg" />
                 </div>
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/2.jpg" />
+                  <img src="/assets/images/brand/2.jpg" />
                 </div>
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/3.jpg" />
+                  <img src="/assets/images/brand/3.jpg" />
                 </div>
               </div>
               <div class="img-content-container">
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/4.jpg" />
+                  <img src="/assets/images/brand/4.jpg" />
                 </div>
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/5.jpg" />
+                  <img src="/assets/images/brand/5.jpg" />
                 </div>
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/6.jpg" />
-                </div>
-              </div>
-              <div class="img-content-container">
-                <div class="img-wwrapper">
-                  <img src="/assets/images/client/7.jpg" />
-                </div>
-                <div class="img-wwrapper">
-                  <img src="/assets/images/client/8.jpg" />
-                </div>
-                <div class="img-wwrapper">
-                  <img src="/assets/images/client/9.jpg" />
+                  <img src="/assets/images/brand/6.jpg" />
                 </div>
               </div>
               <div class="img-content-container">
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/10.jpg" />
+                  <img src="/assets/images/brand/7.jpg" />
                 </div>
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/11.jpg" />
+                  <img src="/assets/images/brand/8.jpg" />
                 </div>
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/12.jpg" />
+                  <img src="/assets/images/brand/9.jpg" />
                 </div>
               </div>
               <div class="img-content-container">
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/13.jpg" />
+                  <img src="/assets/images/brand/10.jpg" />
                 </div>
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/14.jpg" />
+                  <img src="/assets/images/brand/11.jpg" />
                 </div>
                 <div class="img-wwrapper">
-                  <img src="/assets/images/client/15.jpg" />
+                  <img src="/assets/images/brand/12.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/13.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/14.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/15.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/22.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/23.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/24.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/25.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/26.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/27.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/28.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/29.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/30.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/31.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/32.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/33.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/34.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/35.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/36.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/37.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/38.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/39.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/40.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/41.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/42.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/43.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/44.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/45.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/46.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/47.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/48.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/49.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/50.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/51.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/52.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/53.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/54.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/55.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/56.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/57.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/58.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/59.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/60.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/61.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/62.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/63.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/64.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/65.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/66.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/16.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/17.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/18.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/67.jpeg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/20.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/21.jpg" />
                 </div>
               </div>
            </VueSlickCarousel>
@@ -400,8 +605,14 @@ export default {
     next() {
       this.$refs.slick.next()
     },
+    nextBrand() {
+      this.$refs.slickBrand.next()
+    },
     prev() {
       this.$refs.slick.prev()
+    },
+    prevBrand() {
+      this.$refs.slickBrand.prev()
     },
     reInit() {
       // Helpful if you have to deal with v-for to update dynamic lists
@@ -427,12 +638,12 @@ export default {
 }
 
 .about-banner {
-  background-image: url(/assets/images/Banner/about-us.jpg);
-  padding-top: 135px;
+  background-image: url(/assets/images/gift_guide_banner.jpg);
+  margin-top: 85px;
   background-position: center;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   height: 100vh;
   position: relative;
 }
@@ -750,6 +961,10 @@ export default {
   background: #fff;
   color: #f25d79;
 }
+.p2-prev {
+  top: -75px;
+}
+
 .p-next {
   display: inline-block;
   padding: 20px;
@@ -763,8 +978,19 @@ export default {
   color: #f25d79;
 }
 
+.p2-next {
+  top: -75px;
+}
+
 .wpo-service-section-s2 .wpo-service-item, .wpo-service-section .wpo-service-item {
     min-height: 385px;
+}
+
+@media (max-width:1025px) {
+  .about-banner {
+    margin-top: 95px;
+    height: 75vh;
+  }
 }
 
 @media (max-width:600px) {
@@ -777,6 +1003,14 @@ export default {
 
   .p-prev, .p-next {
     top: -65px;
+  }
+
+  .p2-prev, .p2-next {
+    top: -30px;
+  }
+
+  .brand-slider{
+    margin-bottom: 60px;
   }
 
   .projectFactsWrap .item{
@@ -825,4 +1059,25 @@ export default {
   }
 }
 
+@media (max-width:768px) {
+  .about-banner {
+    margin-top: 95px;
+    height: 55vh;
+  }
+}
+
+@media (max-width:600px) {
+  .about-banner {
+    margin-top: 20px;
+    height: 50vh;
+    background-size: 100%;
+    min-height: 0;
+  }
+
+  .product-area{
+    width: 100%;
+    padding: 0px 0;
+}
+  
+}
 </style>

@@ -4,15 +4,15 @@
     <div class="container">
       <div class="row footer-row">
         <div class="col-lg-4 col-md-6 col-sm-12 footer-main">
-          <img src="/assets/images/logo.png" class="logo" alt="" />
+          <!-- <img src="/assets/images/logo.png" class="logo" alt="" /> -->
           <p>
             Ace allows you to benchmark your business against industry peers through thoughtful gifting solutions!!
           </p>
           <div class="social">
-            <a href=""><font-awesome-icon :icon="['fab', 'facebook-f']"/></a>
-            <a href=""><font-awesome-icon :icon="['fab', 'fa-instagram']"/></a>
-            <a href=""><font-awesome-icon :icon="['fab', 'fa-twitter']"/></a>
-            <a href=""><font-awesome-icon :icon="['fab', 'fa-linkedin']"/></a>
+            <a href="https://www.facebook.com/Ace-Gifting-Solutions-110421034013328/?ti=as" target="_blank"><font-awesome-icon :icon="['fab', 'facebook-f']"/></a>
+            <a href="https://instagram.com/acegiftingsolutions?utm_medium=copy_link" target="_blank"><font-awesome-icon :icon="['fab', 'fa-instagram']"/></a>
+            <!-- <a href=""><font-awesome-icon :icon="['fab', 'fa-twitter']"/></a> -->
+            <a href="https://www.linkedin.com/in/ace-gifting-solutions-620404230" target="_blank"><font-awesome-icon :icon="['fab', 'fa-linkedin']"/></a>
           </div>
         </div>
         <div class="col-lg-8 col-md-6 col-sm-12 footer-menu" data-aos="fade-up">
@@ -33,9 +33,9 @@
               <h4>INFORMATION</h4>
               <ul>
                 <li><NuxtLink to="/contact-us">Contact Us</NuxtLink></li>
-                <li><a href="">Delivery & Returns</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Terms & Conditions</a></li>
+                <li><NuxtLink to="/return-policy">Return Policy</NuxtLink></li>
+                <li><NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink></li>
+                <li><NuxtLink to="/terms-condition">Terms & Conditions</NuxtLink></li>
               </ul>
             </div>
           </div>
