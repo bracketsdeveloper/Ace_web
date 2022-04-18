@@ -47,7 +47,7 @@
                             type="text"
                             class="search__text"
                             placeholder="Type Here..."
-                            @change="getProducts(0)"
+                            @input="getProducts(0)"
                           />
                         </form>
 
@@ -132,14 +132,14 @@
                   <ul id="facet_67733" class="collapse">
 
                     <li>
-                      <label class="facet-label" for="facet_input_67733_0a12">
+                      <label class="facet-label" for="facet_input_67733_0a16">
                         <span class="custom-checkbox">
                           <input
-                            id="facet_input_67733_0a12"
+                            id="facet_input_67733_0a16"
                             v-model="priceChecks"
                             data-search-url="#"
                             type="checkbox"
-                            value="20000;15000;"
+                            value="200;0;"
                             @change="priceCheckHandler"
                           />
                           <span class="ps-shown-by-js"
@@ -159,7 +159,40 @@
                           class="_gray-darker search-link js-search-link"
                           rel="nofollow"
                         >
-                          INR 20,000.00 - INR 15,000.00
+                          Below INR 200.00
+                        </a>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a12">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a12"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="500;200;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          INR 200.00 - INR 500.00
                         </a>
                       </label>
                     </li>
@@ -172,7 +205,7 @@
                             v-model="priceChecks"
                             data-search-url="#"
                             type="checkbox"
-                            value="15000;10000;"
+                            value="1000;500;"
                             @change="priceCheckHandler"
                           />
                           <span class="ps-shown-by-js"
@@ -192,7 +225,7 @@
                           class="_gray-darker search-link js-search-link"
                           rel="nofollow"
                         >
-                          INR 15,000.00 - INR 10,000.00
+                          INR 500.00 - INR 1000.00
                         </a>
                       </label>
                     </li>
@@ -205,7 +238,7 @@
                             v-model="priceChecks"
                             data-search-url="#"
                             type="checkbox"
-                            value="10000;5000;"
+                            value="2000;1000;"
                             @change="priceCheckHandler"
                           />
                           <span class="ps-shown-by-js"
@@ -225,7 +258,7 @@
                           class="_gray-darker search-link js-search-link"
                           rel="nofollow"
                         >
-                          INR 10,000.00 - INR 5,000.00
+                          INR 1000.00 - INR 2000.00
                         </a>
                       </label>
                     </li>
@@ -258,20 +291,20 @@
                           class="_gray-darker search-link js-search-link"
                           rel="nofollow"
                         >
-                          INR 5,000.00 - INR 2,000.00
+                          INR 2000.00 - INR 5000.00
                         </a>
                       </label>
                     </li>
 
                     <li>
-                      <label class="facet-label" for="facet_input_67733_0a16">
+                      <label class="facet-label" for="facet_input_67733_0a15">
                         <span class="custom-checkbox">
                           <input
-                            id="facet_input_67733_0a16"
+                            id="facet_input_67733_0a15"
                             v-model="priceChecks"
                             data-search-url="#"
                             type="checkbox"
-                            value="2000;0;"
+                            value="5000;1000000;"
                             @change="priceCheckHandler"
                           />
                           <span class="ps-shown-by-js"
@@ -291,10 +324,12 @@
                           class="_gray-darker search-link js-search-link"
                           rel="nofollow"
                         >
-                          Below INR 2,000.00
+                          INR 5000.00+
                         </a>
                       </label>
                     </li>
+
+                    
 
                     
                   </ul>
