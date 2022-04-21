@@ -660,7 +660,7 @@ export default {
 }
 
 .product-area h1 .underline {
-  border-bottom: 3px solid #ff0000;
+  border-bottom: 3px solid #cb2b1d;
 }
 
 .product-area h1 .blue {
@@ -699,7 +699,7 @@ export default {
 .product-area .product-area-row .product-area-col span {
   font-size: 62px;
   font-weight: bold;
-  color: #ff0000;
+  color: #cb2b1d;
   position: absolute;
   right: 10px;
   top: 50px;
@@ -853,7 +853,7 @@ export default {
 .btn-ticket {
   background-color: #fff;
   border: 1px solid #fff;
-  color: #ff0000;
+  color: #cb2b1d;
   border-radius: 0;
   font-weight: bold;
   font-size: 22px;
@@ -884,7 +884,7 @@ export default {
 .contact-btn {
   font-weight: bold;
   color: #fff;
-  background-color: #ff0000;
+  background-color: #cb2b1d;
   border-radius: 20px;
   margin: 5px;
   font-size: 22px;
@@ -934,7 +934,7 @@ export default {
 }
 .wpo-service-section-s2 .wpo-service-item .wpo-service-text h2 a,
 .wpo-service-section .wpo-service-item .wpo-service-text h2 a {
-  color: #ff0000;
+  color: #cb2b1d;
   text-decoration: none;
   font-weight: bold;
 }

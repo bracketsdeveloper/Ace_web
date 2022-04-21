@@ -11,6 +11,7 @@
               <th scope="col">Name</th>
               <th scope="col">Price</th>
               <th scope="col">Category</th>
+              <th scope="col">Sub-Category</th>
               <th scope="col">Image</th>
             </tr>
           </thead>
@@ -20,6 +21,7 @@
               <td>{{ name }}</td>
               <td>{{ price }}</td>
               <td>{{ category }}</td>
+              <td>{{ subcategory }}</td>
               <td><img :src="apiLink+'products/'+image" style="max-width:100px" /></td>
             </tr>
           </tbody>
@@ -45,6 +47,7 @@ export default {
       price: '',
       description: '',
       category: '',
+      subcategory: '',
       image: '',
     }
   },
@@ -70,6 +73,7 @@ export default {
         this.price = response.data.data.price
         this.description = response.data.data.description
         this.category = response.data.data.productCategories.name
+        this.subcategory = response.data.data.productSubCategoryId!=null ? response.data.data.productSubCategories.name : ''
         this.image = response.data.data.image
       } catch (err) {
         console.log(err) // eslint-disable-line

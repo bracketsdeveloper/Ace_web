@@ -9,7 +9,7 @@ export default function ({ $axios, app }, inject) {
     })
 
     // Set baseURL to something different
-    // publicApi.setBaseURL('http://localhost:8080/')
+    // publicApi.setBaseURL('http://localhost:8080/api/')
     publicApi.setBaseURL('https://acegiftingsolutions.com/api/')
 
     

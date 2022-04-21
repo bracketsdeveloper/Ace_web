@@ -6,6 +6,7 @@
         <thead>
           <tr class="table-primary">
             <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Date</th>
             <th scope="col">Action</th>
@@ -14,9 +15,16 @@
         <tbody>
           <tr v-for="(item, index) in category" :key="index">
             <td scope="row">{{ index + 1 }}</td>
+            <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
             <td>{{ new Date(item.created_at).getDate() }}-{{ new Date(item.created_at).getMonth()+1 }}-{{ new Date(item.created_at).getFullYear() }}</td>
             <td>
+              <NuxtLink
+                :to="'/admin/products/category/sub-category/' + item.id"
+                class="viewBtn"
+                title="add sub-category"
+                ><font-awesome-icon :icon="['fa', 'plus']"
+              /></NuxtLink>
               <NuxtLink
                 :to="'/admin/products/category/edit/' + item.id"
                 class="editBtn"

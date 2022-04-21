@@ -93,13 +93,18 @@
         text-align: center;
     }
 
+    .call-to-action{
+        margin-bottom: 50px;
+    }
+
     .call-to-action .call-to-action-row {
         justify-content: center;
         align-items: center;
     }
 
     .call-to-action-col{
-        margin-bottom: 20px;
+        margin-bottom: 0px;
+        background-size: cover;
     }
 
     .about {

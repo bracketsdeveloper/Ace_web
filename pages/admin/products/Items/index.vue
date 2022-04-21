@@ -16,6 +16,7 @@
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Category</th>
+            <th scope="col">Sub-category</th>
             <th scope="col">Image</th>
             <th scope="col">Action</th>
           </tr>
@@ -26,6 +27,7 @@
             <td>{{ item.name }}</td>
             <td>{{ item.price }}</td>
             <td>{{ item.productCategories.name }}</td>
+            <td>{{ item.productSubCategoryId!=null ? item.productSubCategories.name : '' }}</td>
             <td><img :src="apiLink+'products/'+item.image" style="max-width:100px" /></td>
             <td>
               <button

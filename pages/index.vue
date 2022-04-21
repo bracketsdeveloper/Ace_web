@@ -29,29 +29,23 @@
         </div>
       </div>
       <div class="card-image-div">
-        <img src="/assets/images/card.png" class="card-image" alt="" />
+        <img src="/assets/images/card.png" class="card-image" style="z-index:2;" alt="" />
       </div>
     </section>
-    <section class="call-to-action" style="border-bottom:1px dashed #02b8f4;">
+    
+    <section class="call-to-action" style="padding:0;background-image:linear-gradient(144deg, rgb(203 43 29 / 86%) 12%, rgb(203 43 29 / 86%) 98%), url(/assets/images/bread-banner/bread3.png) !important;background-size:100%;background-position:center right">
       <div class="container-fluid">
-        <div class="row call-to-action-row">
-          <div class="col-lg-2 col-md-6 col-sm-12 call-to-action-col">
-            <div class="row">
-              <div class="icon"><font-awesome-icon icon="fa-brands fa-whatsapp" @click="whatsappBtnHandler" /></div>
-              <!-- <p>CALL US<br />DIRECTLY</p>
-              <h4>(+37) 96354868</h4> -->
+        <div class="row call-to-action-row" style="--bs-gutter-x: 0;">
+          <div class="col-lg-6 col-md-6 col-sm-12 call-to-action-col" style="padding:30px 0;">
+            <div class="row" style="--bs-gutter-x: 0;">
+              <h4 style="color:white"><font-awesome-icon icon="fa-solid fa-users" /></h4>
+              <p style="font-size:23px;font-style:normal;font-weight:bold;font-family:'Circular-Loom';color:white"><span style="font-size:35px">4900594</span><br/>Clients And<br />Employees Delighted</p>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-sm-12 call-to-action-col">
-            <div class="row">
-              <h4>4900594</h4>
-              <p style="font-size:23px;font-style:normal;font-weight:bold;font-family:'Font Awesome 5 Pro'">Clients And<br />Employees Delighted</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 call-to-action-col">
-            <div class="row">
-              <h4>9297</h4>
-              <p style="font-size:23px;font-style:normal;font-weight:bold;font-family:'Font Awesome 5 Pro'">Gifts <br />Curated</p>
+          <div class="col-lg-6 col-md-6 col-sm-12 call-to-action-col" style="padding:30px 0;">
+            <div class="row" style="--bs-gutter-x: 0;">
+              <h4 style="color:white"><font-awesome-icon icon="fa-solid fa-gift" /></h4>
+              <p style="font-size:23px;font-style:normal;font-weight:bold;font-family:'Circular-Loom';color:white"><span style="font-size:35px">9297</span><br/>Gifts <br />Curated</p>
             </div>
           </div>
         </div>
@@ -142,6 +136,291 @@
               </p>
               <!-- <a href="">Read more <font-awesome-icon :icon="['fa', 'angles-right']"/></a> -->
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <h1>
+              We deliver gifts that <br />
+              <span class="underline blue">matter</span
+              > !!
+            </h1>
+            <p>
+              The gifting process at Ace provides impactful solutions delivering consistent quality gifting worldwide. 
+            </p>
+            <div class="btn-area">
+              <NuxtLink to="/product-catalogue" class="btn about-btn">Business Gifts</NuxtLink>
+              <NuxtLink to="/product-catalogue" class="btn contact-btn">Employee Gifts</NuxtLink>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="row product-area-row product-slider brand-slider">
+              <button
+                type="button"
+                data-role="none"
+                class="slick-prev slick-arrow p-prev p2-prev"
+                @click="prevBrand"
+              >
+                <font-awesome-icon :icon="['fa', 'angle-left']" />
+              </button>
+              <button
+                type="button"
+                data-role="none"
+                class="slick-next slick-arrow p-next p2-next"
+                @click="nextBrand"
+              >
+                <font-awesome-icon :icon="['fa', 'angle-right']" />
+              </button>
+            </div>
+            <VueSlickCarousel v-bind="slickOptionsBrand" ref="slickBrand" >
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/1.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/2.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/3.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/4.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/5.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/6.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/7.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/8.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/9.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/10.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/11.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/12.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/13.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/14.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/15.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/22.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/23.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/24.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/25.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/26.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/27.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/28.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/29.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/30.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/31.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/32.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/33.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/34.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/35.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/36.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/37.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/38.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/39.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/40.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/41.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/42.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/43.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/44.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/45.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/46.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/47.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/48.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/49.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/50.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/51.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/52.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/53.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/54.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/55.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/56.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/57.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/58.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/59.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/60.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/61.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/62.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/63.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/64.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/65.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/66.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/16.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/17.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/18.jpg" />
+                </div>
+              </div>
+              <div class="img-content-container">
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/67.jpeg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/20.jpg" />
+                </div>
+                <div class="img-wwrapper">
+                  <img src="/assets/images/brand/21.jpg" />
+                </div>
+              </div>
+           </VueSlickCarousel>
           </div>
         </div>
       </div>
@@ -317,6 +596,18 @@
       </div>
     </section>
 
+    <section class="call-to-action" style="padding:0">
+      <div class="container-fluid">
+        <div class="row call-to-action-row">
+          <div class="col-lg-2 col-md-6 col-sm-12 call-to-action-col">
+            <div class="row">
+              <div class="icon whatsapp-icon"><font-awesome-icon icon="fa-brands fa-whatsapp" @click="whatsappBtnHandler" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     
   </div>
 </template>
@@ -354,6 +645,37 @@ export default {
             breakpoint: 600,
             settings: {
               slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: false,
+            },
+          },
+        ],
+      },
+      slickOptionsBrand: {
+        arrows: false,
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        draggable: false,
+        pauseOnHover: false,
+        swipe: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: false,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
               slidesToScroll: 1,
               dots: false,
             },
@@ -401,6 +723,12 @@ export default {
     },
     prev() {
       this.$refs.slick.prev()
+    },
+    nextBrand() {
+      this.$refs.slickBrand.next()
+    },
+    prevBrand() {
+      this.$refs.slickBrand.prev()
     },
     reInit() {
       // Helpful if you have to deal with v-for to update dynamic lists
@@ -700,7 +1028,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Quattrocento Sans', sans-serif;
 }
 .banner .banner-content .banner-content-row .banner-content-col div .circle-first {
-    color: #ff0000;
+    color: #cb2b1d;
 }
 .banner .banner-content .banner-content-row .banner-content-col div .circle-second {
     color: #02b8f4;
@@ -710,23 +1038,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .red-circle{
-  border: 4px solid #ff0000;
-  background: #ff0000;
+  border: 4px solid #cb2b1d;
+  background: #cb2b1d;
   color: #fff !important;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 2px 2px 6px 2px #818181;
+  font-family: 'Circular-Loom';
+  letter-spacing: 3px;
 }
 
 .red-circle b{
-  color: #ff0000 !important;
-  animation: blinker 1.5s linear infinite;
-text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  color: #fff !important;
+  font-size: 35px;
+  /* animation: blinker 1.5s linear infinite; */
+/* text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; */
 }
 
 
@@ -734,20 +1065,23 @@ text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #
   border: 4px solid #44bfed;
   background: #44bfed;
   color: #fff !important;
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   display: grid;
   place-items: center;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 2px 2px 6px 2px #818181;
+  font-family: 'Circular-Loom';
+  letter-spacing: 3px;
 }
 
 .blue-circle b{
-  color: #44bfed !important;
-  animation: blinker 1.5s linear infinite;
-text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  color: #fff !important;
+  font-size: 35px;
+  /* animation: blinker 1.5s linear infinite; */
+/* text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; */
 }
 
 .i-icon{
@@ -781,5 +1115,394 @@ text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #
   .call-to-action-col {
     margin-bottom: 35px;
   }
+
+  .red-circle{
+  width: 160px;
+  height: 160px;
+  font-family: 'Circular-Loom';
+  letter-spacing: 3px;
 }
+
+.red-circle b{
+  font-size: 27px;
+}
+
+
+.blue-circle{
+  width: 160px;
+  height: 160px;
+  font-family: 'Circular-Loom';
+  letter-spacing: 3px;
+}
+
+.blue-circle b{
+  font-size: 27px;
+}
+}
+
+/* Product Slider */
+
+.product-area {
+  width: 100%;
+  padding: 50px 0;
+  padding-top: 0;
+}
+
+.product-area h1 {
+  margin-bottom: 30px;
+}
+
+.product-area h1 .underline {
+  border-bottom: 3px solid #cb2b1d;
+}
+
+.product-area h1 .blue {
+  color: #02b8f4;
+}
+
+.product-area p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.product-area .product-area-row {
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.product-area .product-area-row .product-area-col {
+  width: 33%;
+  /* margin: 20px; */
+}
+
+.product-area .product-area-row .product-area-col div {
+  /* background-color:#f1f1f1; */
+  padding: 20px 15px;
+  position: relative;
+  /* border-radius: 15px; */
+  transition: all 0.3s ease-in-out;
+}
+
+.product-area .product-area-row .product-area-col h4 {
+  color: #02b8f4;
+  font-size: 22px;
+  font-weight: bold;
+}
+.product-area .product-area-row .product-area-col span {
+  font-size: 62px;
+  font-weight: bold;
+  color: #cb2b1d;
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  box-shadow: 2px 2px 8px #000;
+  padding: 0px 34px;
+  background: #fff;
+}
+
+.product-area .product-area-row .product-area-col img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.btn-area {
+  background-color: #34a1da;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+.about-btn {
+  font-weight: bold;
+  color: #fff;
+  background-color: #34a1da;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 22px;
+}
+.contact-btn {
+  font-weight: bold;
+  color: #fff;
+  background-color: #cb2b1d;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 22px;
+  width: 180px;
+}
+
+.product-slider {
+  position: relative;
+}
+.p-prev {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #c8c8c8;
+  width: 75px;
+  font-size: 22px;
+  position: absolute;
+  top: -120px;
+  right: 100px;
+  background: #fff;
+  color: #f25d79;
+}
+.p2-prev {
+  top: -75px;
+}
+
+.p-next {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #c8c8c8;
+  width: 75px;
+  font-size: 22px;
+  position: absolute;
+  top: -120px;
+  right: 0;
+  background: #fff;
+  color: #f25d79;
+}
+
+.p2-next {
+  top: -75px;
+}
+
+.img-content-container .img-wwrapper{
+  width: 140px;
+  margin: 0 auto;
+}
+
+.img-content-container .img-wwrapper img{
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width:1025px) {
+  .about-banner {
+    margin-top: 95px;
+    height: 75vh;
+  }
+}
+
+@media (max-width:600px) {
+  .about-banner {
+    background-size: cover;
+    height: auto;
+    min-height: 335px;
+    margin-top: 95px;
+  }
+
+  .p-prev, .p-next {
+    top: -65px;
+  }
+
+  .p2-prev, .p2-next {
+    top: -30px;
+  }
+
+  .brand-slider{
+    margin-bottom: 60px;
+  }
+
+  .projectFactsWrap .item{
+    flex: 0 0 100%;
+    padding: 25px 0px;
+  }
+
+  .ticket-content h1 {
+    text-align: center;
+  }
+
+  .ticket-area {
+    padding: 50px 10px;
+  }
+
+  .ticket-content p {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .btn-area {
+    width: 100%;
+  }
+
+  .about-btn {
+    font-size: 18px;
+  }
+
+  .contact-btn {
+    font-size: 18px;
+  }
+
+  .product-area p{
+    text-align: justify;
+  }
+}
+
+@media (max-width:450px) {
+  .about-btn {
+    font-size: 14px;
+  }
+
+  .contact-btn{
+    font-size: 14px;
+    width: 138px;
+  }
+}
+
+@media (max-width:768px) {
+  .about-banner {
+    margin-top: 95px;
+    height: 55vh;
+  }
+}
+
+@media (max-width:600px) {
+  .about-banner {
+    margin-top: 20px;
+    height: 50vh;
+    background-size: 100%;
+    min-height: 0;
+  }
+
+  .product-area{
+    width: 100%;
+    padding: 0px 0;
+}
+  
+}
+
+.whatsapp-icon{
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+}
+
+.sectionClass {
+  padding: 20px 0px 50px 0px;
+  position: relative;
+  display: block;
+}
+
+.fullWidth {
+  width: 100% !important;
+  display: table;
+  float: none;
+  padding: 0;
+  min-height: 1px;
+  height: 100%;
+  position: relative;
+}
+
+
+.sectiontitle {
+  background-position: center;
+  margin: 30px 0 0px;
+  text-align: center;
+  min-height: 20px;
+}
+
+.sectiontitle h2 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+.headerLine {
+  width: 160px;
+  height: 2px;
+  display: inline-block;
+  background: #101F2E;
+}
+
+
+.projectFactsWrap{
+    display: flex;
+  margin-top: 30px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+#projectFacts .fullWidth{
+  padding: 0;
+}
+
+.projectFactsWrap .item{
+  width: 50%;
+  height: 100%;
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.projectFactsWrap .item:nth-child(1){
+  background: rgb(16, 31, 46);
+}
+
+.projectFactsWrap .item:nth-child(2){
+  background: rgb(18, 34, 51);
+}
+
+.projectFactsWrap .item:nth-child(3){
+  background: rgb(21, 38, 56);
+}
+
+.projectFactsWrap .item:nth-child(4){
+  background: rgb(23, 44, 66);
+}
+
+.projectFactsWrap .item p.number{
+  font-size: 40px;
+  padding: 0;
+  font-weight: bold;
+}
+
+.projectFactsWrap .item p{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 30px;
+  margin: 0;
+  padding: 10px;
+  font-family: 'Open Sans';
+}
+
+
+.projectFactsWrap .item span{
+  width: 60px;
+  background: rgba(255, 255, 255, 0.8);
+  height: 2px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.projectFactsWrap .item i, .ff-icon{
+  vertical-align: middle;
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+.projectFactsWrap .item:hover i, .projectFactsWrap .item:hover p{
+  color: white;
+}
+
+.projectFactsWrap .item:hover span{
+  background: white;
+}
+
+@media (max-width: 786px){
+  .projectFactsWrap .item {
+     flex: 0 0 50%;
+  }
+}
+
+
 </style>

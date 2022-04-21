@@ -35,8 +35,15 @@
 
       <div class="mb-3">
         <label class="form-label">Product Category</label>
-        <select v-model="productCategoryId" class="form-control">
+        <select v-model="productCategoryId" class="form-control" @change="getSubCategory(productCategoryId)">
           <option v-for="(item, index) in category" :key="index" :value="item.id">{{item.name}}</option>
+        </select>
+      </div>
+
+      <div v-if="subcategory.length>0" class="mb-3">
+        <label class="form-label">Product Sub-Category</label>
+        <select v-model="productSubCategoryId" class="form-control">
+          <option v-for="(item, index) in subcategory" :key="index" :value="item.id">{{item.name}}</option>
         </select>
       </div>
 
@@ -73,7 +80,9 @@ export default {
       extImage: '',
       image:null,
       category:[],
+      subcategory:[],
       productCategoryId:'',
+      productSubCategoryId:null,
       error:'',
       errorMessage:''
     }
@@ -98,7 +107,9 @@ export default {
         this.price = response.data.data.price
         this.description = response.data.data.description
         this.productCategoryId = response.data.data.productCategoryId
+        this.productSubCategoryId = response.data.data.productSubCategoryId
         this.extImage = response.data.data.image
+        this.getSubCategory(this.productCategoryId)
       } catch (err) {
         console.log(err) // eslint-disable-line
         if (err?.response?.data?.errors?.id) {
@@ -117,6 +128,23 @@ export default {
       try {
         const response = await this.$api.get(`/product-category/view-categories`)
         this.category = response.data.data
+      } catch (err) {
+        console.log(err) // eslint-disable-line
+      } finally{
+        this.$store.commit('loaders/hide')
+      }
+    },
+
+    async getSubCategory(productCategoryId) {
+      this.$store.commit('loaders/show')
+      try {
+        const response = await this.$api.get(`/product-sub-category/${productCategoryId}/view-sub-categories`)
+        this.subcategory = response.data.data
+        if(response?.data?.data?.length>0){
+            this.productSubCategoryId  = response?.data?.data[0]?.id
+        }else{
+          this.productSubCategoryId  = null
+        }
       } catch (err) {
         console.log(err) // eslint-disable-line
       } finally{
@@ -173,6 +201,7 @@ export default {
           formData.append('price',this.price)
           formData.append('description',this.description)
           formData.append('productCategoryId',this.productCategoryId)
+          formData.append('productSubCategoryId',this.productSubCategoryId)
           if (this.image !== null) {
             formData.append('image',this.image)
           }

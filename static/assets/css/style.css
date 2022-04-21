@@ -65,7 +65,7 @@ html, body {
 }
 
 .banner .banner-content h1 span{
-    color: #ff0000;
+    color: #cb2b1d;
     font-style: normal;
 }
 
@@ -98,7 +98,7 @@ html, body {
 }
 
 .banner .banner-content .banner-content-row .banner-content-col div .fa-arrow-down{
-    color:#ff0000;
+    color:#cb2b1d;
 }
 
 .banner .banner-content .banner-content-row .banner-content-col div .fa-arrow-right{
@@ -128,7 +128,7 @@ margin-bottom: 20px;
 }
 
 .service h1 .underline{
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #cb2b1d;
 }
 
 .service h1 .blue{
@@ -186,7 +186,7 @@ text-align: center;
 }
 
 .connect h1 .underline{
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #cb2b1d;
 }
 
 .connect h1 .blue{
@@ -234,7 +234,7 @@ text-align: center;
     padding: 0px 20px;
     font-size: 17px;
     text-align: left;
-    color: #ff0000;
+    color: #cb2b1d;
     text-decoration: none;
     margin-bottom: 30px;
     display: inline-block;
@@ -254,7 +254,7 @@ text-align: center;
 }
 
 .contact h1 .red{
-    color: #ff0000;
+    color: #cb2b1d;
 }
 
 .contact .contact-row{
@@ -281,7 +281,7 @@ text-align: center;
 }
 
 .contact .contact-row .contact-col label .red{
-    color:#ff0000;
+    color:#cb2b1d;
 }
 
 .contact .contact-row .contact-col input{
@@ -325,7 +325,7 @@ line-height: 1.3;
 }
 
 .info h1 .underline{
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #cb2b1d;
 }
 
 .info h1 .blue{
@@ -335,7 +335,7 @@ line-height: 1.3;
 .info a{
     text-align: center;
     text-decoration:none;
-    background-color: #ff0000;
+    background-color: #cb2b1d;
     color: #fff;
     font-weight: bold;
     font-size: 20px;
@@ -358,7 +358,7 @@ line-height: 1.3;
 }
 
 .about h1 .underline{
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #cb2b1d;
 }
 
 .about h1 .blue{
@@ -415,15 +415,15 @@ line-height: 1.3;
 .call-to-action .call-to-action-row .call-to-action-col .row p{
     font-size: 14px;
     text-align: center;
-    text-transform: uppercase;
-    color: #ff0000;
+    text-transform: capitalize;
+    color: #cb2b1d;
 }
 
 .call-to-action .call-to-action-row .call-to-action-col .row h4{
     color: #fff !important;
     text-shadow: 2px 0 0 #02b8f4, -2px 0 0 #02b8f4, 0 2px 0 #02b8f4, 0 -2px 0 #02b8f4, 1px 1px #02b8f4, -1px -1px 0 #02b8f4, 1px -1px 0 #02b8f4, -1px 1px 0 #02b8f4;
     letter-spacing: 3px;
-    font-size: 36px;
+    font-size: 70px;
 }
 
 
@@ -438,7 +438,7 @@ margin-bottom: 50px;
 }
 
 .testimonial h1 .underline{
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #cb2b1d;
 }
 
 .testimonial h1 .blue{
@@ -454,7 +454,7 @@ margin-bottom: 50px;
 }
 
 .testimonial .slider-div-quote .icon{
-    background-color: #ff0000;
+    background-color: #cb2b1d;
     color: #fff;
     width:50px;
     height:50px;
@@ -592,7 +592,7 @@ margin-bottom: 50px;
 }
 
 .banner--2 .banner--2-row .banner--2--outer-col  .banner--2--innercol h1 .underline{
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #cb2b1d;
 }
 
 .banner--2 .banner--2-row .banner--2--outer-col  .banner--2--innercol h1 .blue{
@@ -693,7 +693,7 @@ margin-bottom: 50px;
 }
 
 .banner--3 .banner--3-row .banner--3-col .heading h1 .underline{
-    border-bottom: 3px solid #ff0000;
+    border-bottom: 3px solid #cb2b1d;
 }
 
 .banner--3 .banner--3-row .banner--3-col .heading h1 .blue{
@@ -712,7 +712,7 @@ margin-bottom: 50px;
     bottom: 16px;
     right: 0;
     height: 70px;
-    background-color: #ff0000;
+    background-color: #cb2b1d;
 }
 .banner--3 .banner--3-row .banner--3-col .banner--3-inner-row .col-black{
     position: absolute;
@@ -728,26 +728,26 @@ margin-bottom: 50px;
 
 
 .service .service-row .service-col div:hover{
-    box-shadow: 1px 1px 1px 1px  #ff0000;
+    box-shadow: 1px 1px 1px 1px  #cb2b1d;
 }
 
 .connect .connect-row .connect-col div a:hover{color:#02b8f4;}
 
-.banner--3 .banner--3-row .banner--3-col .button-div a:hover{background:#ff0000;}
+.banner--3 .banner--3-row .banner--3-col .button-div a:hover{background:#cb2b1d;}
 
 .testimonial .slider-div-box .slick-prev:hover, .testimonial .slider-div-box .slick-next:hover{
-    color: #ff0000;
+    color: #cb2b1d;
 }
 
 .contact .contact-row .contact-col button:hover{
-    background-color: #ff0000;
-    border: 1px solid #ff0000;
+    background-color: #cb2b1d;
+    border: 1px solid #cb2b1d;
 }
 
 .info a:hover{
     background-color: #fff;
-    color: #ff0000;
-    border:1px solid #ff0000;
+    color: #cb2b1d;
+    border:1px solid #cb2b1d;
 }
 
 .regular {

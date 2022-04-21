@@ -35,8 +35,15 @@
 
       <div class="mb-3">
         <label class="form-label">Product Category</label>
-        <select v-model="productCategoryId" class="form-control">
+        <select v-model="productCategoryId" class="form-control" @change="getSubCategory(productCategoryId)">
           <option v-for="(item, index) in category" :key="index" :value="item.id">{{item.name}}</option>
+        </select>
+      </div>
+
+      <div v-if="subcategory.length>0" class="mb-3">
+        <label class="form-label">Product Sub-Category</label>
+        <select v-model="productSubCategoryId" class="form-control">
+          <option v-for="(item, index) in subcategory" :key="index" :value="item.id">{{item.name}}</option>
         </select>
       </div>
 
@@ -66,10 +73,12 @@ export default {
       price:'',
       description:'',
       productCategoryId:'',
+      productSubCategoryId:null,
       image:null,
       error:'',
       errorMessage:'',
-      category:[]
+      category:[],
+      subcategory:[],
     }
   },
   mounted(){
@@ -84,6 +93,24 @@ export default {
         this.category = response.data.data
         if(response?.data?.data?.length>0){
             this.productCategoryId  = response?.data?.data[0]?.id
+            this.getSubCategory(this.productCategoryId)
+        }
+      } catch (err) {
+        console.log(err) // eslint-disable-line
+      } finally{
+        this.$store.commit('loaders/hide')
+      }
+    },
+
+    async getSubCategory(productCategoryId) {
+      this.$store.commit('loaders/show')
+      try {
+        const response = await this.$api.get(`/product-sub-category/${productCategoryId}/view-sub-categories`)
+        this.subcategory = response.data.data
+        if(response?.data?.data?.length>0){
+            this.productSubCategoryId  = response?.data?.data[0]?.id
+        }else{
+          this.productSubCategoryId  = null
         }
       } catch (err) {
         console.log(err) // eslint-disable-line
@@ -143,6 +170,7 @@ export default {
           formData.append('price',this.price)
           formData.append('description',this.description)
           formData.append('productCategoryId',this.productCategoryId)
+          formData.append('productSubCategoryId',this.productSubCategoryId)
           formData.append('image',this.image)
           const response = await this.$api.post(`/product/create`, formData ) // eslint-disable-line
           this.error = false
@@ -153,6 +181,7 @@ export default {
           this.image = null
           if(this.category?.length>0){
             this.productCategoryId  = this.category[0]?.id
+            this.getSubCategory(this.productCategoryId)
           }
           this.$toast.success('Data Created Successfully')
       } catch (err) {

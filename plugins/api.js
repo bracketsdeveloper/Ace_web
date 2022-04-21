@@ -10,8 +10,8 @@ export default function ({ $axios, app }, inject) {
     })
 
     // Set baseURL to something different
-    // api.setBaseURL('http://localhost:8080/')
-    api.setBaseURL('https://acegiftingsolutions.com/api/')
+    // api.setBaseURL('http://localhost:8080/api/')
+    api.setBaseURL('https://www.acegiftingsolutions.com/api/')
 
     api.interceptors.request.use(
         config => {

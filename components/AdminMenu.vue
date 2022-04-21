@@ -13,6 +13,7 @@
       <div :class="subMenu=='/products' || path.includes('/products') ? 'inner-sub-menu inner-sub-menu-active' : 'inner-sub-menu'">
         <NuxtLink :class="path.includes('/products/category') ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/products/category">Category</NuxtLink>
         <NuxtLink :class="path.includes('/products/items') ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/products/items">Product Items</NuxtLink>
+        <NuxtLink :class="path.includes('/products/bulk-upload') ? 'inner-menu-link active' : 'inner-menu-link'" to="/admin/products/items/bulk-upload">Product Bulk Upload</NuxtLink>
       </div>
     </div>
     <div>

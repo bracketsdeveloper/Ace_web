@@ -659,7 +659,7 @@ a:hover {
 
 .section-title-s4 span,
 .section-title span {
-    color: #ff0000
+    color: #cb2b1d
 }
 
 @media (max-width:767px) {
@@ -687,7 +687,7 @@ a:hover {
 .section-title-s4>span:before,
 .section-title>span:before {
     content: "";
-    background: #ff0000;
+    background: #cb2b1d;
     width: 30px;
     height: 2px;
     position: absolute;
@@ -953,7 +953,7 @@ a:hover {
 }
 
 .theme-btn {
-    background: #ff0000;
+    background: #cb2b1d;
     color: #fff;
     display: inline-block;
     font-weight: 500;
@@ -1033,14 +1033,14 @@ a:hover {
     font-family: 'Quattrocento Sans', sans-serif;
     font-size: 20px;
     font-size: 1.11111rem;
-    color: #ff0000;
-    border: 1px solid #ff0000
+    color: #cb2b1d;
+    border: 1px solid #cb2b1d
 }
 
 .theme-btn-s2:active,
 .theme-btn-s2:focus,
 .theme-btn-s2:hover {
-    background-color: #ff0000
+    background-color: #cb2b1d
 }
 
 @media (max-width:991px) {
@@ -4423,7 +4423,7 @@ a:hover {
     width: 100px;
     height: 100px;
     line-height: 100px;
-    background: #ff0000;
+    background: #cb2b1d;
     border-radius: 50%;
     text-align: center;
     position: absolute;
@@ -4481,7 +4481,7 @@ a:hover {
     top: auto;
     right: 15px;
     bottom: 15px;
-    background-color: #ff0000
+    background-color: #cb2b1d
 }
 
 .wpo-work-section-s2 .col:nth-child(2) .wpo-work-iem .wpo-work-icon-thumb,
@@ -4829,12 +4829,12 @@ a:hover {
 
 .wpo-service-section-s2 .wpo-service-item .wpo-service-text h2 a,
 .wpo-service-section .wpo-service-item .wpo-service-text h2 a {
-    color: #ff0000
+    color: #cb2b1d
 }
 
 .wpo-service-section-s2 .wpo-service-item .wpo-service-text h2 a:hover,
 .wpo-service-section .wpo-service-item .wpo-service-text h2 a:hover {
-    color: #ff0000
+    color: #cb2b1d
 }
 
 .wpo-service-section-s2 .wpo-service-item .wpo-service-text p,
@@ -5249,7 +5249,7 @@ a:hover {
 .wpo-testimonials-section .testimonials-left span {
     font-size: 20px;
     font-weight: 500;
-    color: #ff0000;
+    color: #cb2b1d;
     position: relative;
     margin-top: -.31em;
     display: inline-block;
@@ -5260,7 +5260,7 @@ a:hover {
 
 .wpo-testimonials-section .testimonials-left span:before {
     content: "";
-    background: #ff0000;
+    background: #cb2b1d;
     width: 30px;
     height: 2px;
     position: absolute;
@@ -6284,11 +6284,11 @@ a:hover {
 }
 
 .wpo-service-single-section .wpo-service-single-wrap .wpo-related-section .wpo-related-item .wpo-related-text h2 a {
-    color: #ff0000
+    color: #cb2b1d
 }
 
 .wpo-service-single-section .wpo-service-single-wrap .wpo-related-section .wpo-related-item .wpo-related-text h2 a:hover {
-    color: #ff0000
+    color: #cb2b1d
 }
 
 .wpo-service-single-section .wpo-service-single-wrap .wpo-related-section .wpo-related-item .wpo-related-text p {
@@ -6466,7 +6466,7 @@ a:hover {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #ff0000;
+    background: #cb2b1d;
     content: "";
     width: 70px;
     height: 4px
@@ -6487,7 +6487,7 @@ a:hover {
 }
 
 .wpo-single-sidebar .wpo-service-widget ul li a svg {
-    color: #ff0000;
+    color: #cb2b1d;
 }
 
 /* .wpo-single-sidebar .wpo-service-widget ul li a:before {
@@ -6501,7 +6501,7 @@ a:hover {
 } */
 
 .wpo-single-sidebar .wpo-service-widget ul li a:hover {
-    color: #ff0000
+    color: #cb2b1d
 }
 
 .wpo-single-sidebar .wpo-service-widget ul li:last-child a {
@@ -6552,7 +6552,7 @@ a:hover {
 }
 
 .wpo-single-sidebar .wpo-newsletter-widget .form button {
-    background: #ff0000;
+    background: #cb2b1d;
     width: 100%;
     height: 50px;
     border-radius: 0;

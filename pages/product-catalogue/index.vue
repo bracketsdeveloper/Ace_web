@@ -47,7 +47,7 @@
                             type="text"
                             class="search__text"
                             placeholder="Type Here..."
-                            @input="getProducts(0)"
+                            @change="getProducts(0)"
                           />
                         </form>
 
@@ -76,7 +76,7 @@
 
                   <ul id="facet_67733" class="collapse category--section">
                     <li v-for="(item, index) in category" :key="index">
-                      <label class="facet-label" :for="'facet_input_67733_0'+item.id">
+                      <label v-if="item.productSubCategoryId==null" class="facet-label" :for="'facet_input_67733_0'+item.id">
                         <span class="custom-checkbox">
                           <input
                             :id="'facet_input_67733_0'+item.id"
@@ -107,6 +107,76 @@
                           <span class="magnitude">({{item.productCounts}})</span>
                         </a>
                       </label>
+                      <div v-else  :for="'facet_input_67733_0'+item.id">
+                        <hr />
+                        <label class="facet-label" :for="'facet_input_67733_0'+item.id">
+                        <span class="custom-checkbox">
+                          <input
+                            :id="'facet_input_67733_0'+item.id"
+                            v-model="categoryChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            :value="item.id"
+                            @change="categoryCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                          style="font-weight:bold;color: #cb2b1d;"
+                        >
+                          {{item.name}}
+                          <span class="magnitude">({{item.productCounts}})</span>
+                        </a>
+                      </label>
+                        <ul id="facet_67733987" class="collapse">
+                          <li v-for="(it, ind) in item.productSubCategories" :key="ind" style="margin-left:25px">
+                            <label class="facet-label" :for="'facet_input_67733_0'+it.id">
+                              <span class="custom-checkbox">
+                                <input
+                                  :id="'facet_input_67733_0'+it.id"
+                                  v-model="subCategoryChecks"
+                                  data-search-url="#"
+                                  type="checkbox"
+                                  :value="it.id"
+                                  @change="subCategoryCheckHandler"
+                                />
+                                <span class="ps-shown-by-js"
+                                  ><i
+                                    class="
+                                      material-icons
+                                      rtl-no-flip
+                                      checkbox-checked
+                                    "
+                                    ></i
+                                  ></span
+                                >
+                              </span>
+
+                              <a
+                                href="javascript:void(0)"
+                                class="_gray-darker search-link js-search-link"
+                                rel="nofollow"
+                              >
+                                {{it.name}}
+                              </a>
+                            </label>
+                          </li>
+                        </ul>
+                        <hr />
+                      </div>
                     </li>
 
                   </ul>
@@ -603,6 +673,8 @@ export default {
       searchText:'',
       categoryChecks:[],
       categoryChecksText:'',
+      subCategoryChecks:[],
+      subCategoryChecksText:'',
       priceChecks:[],
       priceChecksText:'',
       sortSelect:'1',
@@ -636,7 +708,7 @@ export default {
     async getProducts(page=0){
       this.$store.commit('loaders/show')
       try {
-        const response = await this.$axios.$get(`/product/view-custom?page=${page}&size=9&sort=${this.sort}&sortType=${this.sortType}&search=${this.searchText}&category=${this.categoryChecksText}&price=${this.priceChecksText}`)
+        const response = await this.$axios.$get(`/product/view-custom?page=${page}&size=9&sort=${this.sort}&sortType=${this.sortType}&search=${this.searchText}&category=${this.categoryChecksText}&price=${this.priceChecksText}&subcategory=${this.subCategoryChecksText}`)
         this.products = response.data.products
         this.currentPage = parseInt(response.data.currentPage)
         this.totalItems = parseInt(response.data.totalItems)
@@ -675,6 +747,25 @@ export default {
       }
       this.categoryChecks.forEach((item)=>{
         this.categoryChecksText+=(item+';')
+      })
+      this.getProducts(0);
+      return false;
+    },
+    subCategoryCheckHandler(){
+      this.subCategoryChecksText=''
+      if(this.subCategoryChecks.length===0){
+        this.getProducts(0);
+        return false
+      }
+      if(this.subCategoryChecks.length===1){
+        this.subCategoryChecks.forEach((item)=>{
+          this.subCategoryChecksText+=(item)
+        })
+        this.getProducts(0);
+        return false
+      }
+      this.subCategoryChecks.forEach((item)=>{
+        this.subCategoryChecksText+=(item+';')
       })
       this.getProducts(0);
       return false;

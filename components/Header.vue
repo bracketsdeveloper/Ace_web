@@ -9,22 +9,22 @@
                 <img src="/assets/images/logo.png" class="logo" alt="" />
               </li>
               <li>
-                <NuxtLink to="/">Home</NuxtLink>
+                <NuxtLink to="/" :class="currentRoute=='index' ? 'active' : ''">Home</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/about-ace">About Ace</NuxtLink>
+                <NuxtLink to="/about-ace" :class="currentRoute=='about-ace' ? 'active' : ''">About Ace</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/gift-guide">Gift Guide</NuxtLink>
+                <NuxtLink to="/gift-guide" :class="currentRoute=='gift-guide' ? 'active' : ''">Gift Guide</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/product-catalogue">Product Catalogue</NuxtLink>
+                <NuxtLink to="/product-catalogue" :class="currentRoute=='product-catalogue' ? 'active' : ''">Product Catalogue</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/why-us">Why Us</NuxtLink>
+                <NuxtLink to="/why-us" :class="currentRoute=='why-us' ? 'active' : ''">Why Us</NuxtLink>
               </li>
               <li>
-                <NuxtLink to="/contact-us">Contact Us</NuxtLink>
+                <NuxtLink to="/contact-us" :class="currentRoute=='contact-us' ? 'active' : ''">Contact Us</NuxtLink>
               </li>
               <li>
                 <NuxtLink to="/catalogue"><font-awesome-icon :icon="['fa', 'cart-shopping']"/> <span>{{cartCount}}</span></NuxtLink>
@@ -104,6 +104,9 @@ export default {
   computed: {
     cartCount () {
       return this.$store.state.carts.cart.length
+    },
+    currentRoute() {
+      return this.$route.name;
     }
   },
   
@@ -186,7 +189,7 @@ nav .menu-wrapper .nav-header-row li a {
 }
 
 nav .menu-wrapper .nav-menu-row li a span, nav .menu-wrapper .nav-header-row li a span {
-    background: #ff0000;
+    background: #cb2b1d;
     position: absolute;
     top: -15px;
     right: -15px;
@@ -200,11 +203,11 @@ nav .menu-wrapper .nav-menu-row li a span, nav .menu-wrapper .nav-header-row li 
 }
 
 nav .menu-wrapper .nav-header-row li button {
-  color: #ff0000;
+  color: #cb2b1d;
   text-decoration: none;
   font-weight: 700;
   font-size: 23px;
-  border: 2px solid #ff0000;
+  border: 2px solid #cb2b1d;
   display: grid;
   place-items: center;
   padding: 10px;
@@ -235,13 +238,13 @@ nav .menu-wrapper .nav-header-row li a.last {
 
 /* hover */
 
-nav .menu-wrapper .nav-menu-row li a:hover {
-  color: #ff0000;
+nav .menu-wrapper .nav-menu-row li a:hover, nav .menu-wrapper .nav-menu-row li a.active {
+  color: #cb2b1d;
 }
 
 nav .menu-wrapper .nav-menu-row li a.last:hover {
   color: #fff;
-  background-color: #ff0000;
+  background-color: #cb2b1d;
 }
 
 @media screen and (max-width: 1199px) {
