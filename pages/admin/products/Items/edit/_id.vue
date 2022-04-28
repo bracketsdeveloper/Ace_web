@@ -35,7 +35,7 @@
 
       <div class="mb-3">
         <label class="form-label">Product Category</label>
-        <select v-model="productCategoryId" class="form-control" @change="getSubCategory(productCategoryId)">
+        <select v-model="productCategoryId" class="form-control" @change="getSubCategory()">
           <option v-for="(item, index) in category" :key="index" :value="item.id">{{item.name}}</option>
         </select>
       </div>
@@ -84,7 +84,8 @@ export default {
       productCategoryId:'',
       productSubCategoryId:null,
       error:'',
-      errorMessage:''
+      errorMessage:'',
+      changeCounter: 0
     }
   },
   computed:{
@@ -109,7 +110,7 @@ export default {
         this.productCategoryId = response.data.data.productCategoryId
         this.productSubCategoryId = response.data.data.productSubCategoryId
         this.extImage = response.data.data.image
-        this.getSubCategory(this.productCategoryId)
+        this.getSubCategory()
       } catch (err) {
         console.log(err) // eslint-disable-line
         if (err?.response?.data?.errors?.id) {
@@ -135,16 +136,21 @@ export default {
       }
     },
 
-    async getSubCategory(productCategoryId) {
+    async getSubCategory() {
       this.$store.commit('loaders/show')
       try {
-        const response = await this.$api.get(`/product-sub-category/${productCategoryId}/view-sub-categories`)
+        const response = await this.$api.get(`/product-sub-category/${this.productCategoryId}/view-sub-categories`)
         this.subcategory = response.data.data
+        if(this.changeCounter===0){
+          this.changeCounter++;
+          return false;
+        }
         if(response?.data?.data?.length>0){
             this.productSubCategoryId  = response?.data?.data[0]?.id
         }else{
           this.productSubCategoryId  = null
         }
+        
       } catch (err) {
         console.log(err) // eslint-disable-line
       } finally{

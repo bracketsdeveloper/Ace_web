@@ -1380,7 +1380,8 @@ h1, h2, h3, h4, h5, h6 {
 .whatsapp-icon{
   position: fixed;
   bottom: 30px;
-  left: 20px;
+  right: 20px;
+  z-index: 44;
 }
 
 .sectionClass {

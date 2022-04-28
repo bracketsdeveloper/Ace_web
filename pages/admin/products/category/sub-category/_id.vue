@@ -48,7 +48,7 @@
                 :aria-disabled="
                   totalPages === 0 || currentPage === 0 ? 'true' : 'false'
                 "
-                @click="getCategory(currentPage - 1)"
+                @click="getSubCategory(currentPage - 1)"
               >
                 Previous
               </button>
@@ -73,7 +73,7 @@
                     ? 'true'
                     : 'false'
                 "
-                @click="getCategory(currentPage + 1)"
+                @click="getSubCategory(currentPage + 1)"
               >
                 Next
               </button>

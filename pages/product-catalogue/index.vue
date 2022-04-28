@@ -104,7 +104,7 @@
                           rel="nofollow"
                         >
                           {{item.name}}
-                          <span class="magnitude">({{item.productCounts}})</span>
+                          <!-- <span class="magnitude">({{item.productCounts}})</span> -->
                         </a>
                       </label>
                       <div v-else  :for="'facet_input_67733_0'+item.id">
@@ -138,7 +138,7 @@
                           style="font-weight:bold;color: #cb2b1d;"
                         >
                           {{item.name}}
-                          <span class="magnitude">({{item.productCounts}})</span>
+                          <!-- <span class="magnitude">({{item.productCounts}})</span> -->
                         </a>
                       </label>
                         <ul id="facet_67733987" class="collapse">
