@@ -8,14 +8,8 @@
             id="left-column"
             class="sidebar col-xs-12 col-sm-12 col-md-4 col-lg-3"
           >
+            <!-- <div id="search_filters_wrapper" class="hidden-sm-down"> -->
             <div id="search_filters_wrapper" class="hidden-sm-down">
-              <div id="search_filter_controls" class="hidden-md-up">
-                <span id="_mobile_search_filters_clear_all"></span>
-                <button class="btn btn-secondary ok">
-                  <i class="material-icons rtl-no-flip"></i>
-                  OK
-                </button>
-              </div>
               <div id="search_filters">
                 <p class="facet-top-title h6 hidden-sm-down">Filter By</p>
 
@@ -59,20 +53,6 @@
 
                 <section class="facet clearfix">
                   <p class="h6 facet-title hidden-sm-down">Categories</p>
-
-                  <div
-                    class="title hidden-md-up"
-                    data-target="#facet_67733"
-                    data-toggle="collapse"
-                  >
-                    <p class="h6 facet-title">Categories</p>
-                    <span class="float-xs-right">
-                      <span class="navbar-toggler collapse-icons">
-                        <i class="material-icons add"></i>
-                        <i class="material-icons remove"></i>
-                      </span>
-                    </span>
-                  </div>
 
                   <ul id="facet_67733" class="collapse category--section">
                     <li v-for="(item, index) in category" :key="index">
@@ -184,20 +164,6 @@
 
                 <section class="facet clearfix">
                   <p class="h6 facet-title hidden-sm-down">Price</p>
-
-                  <div
-                    class="title hidden-md-up"
-                    data-target="#facet_67733"
-                    data-toggle="collapse"
-                  >
-                    <p class="h6 facet-title">Price</p>
-                    <span class="float-xs-right">
-                      <span class="navbar-toggler collapse-icons">
-                        <i class="material-icons add"></i>
-                        <i class="material-icons remove"></i>
-                      </span>
-                    </span>
-                  </div>
 
                   <ul id="facet_67733" class="collapse">
 
@@ -433,6 +399,379 @@
                       <option value="3">Price -- High to Low</option>
                     </select>
                   </div>
+
+
+                  <div
+            id="left-column"
+            class="sidebar col-xs-12 col-sm-12 col-md-4 col-lg-3"
+          >
+            <!-- <div id="search_filters_wrapper" class="hidden-sm-down"> -->
+            <div id="search_filters_wrapper" class="hidden-md-up">
+              <div id="search_filters">
+                <p class="facet-top-title h6 ">Filter By</p>
+
+                <section class="facet clearfix">
+                  <p class="h6 facet-title">Search</p>
+
+                  <!-- <div
+                    class="title hidden-md-up"
+                    data-target="#facet_67733"
+                    data-toggle="collapse"
+                  >
+                    <p class="h6 facet-title">Categories</p>
+                    <span class="float-xs-right">
+                      <span class="navbar-toggler collapse-icons">
+                        <i class="material-icons add"></i>
+                        <i class="material-icons remove"></i>
+                      </span>
+                    </span>
+                  </div> -->
+
+                  <ul id="facet_67733" class="collapse">
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0">
+                        <form style="width:100%" @submit.prevent="getProducts(0)">
+                          <input
+                            id="facet_input_67733_0"
+                            v-model="searchText"
+                            data-search-url="#"
+                            type="text"
+                            class="search__text"
+                            placeholder="Type Here..."
+                            @change="getProducts(0)"
+                          />
+                        </form>
+
+                      </label>
+                    </li>
+
+                  </ul>
+                </section>
+
+                <section class="facet clearfix">
+                  <p class="h6 facet-title">Categories</p>
+
+                  <ul id="facet_67733" class="collapse category--section">
+                    <li v-for="(item, index) in category" :key="index">
+                      <label v-if="item.productSubCategoryId==null" class="facet-label" :for="'facet_input_67733_0'+item.id">
+                        <span class="custom-checkbox">
+                          <input
+                            :id="'facet_input_67733_0'+item.id"
+                            v-model="categoryChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            :value="item.id"
+                            @change="categoryCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          {{item.name}}
+                          <!-- <span class="magnitude">({{item.productCounts}})</span> -->
+                        </a>
+                      </label>
+                      <div v-else  :for="'facet_input_67733_0'+item.id">
+                        <hr />
+                        <label class="facet-label" :for="'facet_input_67733_0'+item.id">
+                        <span class="custom-checkbox">
+                          <input
+                            :id="'facet_input_67733_0'+item.id"
+                            v-model="categoryChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            :value="item.id"
+                            @change="categoryCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                          style="font-weight:bold;color: #cb2b1d;"
+                        >
+                          {{item.name}}
+                          <!-- <span class="magnitude">({{item.productCounts}})</span> -->
+                        </a>
+                      </label>
+                        <ul id="facet_67733987" class="collapse">
+                          <li v-for="(it, ind) in item.productSubCategories" :key="ind" style="margin-left:25px">
+                            <label class="facet-label" :for="'facet_input_67733_0'+it.id">
+                              <span class="custom-checkbox">
+                                <input
+                                  :id="'facet_input_67733_0'+it.id"
+                                  v-model="subCategoryChecks"
+                                  data-search-url="#"
+                                  type="checkbox"
+                                  :value="it.id"
+                                  @change="subCategoryCheckHandler"
+                                />
+                                <span class="ps-shown-by-js"
+                                  ><i
+                                    class="
+                                      material-icons
+                                      rtl-no-flip
+                                      checkbox-checked
+                                    "
+                                    ></i
+                                  ></span
+                                >
+                              </span>
+
+                              <a
+                                href="javascript:void(0)"
+                                class="_gray-darker search-link js-search-link"
+                                rel="nofollow"
+                              >
+                                {{it.name}}
+                              </a>
+                            </label>
+                          </li>
+                        </ul>
+                        <hr />
+                      </div>
+                    </li>
+
+                  </ul>
+                </section>
+
+                <section class="facet clearfix">
+                  <p class="h6 facet-title">Price</p>
+
+                  <ul id="facet_67733" class="collapse">
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a16">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a16"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="200;0;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          Below INR 200.00
+                        </a>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a12">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a12"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="500;200;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          INR 200.00 - INR 500.00
+                        </a>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a13">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a13"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="1000;500;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          INR 500.00 - INR 1000.00
+                        </a>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a14">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a14"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="2000;1000;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          INR 1000.00 - INR 2000.00
+                        </a>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a15">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a15"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="5000;2000;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          INR 2000.00 - INR 5000.00
+                        </a>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="facet-label" for="facet_input_67733_0a15">
+                        <span class="custom-checkbox">
+                          <input
+                            id="facet_input_67733_0a15"
+                            v-model="priceChecks"
+                            data-search-url="#"
+                            type="checkbox"
+                            value="5000;1000000;"
+                            @change="priceCheckHandler"
+                          />
+                          <span class="ps-shown-by-js"
+                            ><i
+                              class="
+                                material-icons
+                                rtl-no-flip
+                                checkbox-checked
+                              "
+                              ></i
+                            ></span
+                          >
+                        </span>
+
+                        <a
+                          href="javascript:void(0)"
+                          class="_gray-darker search-link js-search-link"
+                          rel="nofollow"
+                        >
+                          INR 5000.00+
+                        </a>
+                      </label>
+                    </li>
+
+                    
+
+                    
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </div>
+
+
                 </div>
               </div>
 
@@ -60762,6 +61101,18 @@ svg {
   .footer-center {
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 780px) {
+  hr {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  #search_filters .facet .facet-title, #search_filters_brands .facet .facet-title, #search_filters_suppliers .facet .facet-title {
+    margin-bottom: 0;
   }
 }
 
