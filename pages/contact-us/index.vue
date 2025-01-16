@@ -16,7 +16,7 @@
                     </div>
                     <div class="office-info-text">
                       <h2>Address</h2>
-                      <p>#1, 1st Floor, Vasavi Complex, 147, Seshadripuram Main Road, Bangalore - 560020</p>
+                      <p># 61, 1st Floor, 5th Main Road, Chamrajpet, Bangalore 560018</p>
                     </div>
                   </div>
                 </div>
@@ -125,9 +125,9 @@
       </div>
       <section class="wpo-contact-map-section">
         <div class="wpo-contact-map">
-          <iframe
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.651740058251!2d77.57576581482226!3d12.994112490841115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17469f168e05%3A0xdce4c7510fe2c2a7!2sAce%20Gifting%20Solutions!5e0!3m2!1sen!2sin!4v1648555261527!5m2!1sen!2sin" 
-          ></iframe>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4748.909246390468!2d77.5643978!3d12.956954299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16150843bc2b%3A0xe13ac3789465d846!2sAce%20Gifting%20Solutions!5e1!3m2!1sen!2sin!4v1737021474792!5m2!1sen!2sin">
+          </iframe>
         </div>
       </section>
     </section>
