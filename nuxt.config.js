@@ -96,7 +96,7 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     // baseURL: 'http://localhost:8080/api/',
-    baseURL: process.env.NUXT_PUBLIC_API_URL,
+    baseURL: 'https://backend.acegiftingsolutions.com/api/',
     credentials: true
   },
 
@@ -109,6 +109,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  server: {
+    host: '0.0.0.0', // allow external connections
+    port: 3000       // default port
+  },
 
   loading: {
     color: '#02b8f4',
